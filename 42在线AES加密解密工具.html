@@ -1,0 +1,335 @@
+<!-- http://tools.jb51.net/password/aes_encode-->
+<style>
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<div class="col-md-9">
+	<h1 align="center" style="font-size: 30px;">在线AES加密/解密工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">这是一款基于AES算法的加密解密工具，用户在文本框中输入待加密的字符串再输入密钥（也可不输入密钥）即可一键加密字符串，同时还具有针对加密处理后的字符串进行一键解密的功能，非常简单实用，提供给需要的朋友使用。</h2>
+
+	<div>
+		<div>
+			<textarea style="resize: none; min-height: 200px;"
+				placeholder="在此输入明文，再点击加密按钮" class="textareas form-control"
+				id="source"></textarea>
+		</div>
+		<div>
+			<div>
+				<div>
+					<input type="text" name="text" id="pwd" placeholder="在此输入密钥"
+						autocomplete="off">(密码是可选项，也就是可以不填) <input type="button"
+						class="btn btn-primary" onclick="encrypt();" value="加密 ↓"
+						style="margin: 10px auto"> <input type="button"
+						class="btn btn-primary" onclick="decrypt();" value="解密 ↑">
+					<input type="button" class="btn btn-success" id="fz"
+						data-clipboard-action="copy" data-clipboard-target="#result"
+						value="复制结果"> <input type="button" class="btn btn-default"
+						onclick="Empty();" value="清空结果 ↓">
+				</div>
+			</div>
+		</div>
+		<div>
+			<textarea name="result" class="textareas form-control"
+				placeholder="此处显示加密后的密文，也可以输入待解密的密文"
+				style="resize: none; min-height: 200px;" id="result"
+				onclick="this.focus();this.select();"></textarea>
+		</div>
+	</div>
+	<h2 class="alert alert-warning">AES 加密/解密工具简介</h2>
+	<div class="alert alert-info" style="font-size: 15px;">
+		<ol>
+			<li>在线AES加密/AES解密工具，可以输入密钥后进行加密和解密，支持可逆加密与解密操作。</li>
+			<li><code>[AES加密]</code>、左边是放明文，加密后，加密的内容在右边。可以填写密码（也可以不填写）。</li>
+			<li><code>[AES解密]</code>、右边是放密文，解密后，解密的内容在右边。密码加密的那一定要相同密码解密，要不然内容为空。
+			</li>
+			<li>这里在原有功能基础上增加了针对加密结果的复制与文本框的清空功能，方便用户使用。</li>
+			<li>高级加密标准（英语：Advanced Encryption
+				Standard，缩写：AES），在密码学中又称Rijndael加密法，是美国联邦政府采用的一种区块加密标准。这个标准用来替代原先的DES，已经被多方分析且广为全世界所使用。经过五年的甄选流程，高级加密标准由美国国家标准与技术研究院（NIST）于2001年11月26日发布于FIPS
+				PUB 197，并在2002年5月26日成为有效的标准。2006年，高级加密标准已然成为对称密钥加密中最流行的算法之一。</li>
+		</ol>
+		<table class="table table-bordered table-hover">
+			<tbody>
+				<tr>
+					<td>AES 全称</td>
+					<td>Advanced Encryption Standard</td>
+					<td>应用学科</td>
+					<td>密码学</td>
+				</tr>
+				<tr>
+					<td>适用领域范围</td>
+					<td>计算机，网络安全</td>
+					<td>集成算法</td>
+					<td>Anubis, Grand Cru</td>
+				</tr>
+				<tr>
+					<td>派生自</td>
+					<td>Square</td>
+					<td>提出时间</td>
+					<td>1998年</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<script src="js/crypto-js/aes.js"></script>
+	<script type="text/javascript"
+		src="http://tools.jb51.net/js/clipboard.min.js"></script>
+	<script>
+		var clipboard = new Clipboard('#fz');
+		clipboard.on('success', function(e) {
+		});
+		clipboard.on('error', function(e) {
+		});
+		$("#fz").click(function() {
+			$(this).val("已复制√");
+		});
+		$("#fz").mouseout(function() {
+			$("#fz").val("复制结果");
+		});
+		function isNull(arg1) {
+			return !arg1 && arg1 !== 0 && typeof arg1 !== "boolean" ? true
+					: false;
+		}
+		function encrypt() {
+			var pwdkey = $("#pwd").val();
+			var scode = $("#source").val();
+			if (isNull(scode)) {
+				alert("请输入待加密字符串");
+				$("#source").focus();
+				return false;
+			} else {
+				var relstr = CryptoJS.AES.encrypt(scode, pwdkey);
+				$("#result").val(relstr);
+			}
+		}
+		function decrypt() {
+			var pwdkey = $("#pwd").val();
+			var relcode = $("#result").val();
+			if (isNull(relcode)) {
+				alert("请输入待解密字符串");
+				$("#result").focus();
+				return false;
+			} else {
+				var scode = CryptoJS.AES.decrypt(relcode, pwdkey);
+				$("#source").val(scode.toString(CryptoJS.enc.Utf8));
+				if (isNull(scode.toString(CryptoJS.enc.Utf8))) {
+					alert("解密失败！");
+					$("#result").focus();
+					return false;
+				}
+			}
+		}
+		function Empty() {
+			document.getElementById('source').value = '';
+			document.getElementById('pwd').value = '';
+			document.getElementById('result').value = '';
+			document.getElementById('source').focus();
+		}
+	</script>
+	<div class="well">
+		<div id="SOHUCS" sid="aes_encode"></div>
+		<script type="text/javascript"> 
+</script>
+
+	</div>
+
+</div>
