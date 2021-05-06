@@ -1,0 +1,287 @@
+<!-- http://tools.jb51.net/aideddesign/img_add_info -->
+<style>
+.container {
+	font-size: 16px;
+	width: 1000px;
+	margin: 0 auto
+}
+
+.container .divider {
+	width: 100%;
+	background: #CCC;
+	height: 1px;
+	margin: 25px 0
+}
+
+.container .row {
+	min-height: 2em;
+	line-height: 2em;
+	width: 100%
+}
+
+.container .row:before, .container .row:after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0
+}
+
+.container .row:after {
+	clear: both
+}
+
+.container .row {
+	zoom: 1;
+	margin: 10px 0
+}
+
+.container .span {
+	float: left;
+	display: inline;
+	min-height: 1em
+}
+
+.container .span:first-child {
+	margin-left: 0
+}
+
+.container .span:last-child {
+	margin-right: 0
+}
+
+.container .six {
+	width: 48%
+}
+
+.container input {
+	text-align: left;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	font-size: .98em
+}
+
+.container .input-text {
+	width: 95%;
+	height: 2.1em;
+	line-height: 2.1em;
+	padding-left: 5px
+}
+
+.container .button {
+	border: 0;
+	border-radius: 4px;
+	outline: 0;
+	cursor: pointer;
+	margin-bottom: 10px
+}
+
+.container .button.small {
+	padding: 7px 10px;
+	font-size: .95em
+}
+
+.container .button.large {
+	padding: 15px 25px;
+	font-size: 1.1em
+}
+
+.container .button.primary {
+	color: #FFF;
+	background: #5f90b0
+}
+
+.container .button.primary:hover {
+	background: #5589ab
+}
+
+.container .button.success {
+	color: #FFF;
+	background: #4daf7c
+}
+
+.container .button.success:hover {
+	background: #48a474
+}
+
+.container .button.danger {
+	color: #FFF;
+	background: #e6623c
+}
+
+.container .button.danger:hover {
+	background: #e4572e
+}
+
+.container .alert {
+	padding: 10px;
+	margin: 0;
+	border-radius: 3px
+}
+
+.container .alert.primary {
+	background: #e8eff3;
+	border: 1px #c5d7e3 solid
+}
+
+.container .alert.success {
+	background: #daeee4;
+	border: 1px #b6dfca solid
+}
+
+.container .alert.danger {
+	background: #fdf4f1;
+	border: 1px #f7cfc4 solid
+}
+
+.container .hidden, .container .hide {
+	display: none
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center" style="font-size: 30px;">在线图片添加/解密隐藏信息(隐写术)工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">这是一款可添加与解密图片隐藏信息的在线工具，通过该工具，用户可以向图片中添加文字信息并重新生成图片，同样对于已经添加隐藏信息的图片也可以解密出之前添加的隐藏信息。提供给需要的朋友免费使用。</h2>
+
+	<div class="container">
+		<h4 class="strong">一、生成带隐藏信息的图片</h4>
+		<div class="divider"></div>
+		<div class="row">
+			<div class="span">1. 从电脑中选择一张用于加密信息的图片：</div>
+			<div class="span">
+				<input type="file" accept="image/*" id="origin_image"
+					onchange="importImage();">
+			</div>
+		</div>
+		<div class="row">
+			<div class="span">2. 输入你要隐藏到图片中的文字信息：</div>
+			<div class="span six">
+				<input type="text" class="input-text"
+					placeholder="隐藏文字，比如：欢迎来到脚本之家 www.jb51.net" id="secret_text">
+			</div>
+		</div>
+		<div class="row">
+			<div class="span">3. 输入需要解开信息的密码：</div>
+			<div class="span six">
+				<input type="password" class="input-text"
+					placeholder="信息查看密码，可以为空即为不加密" id="secret_pwd">
+			</div>
+		</div>
+		<div>
+			<button class="button primary small" onclick="javascript:encode()"
+				type="button">生成带隐藏信息的图片</button>
+		</div>
+		<div class="alert success">
+			<canvas id="result_image" class="hidden"></canvas>
+			<div id="encode_tip" class="strong green"></div>
+			<img id="result_image_output">
+		</div>
+		<div class="divider"></div>
+		<h4 class="strong">二、解密带隐藏信息的图片</h4>
+		<div class="divider"></div>
+		<div class="row">
+			<div class="span">1. 从电脑中选择一张带有隐藏信息的图片：</div>
+			<div class="span">
+				<input type="file" accept="image/*" id="decode_image"
+					onchange="javascript:selectEncodeImage()">
+			</div>
+		</div>
+		<div class="row">
+			<div class="span">2. 输入需要解开信息的密码（如果没有密码可以不填）：</div>
+			<div class="span six">
+				<input type="password" class="input-text"
+					placeholder="信息查看密码，可以为空即为图片解密不需要密码" id="decode_pwd">
+			</div>
+		</div>
+		<div>
+			<button class="button primary small" onclick="javascript:decode()"
+				type="button">解密出隐藏的信息</button>
+		</div>
+		<div class="alert success">
+			<canvas id="decode_result_image" class="hidden"></canvas>
+			<div class="strong" id="messageDecoded"></div>
+		</div>
+		<script src="http://tools.jb51.net/static/api/img_add_info/sjcl.js"
+			type="text/javascript"></script>
+		<script src="http://tools.jb51.net/static/api/img_add_info/main.js"
+			type="text/javascript"></script>
+		<div class="divider"></div>
+		<h4 class="explainer">测试DEMO图片</h4>
+		<div>
+			<p>可以见下面的图片下载到电脑，然后用本工具解密，可以看看其中的隐藏信息。</p>
+			<p>
+				<img src="image/demo1.png"></img>
+			</p>
+			<p>代码参考：https://github.com/oakes/PixelJihad</p>
+		</div>
+	</div>
+
+
+	<h2 class="alert alert-warning" style="text-align: center">在线图片添加/解密隐藏信息工具说明</h2>
+	<div class="alert alert-info" style="font-size: 16px;">
+		<p>①.
+			隐写术算是一种加密技术，权威的wiki说法是“隐写术是一门关于信息隐藏的技巧与科学，所谓信息隐藏指的是不让除预期的接收者之外的任何人知晓信息的传递事件或者信息的内容。</p>
+		<p>②. 使用该工具可以做到在图片中隐藏文字信息，并且不影响图片的显示，只有特殊的工具才能解密出图片的内容等功能。</p>
+		<p>③. 图片隐写术的应用价值很广泛，比如程序员之间的表白（不限男女），不失为一种浪漫的方式~</p>
+		<p>④. 据说大众点评通过这种方式，成功证明了某app对其图片的盗用，为自己的合法权益进行了有效维护。</p>
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="img_add_info"></div>
+		<script type="text/javascript">
+		</script>
+
+	</div>
+
+</div>
