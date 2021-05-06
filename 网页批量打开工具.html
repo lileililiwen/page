@@ -1,0 +1,218 @@
+<!-- http://www.openurls.com.cn/ -->
+<style>
+h1, .h1 {
+    font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-group>.btn:first-child {
+    margin-left: 0;
+}
+.btn-group>.btn, .btn-group-vertical>.btn {
+    position: relative;
+    float: left;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+textarea {
+    overflow: auto;
+    vertical-align: top;
+    outline: none;
+    resize: none;
+    width: 100%;
+    padding: 10px;
+    HEIGHT: 600px;
+    margin-bottom:10px;
+}
+.btn{
+	margin-right:10px;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+</style>
+<h2 class="alert alert-success" style="font-size: 16px;">复制并粘贴网址到框架内，点击<strong>Open All</strong>按钮打开全部，点击<strong>Clear All</strong>按钮把网址消除</h2>
+<div id="lWell">
+	<textarea name="id" id="id"></textarea>
+	<div style="clear:both;"></div>
+	<div style="float: left;">
+		<input type="button" value="Open All" class="iput btn btn-primary" width="124"
+			height="37" alt="Submit" title="Submit"
+			onclick="MultiUrlOpener(false)">
+	</div>
+	<div style="float: left; width: 127px;">
+		<input value="Clear All" type="button" onclick="ClearAll()"
+			class="clearimg btn btn-default">
+	</div>
+	<div id="toomany"
+		style="display: none; border: 0px solid #FFFFFF; background: #ffcece; margin: 10px 30px 10px auto; padding: 10px 10px; width: 550px; text-align: left; float: left;">
+		经测试，同时打开30个或以上的网址会影响浏览器和电脑运作。<b><a
+			href="javascript:MultiUrlOpener(true)"
+			style="text-decoration: underline">继续打开！</a></b>
+	</div>
+	<b>
+		<div id="toomany"
+			style="display: none; border: 50px solid #FFFFFF; background: #ffcece; margin: 10px auto 10px auto; padding: 10px 10px; width: 550px; text-align: center">
+			经测试，同时打开30个或以上的网址会影响浏览器和电脑运作。<b><a
+				href="javascript:MultiUrlOpener(true)"
+				style="text-decoration: underline">继续打开！</a></b>
+		</div>
+		<b> </b>
+	</b>
+</div>
+
+<script type="text/javascript">
+	document.getElementById('id').value = "https://www.baidu.com/\nhttp://www.sina.com.cn/\nhttp://www.163.com/\n";
+	function MultiUrlOpener(skp) {
+		ttt = document.getElementById('id').value;
+		if (trim(ttt) == '') {
+			return
+		}
+		;
+		ttt = removeBlank(ttt);
+		ttt = escape(ttt);
+		ttt = ttt.replace("%20", "%0A");
+		if (ttt.indexOf('%0D%0A') != -1) {
+			ttt = ttt.split('%0D%0A');
+		} else if (ttt.indexOf('%0A') != -1) {
+			ttt = ttt.split('%0A');
+		} else {
+			ttt = ttt.split('%20');
+		}
+		for (i = 0; i < ttt.length; i++) {
+			ttt[i] = trim(unescape(ttt[i]));
+			ttt[i] = ttt[i].replace("http://", "");
+			ttt[i] = ttt[i].replace("https://", "");
+			ttt[i] = 'http://' + ttt[i];
+		}
+		mor = (ttt.length < 30);
+		toomy = (skp) ? "none" : ((mor) ? "none" : "block");
+		document.getElementById('toomany').style.display = toomy;
+		for (c = 0; c < ttt.length; c++) {
+			if (ttt[c] != "") {
+				if (ttt[c] != "http://") {
+					if (mor || skp) {
+						window.open(ttt[c], '_blank');
+					}
+				}
+			}
+		}
+	}
+
+	function trim(txt) {
+		if (!txt || txt == '') {
+			return ''
+		}
+		;
+		while (txt.charAt(0) == ' ') {
+			txt = txt.substring(1, txt.length)
+		}
+		;
+		while (txt.charAt(txt.length - 1) == ' ') {
+			txt = txt.substring(0, txt.length - 1)
+		}
+		;
+		return txt;
+	}
+
+	function ClearAll() {
+		document.getElementById('id').value = '';
+	}
+
+	function removeBlank(str) {
+		str = str.replace(/(\s+$)|(^\s+)/g, "");
+		str = str.replace(/\s+/g, "\n");
+		return str;
+	}
+</script>
