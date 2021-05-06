@@ -1,0 +1,244 @@
+<style>
+.fli {
+	color: #666;
+	font-size: 16px;
+	margin: 10px auto;
+	width: 1100px;
+}
+
+.fli .name {
+	font-size: 16px;
+	margin: 10px auto;
+	color: #1FBCB6;
+}
+
+.fli img {
+	max-width: 400px;
+}
+
+select {
+	height: 26px;
+	line-height: 26px;
+	border: 1px solid #888;
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h4, .h4 {
+    font-size: 18px;
+}
+h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+input[type=file] {
+    display: block;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+select {
+    height: 26px;
+    line-height: 26px;
+    border: 1px solid #888;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, select {
+    text-transform: none;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+hr {
+    height: 0;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.alert>p+p {
+    margin-top: 5px;
+}
+.alert>p, .alert>ul {
+    margin-bottom: 0;
+}
+p {
+    margin: 0 0 10px;
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center" class="h1">在线图片webp/png/jpeg格式转换工具</h1>
+	<h2 class="alert alert-success h4">这是一款非常简单易用的图片格式转换工具。可实现本地图片的上传与转换成webp、png、jpeg等格式的功能，转换后的图片直接显示在页面上，用户只需将页面上的图片保存即可。非常简单实用。提供给需要的朋友参考使用。</h2>
+
+	<div class="center">
+		<h2 align="center" class="alert alert-warning h3">图片在线webp/png/jpeg格式转换工具</h2>
+		<div class="fli">
+			<div class="form-inline">
+				<h4>选择图片：</h4>
+				<input type="file" id="inputimg" class="btn btn-primary">
+			</div>
+			<hr>
+			<div class="form-inline">
+				<span class="h4">选择格式：</span> <select id="myselect" class="select">
+					<option value="1">webp格式</option>
+					<option value="2">jpeg格式</option>
+					<option value="3">png格式</option>
+				</select>
+			</div>
+			<hr>
+			<button id="start" class="submit btn btn-success">开始转换</button>
+		</div>
+		<hr>
+		<div class="fli">
+			<p>预览：</p>
+			<img id="imgShow" src="" alt="">
+		</div>
+		<div class="alert alert-info h4">
+			<p>备注：</p>
+			<p>1、转换后的图片请选择右键保存！</p>
+			<p>2、该工具目前仅支持转换为webp、jpeg、png的格式。如果是gif动态图片转换后不保留动态效果。</p>
+			<p>3、请使用高版本浏览器,推荐使用Chrome。</p>
+		</div>
+	</div>
+	<script type="text/javascript">
+		/*事件*/
+		document.getElementById('start').addEventListener(
+				'click',
+				function() {
+					getImg(function(image) {
+						var can = imgToCanvas(image), imgshow = document
+								.getElementById("imgShow");
+						imgshow.setAttribute('src', canvasToImg(can));
+					});
+				});
+		// 把image 转换为 canvas对象  
+		function imgToCanvas(image) {
+			var canvas = document.createElement("canvas");
+			canvas.width = image.width;
+			canvas.height = image.height;
+			canvas.getContext("2d").drawImage(image, 0, 0);
+			return canvas;
+		}
+		//canvas转换为image
+		function canvasToImg(canvas) {
+			var array = [ "image/webp", "image/jpeg", "image/png" ], type = document
+					.getElementById('myselect').value - 1;
+			var src = canvas.toDataURL(array[type]);
+			return src;
+		}
+		//获取图片信息
+		function getImg(fn) {
+			var imgFile = new FileReader();
+			try {
+				imgFile.onload = function(e) {
+					var image = new Image();
+					image.src = e.target.result; //base64数据 
+					image.onload = function() {
+						fn(image);
+					}
+				}
+				imgFile
+						.readAsDataURL(document.getElementById('inputimg').files[0]);
+			} catch (e) {
+				console.log("请上传图片！" + e);
+			}
+		}
+	</script>
+	<div class="well">
+		<div id="SOHUCS" sid="img2webp_png_jpeg"></div>
+		<script type="text/javascript">
+		</script>
+	</div>
+
+</div>
