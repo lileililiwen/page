@@ -1,0 +1,55 @@
+.jb51_content{margin:0;padding:0;display:block;font-size: 13px;_font-size: 12px;-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;font-family:'Microsoft Yahei','simsun', "arial", "sans-serif"; _font-family:"arial",'simsun','Microsoft Yahei', "sans-serif";}
+.jb51_content button,.jb51_content input{line-height: normal; outline:none;}
+.jb51_content a{color: #338de6;text-decoration: none;} 
+.jb51_content a:focus{outline: thin dotted;outline:none;}
+.jb51_content a:active,.jb51_content a:hover{outline: 0;}
+.jb51_content a:hover{text-decoration: underline;}
+.jb51_content ul, .jb51_content ol, .jb51_content li{list-style: none;}
+.jb51_content ul{margin:0;padding:0;}
+.wrapper {width: 100%;margin-left: auto;margin-right: auto;background: #fff;height: auto;}
+.wwlr {width: 90%;padding: 20px;}
+.fl{float: left; display:inline-block;}
+.fr{float: right !important; display:inline-block;}
+.pr{ position:relative;}
+.zI0{ z-index:0;}
+.w100{width:100px !important}
+.w70{ width:70px;}
+.ml15{ margin-left:15px;}
+.mr15{ margin-right:15px;}
+.pt10 {padding-top: 10px;}
+.YaHei{font-family: 'Microsoft YaHei';}
+.w90 { width: 90px;}
+.clear{ clear:both;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*+height:1%;}
+.search-hint,.search-hint02{font-size:14px; color:#c0c1c4; position:absolute; left:13px;margin-top:10px; *margin-top:8px;letter-spacing:normal; font-weight:normal; z-index:0; top:0;font-family: 'Microsoft YaHei';}
+.MainCate-choese{display:inline-block; float:left; height:30px;}
+.zI1{ z-index:1;}
+.MainCate-choese{display:inline-block; float:left; height:30px;}
+.MainCateW-choese{height:30px;display:inline-block; float:left; margin-right:10px; z-index:2;}
+.MainCateW-cont{cursor: pointer; background-color:#fff; padding: 0px 5px;color:#747d87;height:28px;line-height:28px;font-size:12px;border:solid #c6cede;border-width:1px; display: inline-block;-webkit-user-select:none;-moz-user-select:none;}
+.MCicon-drop-down{position: absolute;right: 10px;top: 13px;overflow: hidden;width: 0px;height: 0px;cursor: pointer;border-width: 5px 4px 0px;border-color: #999999 #FFF;border-style: solid;display: block;}
+.MainCateC-down{position: absolute;top: 30px; background-color:#fff;left: 0px;right: 0px;border:solid #c6cede;border-width:0px 1px 1px 1px;list-style-type: none;z-index: 10;font-size:12px;background: #FFF none repeat scroll 0% 0%;overflow: auto;max-height: 220px;letter-spacing:normal;display:none;}
+.MainCateC-down li{line-height:21px; height:21px;cursor: pointer;text-align:left;}
+.MainCateC-down li:hover{background: #f5f5f5;}
+.MainCateC-down li a{color:#747d87; display:block;padding-left: 7px;}
+.MainCateC-down li a:hover{text-decoration:none;}
+.JsTxtW-r{width:48%;}
+.JsTxtW-r .JsTxtCo{width:98%;}
+.wwlr textarea.wwlr-l{ padding:10px;}
+.wwlr textarea.wwlr-r{ padding:10px;}
+.JsTxtW textarea,.JsTxtW-r textarea,.linedwrap .codelines .lineno{font-size:10pt;font-family:'Microsoft Yahei';line-height:normal !important;}
+.bor-a1s {border: 1px solid #c6cede !important;}
+.h200 {height: 200px;}
+.wrapper textarea {overflow: auto;vertical-align: top;outline: none;resize: none;}
+.GuoLvWrap{ width:1170px;} 
+.GuoLvWrapAgo,.GuoLvWrapAfter{ width:1148px; padding:5px 10px; line-height:30px; font-size:14px;}
+.GlOtherWay,.GuoLvWay,.GuoLvCbtn{ display:inline-block; float:right;}
+.GlOtherWay{ padding-right: 10px;}
+.GlOtherWay input{ height:28px; border:1px solid #e8e8e8; padding:0px 5px; *line-height:28px;}
+.GlOtherWay span{ padding:7px 5px 0px 5px; color:#0474c8;}
+.GlOtherWay span,.GlOtherWay input,.GuoLvWay span,.GuoLvWay input,.GuoLvCbtn input{ display:inline-block; float:left;}
+.GuoLvCbtn input{ padding:0px 12px; border:none; height:35px; color:#0474c8;font-size:14px; line-height:35px; text-align:center; margin-left:10px; _padding:0px 7px;}
+.GuoLvCbtn input:hover{filter: alpha(opacity=80);opacity: 0.8;}
+.GuoLvCbtn input.GLOkBtn:hover{  filter: alpha(opacity=80);opacity: 0.8; }
+.GuoLvCbtn input.GLOkBtn{ background-color:#55a7e3; color:#fff;font-family: 'Microsoft YaHei';}
