@@ -1,0 +1,889 @@
+<!-- http://tools.jb51.net/code/xmlcodeformat-->
+<style>
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+.form-control {
+    height: 26px;
+    padding: 2px 12px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.CodeMirror {
+    border: 1px solid #cccccc;
+    height: 500px;
+}
+.CodeMirror {
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+    background: white;
+    color: black;
+}
+.CodeMirror {
+    font-family: monospace;
+    height: 300px;
+}
+.row {
+    margin-right: -15px;
+    margin-left: -15px;
+}
+@media (min-width: 768px){
+	.col-sm-8 {
+	    width: 66.66666667%;
+	}
+}
+
+@media (min-width: 768px){
+	.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+	    float: left;
+	}
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.box {
+    display: block;
+    position: relative;
+    border: 1px solid #f8f8f8;
+    box-shadow: 0 0 4px #d8d8d8;
+    -webkit-box-shadow: 0 0 4px #d8d8d8;
+    -moz-box-shadow: 0 0 4px #D8D8D8;
+    background: transparent;
+    margin: 20px;
+    margin-bottom: 20px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+.box-content {
+    position: relative;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    border-radius: 0 0 3px 3px;
+    padding: 15px;
+    background: #FCFCFC;
+}
+#main {
+    color: #525252;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    min-height: 800px;
+    overflow: hidden;
+    background:purple;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.box-content .form-group, .devoops-modal-inner .form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+:before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container-fluid {
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 768px){
+	.sidebar-show #content.col-sm-10 {
+	    opacity: 1;
+	    width: 100%;
+	}
+	.col-sm-10 {
+    	width: 83.33333333%;
+	}
+	.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    	float: left;
+	}
+	.col-sm-4 {
+	    width: 33.33333333%;
+	}
+}
+.sidebar-show #content.col-xs-12 {
+    opacity: 1;
+    width: 83.33333333333334%;
+}
+
+#content {
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 0 6px #131313;
+    -webkit-box-shadow: 0 0 6px #131313;
+    -moz-box-shadow: 0 0 6px #131313;
+    overflow: hidden;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+.col-xs-12 {
+    width: 100%;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+.clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+    display: table;
+    content: " ";
+}
+.clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical>.btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
+    clear: both;
+}
+.CodeMirror-scroll {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+.CodeMirror-scroll {
+    margin-bottom: -30px;
+    margin-right: -30px;
+    padding-bottom: 30px;
+    height: 100%;
+    outline: none;
+    position: relative;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.CodeMirror-scroll {
+    overflow: auto;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<div class="col-md-9">
+	<link rel="stylesheet"
+		href="http://tools.jb51.net/static/api/css/jquery-ui.css">
+	<h1 align="center">XML代码在线格式化美化工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px">使用该工具可有效的实现xml代码的格式化与美化功能，可自由控制代码缩进大小与格式。右侧的相关选项可实现html、css与js混编排版的缩进、换行、转义等功能。</h2>
+	<!--Start Container-->
+	<div id="main" class="container-fluid sidebar-show"
+		style="overflow: visible;background:red;">
+
+		<!--Start Content-->
+		<div id="content" class="col-xs-12 col-sm-10"
+			style="min-height: 1000px; padding-left: 0px; padding-right: 0px;">
+
+			<link rel="stylesheet"
+				href="http://tools.jb51.net/static/api/css/codemirror.css">
+			<script src="http://tools.jb51.net/static/api/js/jquery.cookie.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/codemirror.min.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/formatting.js"></script>
+
+			<script src="http://tools.jb51.net/static/api/js/css.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/placeholder.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/fullscreen.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/clike.js"></script>
+
+			<script src="http://tools.jb51.net/static/api/js/javascript.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/xml.js"></script>
+
+			<script src="http://tools.jb51.net/static/api/js/go.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/htmlmixed.js"></script>
+
+			<script src="http://tools.jb51.net/static/api/js/beautify.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/beautify-css.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/beautify-html.js"></script>
+			<script src="http://tools.jb51.net/static/api/js/sanitytest.js"></script>
+			<script
+				src="http://tools.jb51.net/static/api/js/javascriptobfuscator_unpacker.js"></script>
+			<script
+				src="http://tools.jb51.net/static/api/js/urlencode_unpacker.js"></script>
+			<script
+				src="http://tools.jb51.net/static/api/js/p_a_c_k_e_r_unpacker.js"></script>
+			<script
+				src="http://tools.jb51.net/static/api/js/myobfuscate_unpacker.js"></script>
+			<style>
+.column center h2 {
+	display: none;
+}
+
+.CodeMirror-fullscreen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: auto;
+	z-index: 9;
+}
+
+.CodeMirror {
+	border: 1px solid #cccccc;
+	height: 500px;
+}
+/*      .CodeMirror-empty { outline: 1px solid #c22; } */
+.CodeMirror-empty.CodeMirror-focused {
+	outline: none;
+}
+
+.CodeMirror pre.CodeMirror-placeholder {
+	font-size: 2em;
+	color: #999;
+}
+
+.CodeMirror-scroll {
+	height: 100%;
+	overflow-y: auto;
+	overflow-x: auto;
+}
+</style>
+			<div class="box-content">
+
+				<form>
+					<div class="row">
+						<div class="col-sm-8 col-md-9 col-lg-10">
+							<div class="form-group">
+								<textarea class="form-control" name="code" id="code" rows="40"
+									placeholder="Enter your XML:" style="display: none;"></textarea>
+								<div class="CodeMirror cm-s-default CodeMirror-empty">
+									<div
+										style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 5px; left: 34px;">
+										<textarea autocorrect="off" autocapitalize="off"
+											spellcheck="false"
+											style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"
+											tabindex="0"></textarea>
+									</div>
+									<div class="CodeMirror-hscrollbar" style="left: 29px;">
+										<div style="height: 100%; min-height: 1px; width: 0px;"></div>
+									</div>
+									<div class="CodeMirror-vscrollbar">
+										<div style="min-width: 1px; height: 0px;"></div>
+									</div>
+									<div class="CodeMirror-scrollbar-filler"></div>
+									<div class="CodeMirror-gutter-filler"></div>
+									<div class="CodeMirror-scroll" tabindex="-1">
+										<div class="CodeMirror-sizer"
+											style="margin-left: 29px; min-width: 7px; min-height: 20px;">
+											<div style="position: relative; top: 0px;">
+												<div class="CodeMirror-lines">
+													<div style="position: relative; outline: none;">
+														<pre class="CodeMirror-placeholder"
+															style="height: 0px; overflow: visible;">Enter your XML:</pre>
+														<div class="CodeMirror-measure">
+															<div
+																style="width: 50px; height: 50px; overflow-x: scroll;"></div>
+														</div>
+														<div class="CodeMirror-measure"></div>
+														<div style="position: relative; z-index: 1;"></div>
+														<div class="CodeMirror-cursors">
+															<div class="CodeMirror-cursor"
+																style="left: 4px; top: 0px; height: 12px;">&nbsp;</div>
+														</div>
+														<div class="CodeMirror-code">
+															<div style="position: relative;">
+																<div class="CodeMirror-gutter-wrapper"
+																	style="position: absolute; left: -29px;">
+																	<div
+																		class="CodeMirror-linenumber CodeMirror-gutter-elt"
+																		style="left: 0px; width: 20px;">1</div>
+																</div>
+																<pre class="">
+																	<span style="padding-right: 0.1px;"><span>​</span></span>
+																</pre>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div
+											style="position: absolute; height: 30px; width: 1px; top: 20px;"></div>
+										<div class="CodeMirror-gutters" style="height: 498px;">
+											<div class="CodeMirror-gutter CodeMirror-linenumbers"
+												style="width: 28px;"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<script>
+								$(document).ready(function() {
+									$("#capimage").error(function() {
+										$(this).hide();
+										$('#captxt').hide();
+										$('#captxt').val('hide');
+									});
+									$("#capimage").load(function() {
+										$('#captxt').show();
+									});
+									$('#cap').click(function(event) {
+										if ($('#captxt').val() == '') {
+											alert('Please enter the captcha');
+											return false;
+										}
+										$('#captxt').hide();
+										$('#captxt').val('hide');
+										$('#capimage').hide();
+									});
+									$('#captxt').keypress(function(e) {
+										var key = e.which;
+										if (key == 13) // the enter key code
+										{
+											$('#cap').click();
+											beautify();
+											return false;
+										}
+									});
+
+								});
+							</script>
+
+							<a id="cap" href="javascript:beautify();"
+								class="btn btn-primary btn-large listen"> <i
+								class="icon-indent-left icon-white"></i>格式化 代码
+							</a>
+						</div>
+						<div class="col-sm-4 col-md-3 col-lg-2">
+
+							<br> <select name="tabsize" id="tabsize"
+								class="form-control">
+								<option value="1">使用 tab 符缩进</option>
+								<option value="2">使用 2 个空格缩进</option>
+								<option value="3">使用 3 个空格缩进</option>
+								<option value="4">使用 4 个空格缩进</option>
+								<option value="8">使用 8 个空格缩进</option>
+							</select> <br> <select name="max-preserve-newlines"
+								id="max-preserve-newlines" class="form-control">
+								<option value="-1">删除所有多余换行符</option>
+								<option value="1">标记之间保留1个换行</option>
+								<option value="2">标记之间保留2个换行</option>
+								<option value="5">标记之间保留5个换行</option>
+								<option value="10">标记之间保留10个换行</option>
+								<option value="0">标记之间允许无限换行</option>
+							</select> <br> <select name="wrap-line-length" id="wrap-line-length"
+								class="form-control">
+								<option value="0">不换行</option>
+								<option value="40">在40个字符附近换行</option>
+								<option value="70">在70个字符附近换行</option>
+								<option value="80">在80个字符附近换行</option>
+								<option value="110">在110个字符附近换行</option>
+								<option value="120">在120个字符附近换行</option>
+								<option value="160">在160个字符附近换行</option>
+							</select> <br> <select id="brace-style" class="form-control">
+								<option value="collapse">控制语句的括号</option>
+								<option value="expand">开始括号单独一行</option>
+								<option value="end-expand">结束括号单独一行</option>
+							</select> <br>
+
+							<p style="margin: 6px 0 0 0" class="pull-left">
+								<b><u>HTML &lt;style&gt;, &lt;script&gt; 格式:</u></b>
+							</p>
+							<select id="indent-scripts" class="form-control">
+								<option value="keep">保持标签的缩进级别</option>
+								<option value="normal">添加一个缩进级别</option>
+								<option value="separate">分开缩进</option>
+							</select> <label for="end-with-newline"><input type="checkbox"
+								id="end-with-newline"> 以换行符结束脚本和样式？</label> <label
+								for="detect-packers"><input type="checkbox"
+								id="detect-packers"> 检测包并模糊化处理?</label> <label
+								for="keep-array-indentation"><input type="checkbox"
+								id="keep-array-indentation"> 保持数组缩进?</label> <label
+								for="break-chained-methods"><input type="checkbox"
+								id="break-chained-methods"> 在链式方法处换行?</label> <label
+								for="space-before-conditional"><input type="checkbox"
+								id="space-before-conditional"> 条件语句之前的空格: "if(x)" / "if
+								(x)"</label> <label for="unescape-strings"><input
+								type="checkbox" id="unescape-strings"> 不转义可打印字符如 \xNN 或
+								\uNNNN?</label> <label for="jslint-happy"><input type="checkbox"
+								id="jslint-happy"> 使用 JSLint-happy 格式调整?</label>
+						</div>
+					</div>
+				</form>
+			</div>
+
+
+			<script>
+				var the = {
+					use_codemirror : (!window.location.href
+							.match(/without-codemirror/)),
+					beautify_in_progress : false,
+					editor : null
+				// codemirror editor
+				};
+
+				function run_tests() {
+					var st = new SanityTest();
+					run_beautifier_tests(st, Urlencoded, js_beautify,
+							html_beautify, css_beautify);
+					JavascriptObfuscator.run_tests(st);
+					P_A_C_K_E_R.run_tests(st);
+					Urlencoded.run_tests(st);
+					MyObfuscate.run_tests(st);
+					var results = st.results_raw().replace(/&/g, '&amp;')
+							.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+							.replace(/ /g, '&nbsp;').replace(/\r/g, '·')
+							.replace(/\n/g, '<br>');
+					$('#testresults').html(results).show();
+				}
+
+				function any(a, b) {
+					return a || b;
+				}
+				function unpacker_filter(source) {
+					var trailing_comments = '', comment = '', unpacked = '', found = false;
+
+					// cut trailing comments
+					do {
+						found = false;
+						if (/^\s*\/\*/.test(source)) {
+							found = true;
+							comment = source
+									.substr(0, source.indexOf('*/') + 2);
+							source = source.substr(comment.length).replace(
+									/^\s+/, '');
+							trailing_comments += comment + "\n";
+						} else if (/^\s*\/\//.test(source)) {
+							found = true;
+							comment = source.match(/^\s*\/\/.*/)[0];
+							source = source.substr(comment.length).replace(
+									/^\s+/, '');
+							trailing_comments += comment + "\n";
+						}
+					} while (found);
+
+					var unpackers = [ P_A_C_K_E_R, Urlencoded, /*JavascriptObfuscator,*/
+					MyObfuscate ];
+					for (var i = 0; i < unpackers.length; i++) {
+						if (unpackers[i].detect(source)) {
+							unpacked = unpackers[i].unpack(source);
+							if (unpacked != source) {
+								source = unpacker_filter(unpacked);
+							}
+						}
+					}
+
+					return trailing_comments + source;
+				}
+
+				function read_settings_from_cookie() {
+					$('#tabsize').val(any($.cookie('tabsize'), '4'));
+					$('#brace-style').val(
+							any($.cookie('brace-style'), 'collapse'));
+					$('#detect-packers').prop('checked',
+							$.cookie('detect-packers') !== 'off');
+					$('#max-preserve-newlines').val(
+							any($.cookie('max-preserve-newlines'), '5'));
+					$('#keep-array-indentation').prop('checked',
+							$.cookie('keep-array-indentation') === 'on');
+					$('#break-chained-methods').prop('checked',
+							$.cookie('break-chained-methods') === 'on');
+					$('#indent-scripts').val(
+							any($.cookie('indent-scripts'), 'normal'));
+					$('#space-before-conditional').prop('checked',
+							$.cookie('space-before-conditional') !== 'off');
+					$('#wrap-line-length').val(
+							any($.cookie('wrap-line-length'), '0'));
+					$('#unescape-strings').prop('checked',
+							$.cookie('unescape-strings') === 'on');
+					$('#jslint-happy').prop('checked',
+							$.cookie('jslint-happy') === 'on');
+					$('#end-with-newline').prop('checked',
+							$.cookie('end-with-newline') === 'on');
+				}
+
+				function store_settings_to_cookie() {
+					var opts = {
+						expires : 360
+					};
+					$.cookie('tabsize', $('#tabsize').val(), opts);
+					$.cookie('brace-style', $('#brace-style').val(), opts);
+					$.cookie('detect-packers', $('#detect-packers').prop(
+							'checked') ? 'on' : 'off', opts);
+					$.cookie('max-preserve-newlines', $(
+							'#max-preserve-newlines').val(), opts);
+					$.cookie('keep-array-indentation', $(
+							'#keep-array-indentation').prop('checked') ? 'on'
+							: 'off', opts);
+					$.cookie('break-chained-methods', $(
+							'#break-chained-methods').prop('checked') ? 'on'
+							: 'off', opts);
+					$.cookie('space-before-conditional', $(
+							'#space-before-conditional').prop('checked') ? 'on'
+							: 'off', opts);
+					$.cookie('unescape-strings', $('#unescape-strings').prop(
+							'checked') ? 'on' : 'off', opts);
+					$.cookie('jslint-happy',
+							$('#jslint-happy').prop('checked') ? 'on' : 'off',
+							opts);
+					$.cookie('end-with-newline', $('#end-with-newline').prop(
+							'checked') ? 'on' : 'off', opts);
+					$.cookie('wrap-line-length', $('#wrap-line-length').val(),
+							opts);
+					$
+							.cookie('indent-scripts', $('#indent-scripts')
+									.val(), opts);
+				}
+
+				function beautify() {
+					if (the.beautify_in_progress)
+						return;
+
+					store_settings_to_cookie();
+
+					the.beautify_in_progress = true;
+
+					var source = the.editor ? the.editor.getValue()
+							: $('#code').val(), output, opts = {};
+
+					opts.indent_size = $('#tabsize').val();
+					opts.indent_char = opts.indent_size == 1 ? '\t' : ' ';
+					opts.max_preserve_newlines = $('#max-preserve-newlines')
+							.val();
+					opts.preserve_newlines = opts.max_preserve_newlines !== "-1";
+					opts.keep_array_indentation = $('#keep-array-indentation')
+							.prop('checked');
+					opts.break_chained_methods = $('#break-chained-methods')
+							.prop('checked');
+					opts.indent_scripts = $('#indent-scripts').val();
+					opts.brace_style = $('#brace-style').val();
+					opts.space_before_conditional = $(
+							'#space-before-conditional').prop('checked');
+					opts.unescape_strings = $('#unescape-strings').prop(
+							'checked');
+					opts.jslint_happy = $('#jslint-happy').prop('checked');
+					opts.end_with_newline = $('#end-with-newline').prop(
+							'checked');
+					opts.wrap_line_length = $('#wrap-line-length').val();
+
+					if (looks_like_html(source)) {
+						output = html_beautify(source, opts);
+					} else if (the.editor.options.mode == 'css') {
+						output = css_beautify(source);
+					} else {
+						if ($('#detect-packers').prop('checked')) {
+							source = unpacker_filter(source);
+						}
+						output = js_beautify(source, opts);
+					}
+					if (the.editor) {
+						the.editor.setValue(output);
+					} else {
+						$('#code').val(output);
+					}
+
+					the.beautify_in_progress = false;
+				}
+
+				function looks_like_html(source) {
+
+					var trimmed = source.replace(/^[ \t\n\r]+/, '');
+					var comment_mark = '<' + '!-' + '-';
+					return (trimmed && (trimmed.substring(0, 1) === '<' && trimmed
+							.substring(0, 4) !== comment_mark));
+				}
+				$(function() {
+					read_settings_from_cookie();
+					$('select').change(beautify);
+
+				});
+			</script>
+
+			<div class="box">
+				<div class="box-content">
+					<div class="box-content" style="min-height: 400px;background:green;">
+
+						<h1>XML 代码美化：</h1>
+						<p>
+							在上面的编辑器中输入你手中混乱、压缩或混淆的XML代码，点击【格式化
+							代码】即可实现代码的格式化与美化功能。该编辑器还具备行数显示及语法高亮显示的功能。 <br> <br>
+							此外还提供了大量的附加选项来实现个性化的代码美化显示功能。
+						</p>
+						<h3>什么时候需要使用XML代码美化：</h3>
+						<p>
+							通常你的XML代码会由于缩进、间距以及其他格式原因而显得杂乱无章。这种情况常见于多个开发人员进行同一项目的开发过程中，因为大家往往都有着不同的排版格式。该工具有助于使文件的格式统一。
+							<br> <br>
+							同时，该工具在处理压缩或混淆的代码时也很常用，你可以使用该工具使代码看起来更加漂亮且可读性更强，也更容易编辑。
+						</p>
+						<h3>示例：</h3>
+						<p>未处理的 XML 代码如下:</p>
+						<p></p>
+						<pre>&lt;books&gt;
+&lt;book&gt;
+&lt;author&gt;Jack Herrington&lt;/author&gt;
+&lt;title&gt;PHP Hacks&lt;/title&gt;
+&lt;publisher&gt;O'Reilly&lt;/publisher&gt;
+&lt;/book&gt;
+&lt;book&gt;
+&lt;author&gt;Jack Herrington&lt;/author&gt;
+&lt;title&gt;Podcasting Hacks&lt;/title&gt;
+&lt;publisher&gt;O'Reilly&lt;/publisher&gt;
+&lt;/book&gt;
+&lt;book&gt;
+&lt;author&gt;XML格式化&lt;/author&gt;
+&lt;title&gt;脚本之家在线工具&lt;/title&gt;
+&lt;publisher&gt;tools.jb51.net&lt;/publisher&gt;
+&lt;/book&gt;
+&lt;/books&gt;
+</pre>
+						<p>代码美化后变成了这样 :</p>
+						<p></p>
+						<pre>&lt;books&gt;
+    &lt;book&gt;
+        &lt;author&gt;Jack Herrington&lt;/author&gt;
+        &lt;title&gt;PHP Hacks&lt;/title&gt;
+        &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
+    &lt;/book&gt;
+    &lt;book&gt;
+        &lt;author&gt;Jack Herrington&lt;/author&gt;
+        &lt;title&gt;Podcasting Hacks&lt;/title&gt;
+        &lt;publisher&gt;O'Reilly&lt;/publisher&gt;
+    &lt;/book&gt;
+    &lt;book&gt;
+        &lt;author&gt;XML格式化&lt;/author&gt;
+        &lt;title&gt;脚本之家在线工具&lt;/title&gt;
+        &lt;publisher&gt;tools.jb51.net&lt;/publisher&gt;
+    &lt;/book&gt;
+&lt;/books&gt;</pre>
+						<p></p>
+					</div>
+				</div>
+				<script>
+					$(function() {
+						the.editor = CodeMirror.fromTextArea(document
+								.getElementById("code"), {
+							lineNumbers : true,
+							mode : "xml"
+						});
+
+						function autoFormat(t) {
+							CodeMirror.commands["selectAll"](editor);
+							editor.autoFormatRange(editor.getCursor(true),
+									editor.getCursor(false));
+							editor.setCursor(0);
+						}
+					});
+				</script>
+
+
+			</div>
+			<!--End Content-->
+		</div>
+
+	</div>
+
+
+	<script src="http://tools.jb51.net/static/api/js/jquery-ui.min.js"></script>
+	<script src="http://tools.jb51.net/static/api/js/devoops.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// Make all JS-activity for dashboard
+			DashboardTabChecker();
+		});
+	</script>
+	<div class="well">
+		<hr>
+		<div id="SOHUCS" sid="xmlcodeformat"></div>
+		<script type="text/javascript">
+			
+		</script>
+
+	</div>
+
+</div>
