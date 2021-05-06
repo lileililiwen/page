@@ -1,0 +1,467 @@
+
+<style>
+#warp {
+	width: 1000px;
+	margin: 0px auto;
+	background: #F0EFE2;
+	background-image: url(/images/body_bg.jpg);
+	background-repeat: repeat;
+	padding-top: 10px;
+}
+
+.center {
+	width: 100%;
+	font-size: 15px;
+}
+/*.center td { height:30px; line-height:30px;}*/
+.center ul {
+	margin-left: 30px;
+}
+
+table.data_table td {
+	height: 20px;
+	line-height: 20px;
+}
+
+table.ns {
+	border-collapse: collapse;
+	text-align: center;
+}
+
+table.ns th {
+	text-align: center;
+}
+
+table.ns td {
+	border: #adf 1px solid;
+	height: 30px;
+	line-height: 30px;
+}
+
+table.ns td a {
+	text-decoration: none;
+	color: #205001;
+}
+
+table.ns td a {
+	text-decoration: none;
+	color: #205001;
+}
+
+table.ns td a:hover {
+	text-decoration: underline;
+}
+
+table.ns td a:visited {
+	color: grey;
+}
+
+form {
+	border: thin solid #A4AA04;
+	padding-bottom: 20px;
+}
+
+form.ns {
+	border: thin solid #A4AA04;
+	padding-bottom: 10px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+form.ns input, form.ns select, form.ns textarea {
+	padding: 5px;
+	width: 580px;
+	border: 1px solid #E5E5DB;
+	background: #FFF;
+	color: #47433F;
+}
+
+form.ns span.form_label { /*float: left;*/
+	display: inline-block;
+	width: 120px;
+	text-align: left;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+form.ns input.form_button {
+	border: 1px solid;
+	width: 125px;
+	height: 33px;
+	cursor: pointer;
+	background: #5B7102;
+	color: #FFF;
+}
+
+form.ns input.radio {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	margin-left: 10px;
+}
+
+form.ns span.radio {
+	width: 10px;
+	text-align: left;
+	margin: 5px 5px 0 0;
+}
+
+form.ns textarea {
+	width: 95%;
+	margin: 10px auto;
+	height: 150px;
+}
+
+form.ns select {
+	width: 80px;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+#warp {
+    width: 1000px;
+    margin: 0px auto;
+    background: #F0EFE2;
+    background-image: url(image/body_bg.jpg);
+    background-repeat: repeat;
+    padding-top: 10px;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+table.ns td {
+    border: #adf 1px solid;
+    height: 30px;
+    line-height: 30px;
+}
+td, th {
+    padding: 0;
+}
+.table th {
+    color: #ffffff;
+    background-color: #555555;
+    border: 1px solid #555555;
+}
+.table tr:nth-child(even) {
+    background-color: #ffffff;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<div class="col-md-9">
+	<h1 align="center" style="font-size: 30px;">在线随机生成个人信息数据工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">这是一款个人信息在线随机生成工具，可以非常方便的根据所选国籍随机生成相应的姓名、生日、邮箱、电话、城市、账号、密码等信息，可用于一些对个人信息要求较高的网站注册使用。提供给需要的朋友免费使用。</h2>
+
+	<script type="text/javascript">
+		function getpw(length, upper, lower, numbers, special) {
+			var chars = '';
+			if (upper)
+				chars += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+			if (lower)
+				chars += 'abcdefghijklmnopqrstuvwxyz';
+			if (numbers)
+				chars += '0123456789';
+			if (special)
+				chars += '!#$%&*+-=?@^_~';
+			var pw = '';
+			chars = chars.split('');
+			for (var i = 0; i < length; i++)
+				pw += chars[Math.floor(Math.random() * chars.length)];
+			return pw
+		}
+		function generate() {
+			var length = document.getElementById('length').value;
+			var upper = lower = numbers = special = false;
+			if (document.getElementById('upper').checked)
+				upper = true;
+			if (document.getElementById('lower').checked)
+				lower = true;
+			if (document.getElementById('numbers').checked)
+				numbers = true;
+			if (document.getElementById('special').checked)
+				special = true;
+			var Password = '';
+			if (length<=0||length>50)
+				alert('随机密码长度设置错误，请重设！');
+			else if (!upper && !lower && !numbers && !special)
+				alert('请选择字符集！');
+			else
+				Password += getpw(length, upper, lower, numbers, special)
+						+ '\r\n';
+			document.getElementById('password').value = Password.substring(0,
+					Password.length - 2)
+		}
+	</script>
+
+	<div id="warp">
+		<div class="center">
+
+
+			<hr>
+			<form class="ns">
+				<p>
+					<b><span class="form_label">选择国家地区：</span></b> <select id="locale"
+						style="width: 300px;">
+						<option value="en_AU">Australia (English)</option>
+						<option value="en_au_ocker">Australia Ocker (English)</option>
+						<option value="en_BORK">Bork (English)</option>
+						<option value="en_CA">Canada (English)</option>
+						<option value="fr_CA">Canada (French)</option>
+						<option value="zh_CN">Chinese</option>
+						<option value="zh_TW">Chinese (Taiwan)</option>
+						<option value="nl">Dutch</option>
+						<option value="en">English</option>
+						<option value="fa">Farsi</option>
+						<option value="fr">French</option>
+						<option value="ge">Georgian</option>
+						<option value="de">German</option>
+						<option value="de_AT">German (Austria)</option>
+						<option value="de_CH">German (Switzerland)</option>
+						<option value="en_GB">Great Britain (English)</option>
+						<option value="en_IND">India (English)</option>
+						<option value="id_ID">Indonesia</option>
+						<option value="en_IE">Ireland (English)</option>
+						<option value="it">Italian</option>
+						<option value="ja">Japanese</option>
+						<option value="ko">Korean</option>
+						<option value="nep">Nepalese</option>
+						<option value="nb_NO">Norwegian</option>
+						<option value="pl">Polish</option>
+						<option value="pt_BR">Portuguese (Brazil)</option>
+						<option value="ru">Russian</option>
+						<option value="sk">Slovakian</option>
+						<option value="es">Spanish</option>
+						<option value="es_MX">Spanish Mexico</option>
+						<option value="sv">Swedish</option>
+						<option value="tr">Turkish</option>
+						<option value="uk">Ukrainian</option>
+						<option value="en_US">United States (English)</option>
+						<option value="vi">Vietnamese</option>
+					</select> <input type="button" id="generateName" class="form_button"
+						style="margin-left: 50px; width: 200px;" value="随机生成个人信息">
+				</p>
+				<hr>
+				<table width="900" border="0" align="center" cellpadding="0"
+					cellspacing="0" class="ns table">
+					<tbody id="showTable">
+						<tr class="th">
+							<th width="30%">项目类型</th>
+							<th width="70%">信息数据</th>
+						</tr>
+						<tr>
+							<td>名字</td>
+							<td id="inputName">萧 明辉</td>
+						</tr>
+						<tr>
+							<td>生日</td>
+							<td id="inputDob">1977-0-28</td>
+						</tr>
+						<tr>
+							<td>邮箱</td>
+							<td id="inputEmail">86@gmail.com</td>
+						</tr>
+						<tr>
+							<td>公司</td>
+							<td id="inputCompany">健柏, 志强 and 智渊</td>
+						</tr>
+						<tr>
+							<td>城市</td>
+							<td id="inputStreetAddress">616 文博 侬</td>
+						</tr>
+						<tr>
+							<td>国家</td>
+							<td id="inputCountry">中国</td>
+						</tr>
+						<tr>
+							<td>电话号码</td>
+							<td id="inputPhone">767-92467228</td>
+						</tr>
+						<tr>
+							<td>主页</td>
+							<td id="inputDomain">田.com</td>
+						</tr>
+						<tr>
+							<td>账号名</td>
+							<td id="inputUsername">萧18</td>
+						</tr>
+						<tr>
+							<td>密码</td>
+							<td id="inputPassword">j6GnqCZZxUN28In</td>
+						</tr>
+						<tr>
+							<td>所在IP</td>
+							<td id="inputIp">120.161.2.224</td>
+						</tr>
+					</tbody>
+				</table>
+			</form>
+			<script type="text/javascript">
+				$(document)
+						.ready(
+								function(e) {
+									function generateName() {
+										var locale = $('#locale').val();
+										faker.locale = locale;
+										console.log(faker);
+										var firstName = faker.name.firstName(), lastName = faker.name
+												.lastName();
+										var dob = faker.date
+												.past(
+														50,
+														new Date(
+																"Sat Sep 20 1992 21:35:02 GMT+0200 (CEST)"));
+										dob = dob.getFullYear() + "-"
+												+ dob.getMonth() + "-"
+												+ dob.getDate();
+										$('#inputName').text(
+												faker.name.findName(firstName,
+														lastName));
+										$('#inputDob').text(dob);
+										$('#inputStreetAddress').text(
+												faker.address.streetAddress());
+										$('#inputCityStateZip').text(
+												faker.address.city()
+														+ ", "
+														+ faker.address
+																.stateAbbr()
+														+ " "
+														+ faker.address
+																.zipCode());
+										$('#inputCountry')
+												.text(
+														faker.locales[faker.locale].address.default_country[0]
+																|| "");
+										$('#inputPhone').text(
+												faker.phone.phoneNumber());
+										$('#inputUsername').text(
+												faker.internet.userName(
+														firstName, lastName));
+										$('#inputPassword').text(
+												faker.internet.password());
+										$('#inputEmail').text(
+												faker.internet.email(firstName,
+														lastName));
+										$('#inputDomain')
+												.text(
+														faker.internet
+																.domainWord()
+																+ '.'
+																+ faker.internet
+																		.domainSuffix());
+										$('#inputIp').text(faker.internet.ip());
+										$('#inputCompany').text(
+												faker.company.companyName());
+
+										// $('#imageAvatar').attr('src', faker.internet.avatar());
+									}
+									;
+									var _locales = [];
+
+									for ( var locale in faker.locales) {
+										_locales.push({
+											name : locale,
+											title : faker.locales[locale].title
+										})
+									}
+
+									_locales = _locales.sort(function(a, b) {
+										if (a.title < b.title)
+											return -1;
+										if (a.title > b.title)
+											return 1;
+										return 0;
+									});
+
+									_locales.forEach(function(item) {
+										$('#locale').append(
+												'<option value="' + item.name+ '">'
+														+ item.title
+														+ '</option>');
+									});
+									$('#locale').val("zh_CN");
+									$('#locale').change(function(e) {
+										generateName();
+									});
+									$('#generateName').click(function() {
+										generateName();
+									});
+									generateName();
+								});
+			</script>
+			<hr>
+		</div>
+
+	</div>
+	<h2 class="alert alert-warning" style="text-align: center">在线个人信息数据生成工具说明</h2>
+	<div class="alert alert-info" style="font-size: 16px;">
+		<ul>
+			<li>个人信息的重要性不言而喻，有时候我们并不想把自己的信息透露给任何人，但在某些网站注册的时候，在所难免的要输入一些个人信息，本工具可以根据你的要求生成不同国家公民的身份信息。</li>
+		</ul>
+		<ul>
+			<li>很多人都有到网上吃免费午餐的经历。相信大家也都清楚，在很多时候，注册这些免费服务时都是要提供完整的个人信息的。</li>
+		</ul>
+		<ul>
+			<li>由于众所周知的原因，这些提供商并不是那么欢迎中国人去注册，有的很直接地通知IP
+				forbidden，有的很客气地说“Verification In
+				Progress”。当你好不容易翻墙拿到一个国外IP的时候，填米国姓名、地址、邮编、社保、信用卡、UPS追踪号又要头疼了吧。其实这些东西有时候恰恰就决定了能否通过他们的审核。</li>
+		</ul>
+		<ul>
+			<li>本工具是目前互联网上最先进的姓名产生器，提供 37 种语言和 31 个国家选项。
+				假名产生器能产生姓名、地址、社会保险号、信用卡号、职业、UPS 追踪号，并且完全免费。</li>
+		</ul>
+	</div>
+	<script type="text/javascript"
+		src="https://cdn.bootcss.com/Faker/3.1.0/faker.min.js"></script>
+	<div class="well">
+		<hr>
+		<div id="SOHUCS" sid="rnd_userinfo"></div>
+		<script type="text/javascript">
+			
+		</script>
+
+	</div>
+
+</div>
