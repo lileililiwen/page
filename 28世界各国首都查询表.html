@@ -1,0 +1,961 @@
+<style>
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #ddd;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.table th {
+    color: #ffffff;
+    background-color: #555555;
+    border: 1px solid #555555;
+}
+th {
+    text-align: left;
+}
+td, th {
+    padding: 0;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table tr:nth-child(odd) {
+    background-color: #F6F4F0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.aler
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<div class="col-md-9">
+	<h1 style="text-align: center; font-size: 30px;">世界各国首都查询表</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">这是一款可在线查询世界各国对应首都的查询表，表中详细罗列了当今世界主要国家及其对应首都城市的信息。用户可在浏览器上直接使用“Ctrl+F”查询，也可使用表格上方的搜索框进行查询。非常简单易用，免费提供给需要的朋友使用。</h2>
+	<div class="clearfix">
+		<h1>各国首都列表</h1>
+	</div>
+	<p class="alert alert-info">提示：可使用 Ctrl+F 在浏览器搜索，也可使用下方搜索框进行搜索。</p>
+	<div style="font-size: 15px;">
+		<form
+			onsubmit="Public.TableSearch($('#table_shoudu'), $('#keyword').val());return false;">
+			<label for="keyword"> 请输入你要搜索的关键词： </label> <input id="keyword"
+				type="text" name="keyword" class="text-input gray-input" value=""
+				style="float: none;"> <input id="goSearch" type="button"
+				value="搜索" class="button-orange" style="float: none;"
+				onclick="Public.TableSearch($('#table_shoudu'), $('#keyword').val())">
+		</form>
+
+		<table id="table_shoudu" width="100%" class="table table-bordered">
+			<tbody>
+				<tr>
+					<th>国 家 名 称</th>
+					<th>首&nbsp; 都</th>
+				</tr>
+				<tr>
+					<td width="60%">中华人民共和国 People's Republic of China</td>
+					<td width="40%">北京 Beijing</td>
+				</tr>
+				<tr>
+					<td width="60%">蒙古 Mongolia</td>
+					<td width="40%">乌兰巴托 Elggydggmgj</td>
+				</tr>
+				<tr>
+					<td width="60%">朝鲜 Democratic People's Republic of Korea</td>
+					<td width="40%">平壤 Pyongyang</td>
+				</tr>
+				<tr>
+					<td width="60%">韩国 Republic of Korea</td>
+					<td width="40%">首尔 Seoul</td>
+				</tr>
+				<tr>
+					<td width="60%">日本 Japan</td>
+					<td width="40%">东京 Tokyo</td>
+				</tr>
+				<tr>
+					<td width="60%">菲律宾 Republic of the Philippines</td>
+					<td width="40%">马尼拉 Manila</td>
+				</tr>
+				<tr>
+					<td width="60%">印度尼西亚 Republic of Indonesia</td>
+					<td width="40%">雅加达 Jakarta</td>
+				</tr>
+				<tr>
+					<td width="60%">文莱 Brunei Darussalam</td>
+					<td width="40%">斯里巴加湾市 Bandar Seri Begawan</td>
+				</tr>
+				<tr>
+					<td width="60%">新加坡 Republic of Singapore</td>
+					<td width="40%">新加坡 Singapore</td>
+				</tr>
+				<tr>
+					<td width="60%">泰国 Kingdom of Thailand</td>
+					<td width="40%">曼谷 Bangkok</td>
+				</tr>
+				<tr>
+					<td width="60%">马来西亚 Malaysia</td>
+					<td width="40%">吉隆坡 Kuala Lumpur</td>
+				</tr>
+				<tr>
+					<td width="60%">越南 Socialist Republic of Vietnam</td>
+					<td width="40%">河内 Hanoi</td>
+				</tr>
+				<tr>
+					<td width="60%">老挝 Lao People's Democratic Republic</td>
+					<td width="40%">万象 Vientiane</td>
+				</tr>
+				<tr>
+					<td width="60%">柬埔寨 Kingdom of Cambodia</td>
+					<td width="40%">金边 Phnom Penh</td>
+				</tr>
+				<tr>
+					<td width="60%">缅甸 Union of Myanmar</td>
+					<td width="40%">仰光 Yangon</td>
+				</tr>
+				<tr>
+					<td width="60%">不丹 Kingdom of Bhutan</td>
+					<td width="40%">廷布 Thimphu</td>
+				</tr>
+				<tr>
+					<td width="60%">东帝汶 Democratic Republic of East Timor</td>
+					<td width="40%">帝力 Dili</td>
+				</tr>
+				<tr>
+					<td width="60%">尼泊尔 Kingdom of Nepal</td>
+					<td width="40%">加德满都 Kathmandu</td>
+				</tr>
+				<tr>
+					<td width="60%">印度 Republic of India</td>
+					<td width="40%">新德里 New Delhi</td>
+				</tr>
+				<tr>
+					<td width="60%">孟加拉国 People's Republic of Bangladesh</td>
+					<td width="40%">达卡 Dhaka</td>
+				</tr>
+				<tr>
+					<td width="60%">斯里兰卡 Democratic Socialist Republic of Sri
+						Lanka</td>
+					<td width="40%">科伦坡 Colombo</td>
+				</tr>
+				<tr>
+					<td width="60%">马尔代夫 Republic of Maldives</td>
+					<td width="40%">马累 Male</td>
+				</tr>
+				<tr>
+					<td width="60%">巴基斯坦 Islamic Republic of Pakistan</td>
+					<td width="40%">伊斯兰堡 Islamabad</td>
+				</tr>
+				<tr>
+					<td width="60%">阿富汗 Islamic State of Afghanistan</td>
+					<td width="40%">喀布尔 Kabul</td>
+				</tr>
+				<tr>
+					<td width="60%">塔吉克斯坦 Republic of Tajikistan</td>
+					<td width="40%">杜尚别 Dushanbe</td>
+				</tr>
+				<tr>
+					<td width="60%">吉尔吉斯斯坦 Kyrgyz Republic</td>
+					<td width="40%">比什凯克 Bishkek</td>
+				</tr>
+				<tr>
+					<td width="60%">哈萨克斯坦 Republic of Kazakhstan</td>
+					<td width="40%">阿斯塔纳 Astana</td>
+				</tr>
+				<tr>
+					<td width="60%">乌兹别克期坦 Republic of Uzbekistan</td>
+					<td width="40%">塔什干 Tashkent</td>
+				</tr>
+				<tr>
+					<td width="60%">土库曼斯坦 Republic of Turkmenistan</td>
+					<td width="40%">阿什哈巴德 Ashgabat</td>
+				</tr>
+				<tr>
+					<td width="60%">伊朗 Islamic Republic of Iran</td>
+					<td width="40%">德黑兰 Tehran</td>
+				</tr>
+				<tr>
+					<td width="60%">伊拉克 Republic of Iraq</td>
+					<td width="40%">巴格达 Baghdad</td>
+				</tr>
+				<tr>
+					<td width="60%">科威特 State of Kuwait</td>
+					<td width="40%">科威特城 Kuwait</td>
+				</tr>
+				<tr>
+					<td width="60%">卡塔尔 State of Qatarc</td>
+					<td width="40%">多哈 Doha</td>
+				</tr>
+				<tr>
+					<td width="60%">阿拉伯联合酋长国 United Arab Emirates</td>
+					<td width="40%">阿布扎比 Abu Dhabi</td>
+				</tr>
+				<tr>
+					<td width="60%">巴林 Kingdom of Bahrain</td>
+					<td width="40%">麦纳麦 Manama</td>
+				</tr>
+				<tr>
+					<td width="60%">阿曼 Sultanate of Oman</td>
+					<td width="40%">马斯喀特 Muscat</td>
+				</tr>
+				<tr>
+					<td width="60%">也门 Republic of Yemen</td>
+					<td width="40%">萨那 Sanaa</td>
+				</tr>
+				<tr>
+					<td width="60%">沙特阿拉伯 Kingdom of Saudi Arabia</td>
+					<td width="40%">利雅得 Riyadh</td>
+				</tr>
+				<tr>
+					<td width="60%">约旦 Hashemite Kingdom of Jordan</td>
+					<td width="40%">安曼 Amman</td>
+				</tr>
+				<tr>
+					<td width="60%">巴勒斯坦 State of Palestine</td>
+					<td width="40%">耶路撒冷 Jerusalem</td>
+				</tr>
+				<tr>
+					<td width="60%">以色列 State of Israel</td>
+					<td width="40%">耶路撒冷 Jerusalem</td>
+				</tr>
+				<tr>
+					<td width="60%">叙利亚 Syrian Arab Republic</td>
+					<td width="40%">大马士革 Damascus</td>
+				</tr>
+				<tr>
+					<td width="60%">黎巴嫩 Lebanese Republic</td>
+					<td width="40%">贝鲁特 Beirut</td>
+				</tr>
+				<tr>
+					<td width="60%">塞浦路斯 Republic of Cyprus</td>
+					<td width="40%">尼科西亚 Nicosia</td>
+				</tr>
+				<tr>
+					<td width="60%">土耳其 Republic of Turkey</td>
+					<td width="40%">安卡拉 Ankara</td>
+				</tr>
+				<tr>
+					<td width="60%">阿塞拜疆 Republic of Azerbaijan</td>
+					<td width="40%">巴库 Baku</td>
+				</tr>
+				<tr>
+					<td width="60%">格鲁吉亚 Georgia</td>
+					<td width="40%">第比利斯 T'bilisi</td>
+				</tr>
+				<tr>
+					<td width="60%">亚美尼亚 Republic of Armenia</td>
+					<td width="40%">埃里温 Yerevan</td>
+				</tr>
+				<tr>
+					<td width="60%">挪威 Kingdom of Norway</td>
+					<td width="40%">奥斯路 Oslo</td>
+				</tr>
+				<tr>
+					<td width="60%">冰岛 Republic of Iceland</td>
+					<td width="40%">雷克雅未克 Reykjavik</td>
+				</tr>
+				<tr>
+					<td width="60%">瑞典 Kingdom of Sweden</td>
+					<td width="40%">斯德哥尔摩 Stockholm</td>
+				</tr>
+				<tr>
+					<td width="60%">芬兰 Republic of Finland</td>
+					<td width="40%">赫尔辛基 Helsinki</td>
+				</tr>
+				<tr>
+					<td width="60%">爱沙尼亚 Republic of Estonia</td>
+					<td width="40%">塔林 Tallinn</td>
+				</tr>
+				<tr>
+					<td width="60%">拉脱维亚 Republic of Latvia</td>
+					<td width="40%">里加 Riga</td>
+				</tr>
+				<tr>
+					<td width="60%">立陶宛 Republic of Lithuania</td>
+					<td width="40%">维尔纽斯 Vilnius</td>
+				</tr>
+				<tr>
+					<td width="60%">白俄罗斯 Republic of Belarus</td>
+					<td width="40%">明斯克 Minsk</td>
+				</tr>
+				<tr>
+					<td width="60%">俄罗斯 Russian Federation</td>
+					<td width="40%">莫斯科 Moscow</td>
+				</tr>
+				<tr>
+					<td width="60%">乌克兰 Ukraine</td>
+					<td width="40%">基辅 Kiev</td>
+				</tr>
+				<tr>
+					<td width="60%">摩尔多瓦 Republic of Moldova</td>
+					<td width="40%">基希讷乌 Chisinau</td>
+				</tr>
+				<tr>
+					<td width="60%">波兰 Republic of Poland</td>
+					<td width="40%">华沙 Warsaw</td>
+				</tr>
+				<tr>
+					<td width="60%">捷克 Czech Republic</td>
+					<td width="40%">布拉格Prague</td>
+				</tr>
+				<tr>
+					<td width="60%">斯洛伐克 Slovak Republic</td>
+					<td width="40%">布拉提斯拉发 Bratislava</td>
+				</tr>
+				<tr>
+					<td width="60%">匈牙利 Republic of Hungary</td>
+					<td width="40%">布达佩斯 Budapest</td>
+				</tr>
+				<tr>
+					<td width="60%">德国 Federal Republic of Germany</td>
+					<td width="40%">柏林 Berlin</td>
+				</tr>
+				<tr>
+					<td width="60%">英国 United kingdom of Great Britain and
+						Northern Ireland</td>
+					<td width="40%">伦敦 London</td>
+				</tr>
+				<tr>
+					<td width="60%">爱尔兰 Ireland</td>
+					<td width="40%">都柏林 Dublin</td>
+				</tr>
+				<tr>
+					<td width="60%">丹麦 Kingdom of Denmark</td>
+					<td width="40%">哥本哈根 Copenhagen</td>
+				</tr>
+				<tr>
+					<td width="60%">荷兰 Kingdom of the Netherlands</td>
+					<td width="40%">阿姆斯特丹 Amsterdam</td>
+				</tr>
+				<tr>
+					<td width="60%">摩纳哥 Principality of Monaco</td>
+					<td width="40%">摩纳哥 Monaco</td>
+				</tr>
+				<tr>
+					<td width="60%">法国 French Republic</td>
+					<td width="40%">巴黎 Paris</td>
+				</tr>
+				<tr>
+					<td width="60%">比利时 Kingdom of Belgium</td>
+					<td width="40%">布鲁塞尔 Brussels</td>
+				</tr>
+				<tr>
+					<td width="60%">卢森堡 Grand Duchy of Luxembourg</td>
+					<td width="40%">卢森堡 Luxembourg</td>
+				</tr>
+				<tr>
+					<td width="60%">奥地利 Republic of Austria</td>
+					<td width="40%">维也纳 Vienna</td>
+				</tr>
+				<tr>
+					<td width="60%">瑞士 Swiss Confederation</td>
+					<td width="40%">伯尔尼 Bern</td>
+				</tr>
+				<tr>
+					<td width="60%">列支敦士登 Principality of Liechtenstein</td>
+					<td width="40%">瓦杜兹 Vaduz</td>
+				</tr>
+				<tr>
+					<td width="60%">西班牙 Kingdom of Spain</td>
+					<td width="40%">马德里 Madrid</td>
+				</tr>
+				<tr>
+					<td width="60%">安道尔 Principality of Andorra</td>
+					<td width="40%">安道尔 Andorra la Vella</td>
+				</tr>
+				<tr>
+					<td width="60%">葡萄牙 Portuguese Republic</td>
+					<td width="40%">里斯本 Lisbon</td>
+				</tr>
+				<tr>
+					<td width="60%">意大利 Italian Republic</td>
+					<td width="40%">罗马 Rome</td>
+				</tr>
+				<tr>
+					<td width="60%">马耳他 Republic of Malta</td>
+					<td width="40%">瓦莱塔 Bamako</td>
+				</tr>
+				<tr>
+					<td width="60%">圣马力诺 Republic of San Marino</td>
+					<td width="40%">圣马力诺 San Marino</td>
+				</tr>
+				<tr>
+					<td width="60%">梵蒂冈 Vatican City State</td>
+					<td width="40%">梵蒂冈城 Vatican City</td>
+				</tr>
+				<tr>
+					<td width="60%">斯洛文尼亚 Republic of Slovenia</td>
+					<td width="40%">卢布尔雅那 Ljubljana</td>
+				</tr>
+				<tr>
+					<td width="60%">克罗地亚 Republic of Croatia</td>
+					<td width="40%">萨格勒布 Zagreb</td>
+				</tr>
+				<tr>
+					<td width="60%">波斯尼亚和黑塞哥维那 Bosnia and Herzegovina</td>
+					<td width="40%">萨拉热窝 Sarajevo</td>
+				</tr>
+				<tr>
+					<td width="60%">南斯拉夫 Federal Republic of Yugoslavia</td>
+					<td width="40%">贝尔格莱德 Belgrade</td>
+				</tr>
+				<tr>
+					<td width="60%">马其顿 Republic of Macedonia</td>
+					<td width="40%">斯科普里 Skopje</td>
+				</tr>
+				<tr>
+					<td width="60%">阿尔巴尼亚 Republic of Albania</td>
+					<td width="40%">地拉那 Tirana</td>
+				</tr>
+				<tr>
+					<td width="60%">罗马尼亚 Romania</td>
+					<td width="40%">布加勒斯特 Bucharest</td>
+				</tr>
+				<tr>
+					<td width="60%">保加利亚 Republic of Bulgaria</td>
+					<td width="40%">索非亚 Sofia</td>
+				</tr>
+				<tr>
+					<td width="60%">希腊 Hellenic Republic</td>
+					<td width="40%">雅典 Athens</td>
+				</tr>
+				<tr>
+					<td width="60%">埃及 Arab Republic of Egypt</td>
+					<td width="40%">开罗 Cairo</td>
+				</tr>
+				<tr>
+					<td width="60%">苏丹 Republic of the Sudan</td>
+					<td width="40%">喀土穆 Khartoum</td>
+				</tr>
+				<tr>
+					<td width="60%">埃塞俄比亚 Federal Democratic Republic of Ethiopia
+					</td>
+					<td width="40%">亚的斯亚贝巴 Addis Ababa</td>
+				</tr>
+				<tr>
+					<td width="60%">厄立特里亚 State of Eritrea</td>
+					<td width="40%">阿斯马拉 Asmara</td>
+				</tr>
+				<tr>
+					<td width="60%">吉布提 Republic of Djibouti</td>
+					<td width="40%">吉布提 Djibouti</td>
+				</tr>
+				<tr>
+					<td width="60%">索马里 Somali Republic</td>
+					<td width="40%">摩加迪沙 Mogadishu</td>
+				</tr>
+				<tr>
+					<td width="60%">利比亚 Socialist People's Libyan Arab Jamahiriya
+					</td>
+					<td width="40%">的黎波里 Tripoli</td>
+				</tr>
+				<tr>
+					<td width="60%">阿尔及利亚 Democratic People's Republic of Algeria
+					</td>
+					<td width="40%">阿尔及尔 Algiers</td>
+				</tr>
+				<tr>
+					<td width="60%">突尼斯 Republic of Tunisia</td>
+					<td width="40%">突尼斯 Tunis</td>
+				</tr>
+				<tr>
+					<td width="60%">摩洛哥 Kingdom of Morocco</td>
+					<td width="40%">拉巴特 Rabat</td>
+				</tr>
+				<tr>
+					<td width="60%">佛得角 Republic of Cape Verde</td>
+					<td width="40%">普拉亚 Praia</td>
+				</tr>
+				<tr>
+					<td width="60%">毛里塔尼亚 Islamic Republic of Mauritania</td>
+					<td width="40%">努瓦克肖特 Nouakchott</td>
+				</tr>
+				<tr>
+					<td width="60%">马里 Republic of Mali</td>
+					<td width="40%">巴马科 Bamako</td>
+				</tr>
+				<tr>
+					<td width="60%">塞内加尔 Republic of Senegal</td>
+					<td width="40%">达喀尔 Dakar</td>
+				</tr>
+				<tr>
+					<td width="60%">冈比亚 Republic of the Gambia</td>
+					<td width="40%">班珠尔 Banjul</td>
+				</tr>
+				<tr>
+					<td width="60%">几内亚比绍 Republic of Guinea-Bissau</td>
+					<td width="40%">比绍 Bissau</td>
+				</tr>
+				<tr>
+					<td width="60%">几内亚 Republic of Guinea</td>
+					<td width="40%">科纳克里 Conakry</td>
+				</tr>
+				<tr>
+					<td width="60%">塞拉利昂 Republic of Sierra Leone</td>
+					<td width="40%">弗里敦 Freetown</td>
+				</tr>
+				<tr>
+					<td width="60%">利比里亚 Republic of Liberia</td>
+					<td width="40%">蒙罗维亚 Monrovia</td>
+				</tr>
+				<tr>
+					<td width="60%">科特迪瓦 Republic of Cote d'Ivoire</td>
+					<td width="40%">亚穆苏克罗 Yamoussoukro</td>
+				</tr>
+				<tr>
+					<td width="60%">布基纳法索 Burkina Faso</td>
+					<td width="40%">瓦加杜古 Ouagadougou</td>
+				</tr>
+				<tr>
+					<td width="60%">尼日尔 Republic of Niger</td>
+					<td width="40%">尼亚美 Niamey</td>
+				</tr>
+				<tr>
+					<td width="60%">乍得 Republic of Chad</td>
+					<td width="40%">恩贾梅纳 N'Djamena</td>
+				</tr>
+				<tr>
+					<td width="60%">尼日利亚 Federal Republic of Nigeria</td>
+					<td width="40%">阿布贾 Abuja</td>
+				</tr>
+				<tr>
+					<td width="60%">加纳 Republic of Ghana</td>
+					<td width="40%">阿克拉 Accra</td>
+				</tr>
+				<tr>
+					<td width="60%">多哥 Togolese Republic</td>
+					<td width="40%">洛美 Lome</td>
+				</tr>
+				<tr>
+					<td width="60%">贝宁 Republic of Benin</td>
+					<td width="40%">波多诺伏 Porto-Novo</td>
+				</tr>
+				<tr>
+					<td width="60%">喀麦隆 Republic of Cameroon</td>
+					<td width="40%">雅温得 Yaounde</td>
+				</tr>
+				<tr>
+					<td width="60%">加蓬 Gabonese Republic</td>
+					<td width="40%">利伯维尔 Libreville</td>
+				</tr>
+				<tr>
+					<td width="60%">赤道几内亚 Republic of Equatorial Guinea</td>
+					<td width="40%">马拉博 Malabo</td>
+				</tr>
+				<tr>
+					<td width="60%">圣多美和普林西比 Democratic Republic of Sao Tome and
+						Principe</td>
+					<td width="40%">圣多美 Sao Tome</td>
+				</tr>
+				<tr>
+					<td width="60%">中非 Central African Republic</td>
+					<td width="40%">班吉 Bangui</td>
+				</tr>
+				<tr>
+					<td width="60%">刚果 Republic of the Congo</td>
+					<td width="40%">布拉柴维尔 Brazzaville</td>
+				</tr>
+				<tr>
+					<td width="60%">刚果民主共和国 Democratic Republic of the Congo</td>
+					<td width="40%">金沙萨 Kinshasa</td>
+				</tr>
+				<tr>
+					<td width="60%">乌干达 Republic of Uganda</td>
+					<td width="40%">坎帕拉 Kampala</td>
+				</tr>
+				<tr>
+					<td width="60%">卢旺达 Republic of Rwanda</td>
+					<td width="40%">基加利 Kigali</td>
+				</tr>
+				<tr>
+					<td width="60%">布隆迪 Republic of Burundi</td>
+					<td width="40%">布琼布拉 Bujumbura</td>
+				</tr>
+				<tr>
+					<td width="60%">坦桑尼亚 United Republic of Tanzania</td>
+					<td width="40%">多多马 Dodoma</td>
+				</tr>
+				<tr>
+					<td width="60%">肯尼亚 Republic of Kenya</td>
+					<td width="40%">内罗华 Nairobi</td>
+				</tr>
+				<tr>
+					<td width="60%">安哥拉 Republic of Angola</td>
+					<td width="40%">罗安达 Luanda</td>
+				</tr>
+				<tr>
+					<td width="60%">赞比亚 Republic of Zambia</td>
+					<td width="40%">卢萨卡 Lusaka</td>
+				</tr>
+				<tr>
+					<td width="60%">马拉维 Republic of Malawi</td>
+					<td width="40%">利隆圭 Lilongwe</td>
+				</tr>
+				<tr>
+					<td width="60%">莫桑比克 Republic of Mozambique</td>
+					<td width="40%">马普托 Maputo</td>
+				</tr>
+				<tr>
+					<td width="60%">马达加斯加 Republic of Madagascar</td>
+					<td width="40%">塔那那利佛 Antananarivo</td>
+				</tr>
+				<tr>
+					<td width="60%">科摩罗 Union of the Comoros</td>
+					<td width="40%">莫罗尼 Moroni</td>
+				</tr>
+				<tr>
+					<td width="60%">塞舌尔 Republic of Seychelles</td>
+					<td width="40%">维多利亚 Victoria</td>
+				</tr>
+				<tr>
+					<td width="60%">毛里求斯 Republic of Mauritius</td>
+					<td width="40%">路易港 Port Louis</td>
+				</tr>
+				<tr>
+					<td width="60%">津巴布韦 Republic of Zimbabwe</td>
+					<td width="40%">哈拉雷 Harare</td>
+				</tr>
+				<tr>
+					<td width="60%">博茨瓦纳 Republic of Botswana</td>
+					<td width="40%">哈博罗内 Gaborone</td>
+				</tr>
+				<tr>
+					<td width="60%">纳米比亚 Republic of Namibia</td>
+					<td width="40%">温得和克 Windhoek</td>
+				</tr>
+				<tr>
+					<td width="60%">斯威士兰 Kingdom of Swaziland</td>
+					<td width="40%">姆巴巴内 Mbabane</td>
+				</tr>
+				<tr>
+					<td width="60%">莱索托 Kingdom of Lesotho</td>
+					<td width="40%">马塞卢 Maseru</td>
+				</tr>
+				<tr>
+					<td width="60%">南非 Republic of South Africa</td>
+					<td width="40%">比勒陀利亚 Cape Town</td>
+				</tr>
+				<tr>
+					<td width="60%">澳大利亚 Commonwealth of Australia</td>
+					<td width="40%">堪培拉 Canberra</td>
+				</tr>
+				<tr>
+					<td width="60%">巴布亚新几内亚 Independent State of Papua New Guinea
+					</td>
+					<td width="40%">莫尔兹比港 Port Moresby</td>
+				</tr>
+				<tr>
+					<td width="60%">所罗门群岛 Solomon Islands</td>
+					<td width="40%">霍尼亚拉 Honiara</td>
+				</tr>
+				<tr>
+					<td width="60%">瓦努阿图 Republic of Vanuatu</td>
+					<td width="40%">维拉港 Port-Vila</td>
+				</tr>
+				<tr>
+					<td width="60%">新西兰 New Zealand</td>
+					<td width="40%">惠灵顿 Wellington</td>
+				</tr>
+				<tr>
+					<td width="60%">斐济 Republic of the Fiji Islands</td>
+					<td width="40%">苏瓦 Suva</td>
+				</tr>
+				<tr>
+					<td width="60%">汤加 Kingdom of Tonga</td>
+					<td width="40%">努库阿洛法 Nuku'alofa</td>
+				</tr>
+				<tr>
+					<td width="60%">瑙鲁 Republic of Nauru</td>
+					<td width="40%">亚伦 Yaren District</td>
+				</tr>
+				<tr>
+					<td width="60%">基里巴斯 Republic of Kiribati</td>
+					<td width="40%">塔拉瓦 Tarawa</td>
+				</tr>
+				<tr>
+					<td width="60%">图瓦卢 Tuvalu</td>
+					<td width="40%">富纳富提 Funafuti</td>
+				</tr>
+				<tr>
+					<td width="60%">萨摩亚 Independent State of Samoa</td>
+					<td width="40%">阿皮亚 Apia</td>
+				</tr>
+				<tr>
+					<td width="60%">密克罗尼西亚联邦 Federated States of Micronesia</td>
+					<td width="40%">帕利基尔 Palikir</td>
+				</tr>
+				<tr>
+					<td width="60%">马绍尔群岛 Republic of the Marshall Islands</td>
+					<td width="40%">马朱罗 Majuro</td>
+				</tr>
+				<tr>
+					<td width="60%">帕劳 Republic of Palau</td>
+					<td width="40%">科罗尔 Koror</td>
+				</tr>
+				<tr>
+					<td width="60%">加拿大 Canada</td>
+					<td width="40%">渥太华 Ottawa</td>
+				</tr>
+				<tr>
+					<td width="60%">美国 United States of America</td>
+					<td width="40%">华盛顿 Washington</td>
+				</tr>
+				<tr>
+					<td width="60%">墨西哥 United Mexican States</td>
+					<td width="40%">墨西哥城 Mexico City</td>
+				</tr>
+				<tr>
+					<td width="60%">危地马拉 Republic of Guatemala</td>
+					<td width="40%">危地马拉 Guatemala</td>
+				</tr>
+				<tr>
+					<td width="60%">伯利兹 Belize</td>
+					<td width="40%">贝尔莫潘 Belmopan</td>
+				</tr>
+				<tr>
+					<td width="60%">萨尔瓦多 Republic of El Salvador</td>
+					<td width="40%">圣萨尔瓦多 San Salvador</td>
+				</tr>
+				<tr>
+					<td width="60%">洪都拉斯 Republic of Honduras</td>
+					<td width="40%">特古西加尔巴 Tegucigalpa</td>
+				</tr>
+				<tr>
+					<td width="60%">尼加拉瓜 Republic of Nicaragua</td>
+					<td width="40%">马那瓜 Managua</td>
+				</tr>
+				<tr>
+					<td width="60%">哥斯达黎加 Republic of Costa Rica</td>
+					<td width="40%">圣何塞 San Jose</td>
+				</tr>
+				<tr>
+					<td width="60%">巴拿马 Republic of Panama</td>
+					<td width="40%">巴拿马城 Panama</td>
+				</tr>
+				<tr>
+					<td width="60%">古巴 Republic of Cuba</td>
+					<td width="40%">哈瓦那 Havana</td>
+				</tr>
+				<tr>
+					<td width="60%">巴哈马 Commonwealth of the Bahamas</td>
+					<td width="40%">拿骚 Nassau</td>
+				</tr>
+				<tr>
+					<td width="60%">海地 Republic of Haiti</td>
+					<td width="40%">太子港 Port-au-Prince</td>
+				</tr>
+				<tr>
+					<td width="60%">多米尼加共和国 Dominican Republic</td>
+					<td width="40%">圣多明各 Santo Domingo</td>
+				</tr>
+				<tr>
+					<td width="60%">牙买加 Jamaica</td>
+					<td width="40%">金斯敦 Kingston</td>
+				</tr>
+				<tr>
+					<td width="60%">圣基茨和尼维斯 Federation of Saint Kitts and Nevis</td>
+					<td width="40%">巴斯特尔 Basseterre</td>
+				</tr>
+				<tr>
+					<td width="60%">安提瓜和巴布达 Antigua and Barbuda</td>
+					<td width="40%">圣约翰 Saint John's</td>
+				</tr>
+				<tr>
+					<td width="60%">多米尼克 Commonwealth of Dominica</td>
+					<td width="40%">罗索 Roseau</td>
+				</tr>
+				<tr>
+					<td width="60%">圣卢西亚 Saint Lucia</td>
+					<td width="40%">卡斯特里 Castries</td>
+				</tr>
+				<tr>
+					<td width="60%">圣文森特和格林纳丁斯 Saint Vincent and the Grenadines</td>
+					<td width="40%">金斯敦 Kingstown</td>
+				</tr>
+				<tr>
+					<td width="60%">格林纳达 Grenada</td>
+					<td width="40%">圣乔治 Saint George's</td>
+				</tr>
+				<tr>
+					<td width="60%">巴巴多斯 Barbados</td>
+					<td width="40%">布里奇敦 Bridgetown</td>
+				</tr>
+				<tr>
+					<td width="60%">特立尼达和多巴哥 Republic of Trinidad and Tobago</td>
+					<td width="40%">西班牙港 Port-of-Spain</td>
+				</tr>
+				<tr>
+					<td width="60%">哥伦比亚 Republic of Colombia</td>
+					<td width="40%">波哥大 Bogota</td>
+				</tr>
+				<tr>
+					<td width="60%">厄瓜多尔 Republic of Ecuador</td>
+					<td width="40%">基多 Quito</td>
+				</tr>
+				<tr>
+					<td width="60%">委内瑞拉 Bolivarian Republic of Venezuela</td>
+					<td width="40%">加拉加斯 Caracas</td>
+				</tr>
+				<tr>
+					<td width="60%">圭亚那 Co-operative Republic of Guyana</td>
+					<td width="40%">乔治敦 Georgetown</td>
+				</tr>
+				<tr>
+					<td width="60%">苏里南 Republic of Suriname</td>
+					<td width="40%">帕拉马里博 aramaribo</td>
+				</tr>
+				<tr>
+					<td width="60%">秘鲁 Republic of Peru</td>
+					<td width="40%">利马 Lima</td>
+				</tr>
+				<tr>
+					<td width="60%">玻利维亚 Republic of Bolivia</td>
+					<td width="40%">苏克雷 Sucre</td>
+				</tr>
+				<tr>
+					<td width="60%">巴拉圭 Republic of Paraguay</td>
+					<td width="40%">亚松森 Asuncion</td>
+				</tr>
+				<tr>
+					<td width="60%">阿根廷 Argentine Republic</td>
+					<td width="40%">布宜诺斯艾利斯 Buenos Aires</td>
+				</tr>
+				<tr>
+					<td width="60%">乌拉圭 Oriental Republic of Uruguay</td>
+					<td width="40%">蒙得维的亚 Montevide</td>
+				</tr>
+				<tr>
+					<td width="60%">巴西 Federative Republic of Brazil</td>
+					<td width="40%">巴西利亚 Brasilia</td>
+				</tr>
+				<tr>
+					<td width="60%">智利 Republic of Chile</td>
+					<td width="40%">圣地亚哥 Santiago</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 class="alert alert-warning">附：首都城市相关说明</h4>
+	<div class="alert alert-success" style="font-size: 15px;">
+		<p>首都，又称国都、首要城市或行政首府，是一个国家的政治中心和中央政府所在地的政治称谓。1927年民国政府定都南京，将南京称为首都，至此中国第一次有了“首都”的称呼，并将该词沿用至今。</p>
+		<p>首都通常是一个国家的中央政府所在地，政治和经济活动的中心城市，各类国家级机关集中驻扎地，国家主权的象征城市。有的国家不只有一个首都，也有的国家为了谋求发展而进行迁都。中国历朝历代的首都也在不断变化。</p>
+	</div>
+	<script type="text/javascript" language="javascript">   
+var Public = {};
+Public.TableSearch = function(table, keyword)
+{
+	if(keyword)
+	{
+		keyword = keyword.replace(/\s+/g, '');
+	}
+	
+	if(!keyword)
+	{
+		$('tr', table).each(function(){
+			$(this).show();
+		});
+		return;
+	}
+	
+	var pattern = new RegExp(keyword), is_show = false, is_td = false, str = '';
+	$('tr', table).each(
+		function(){
+			is_show = false, is_td = false;
+			
+			$('td', this).each(
+				function(){
+					is_td = true;
+					str = $(this).text().replace(/\s+/g, '');
+					if(pattern.test(str))
+					{
+						is_show = true;
+					}
+				}
+			);
+			
+			if(is_td)
+			{
+				if(is_show)
+				{
+					$(this).show();
+				}
+				else
+				{
+					$(this).hide();
+				}
+			}
+		}
+	);
+} 
+</script>
+	<div class="well">
+		<div id="SOHUCS" sid="shoudu"></div>
+		<script type="text/javascript"> 
+		</script>
+	</div>
+</div>
