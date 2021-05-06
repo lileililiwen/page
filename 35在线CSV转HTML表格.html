@@ -1,0 +1,172 @@
+<!-- http://tools.jb51.net/code/csv2tb-->
+<style>
+.textareas {
+	width: 100%;
+	height: 200px;
+}
+
+.radiomid {
+	vertical-align: inherit;
+}
+	h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #ddd;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.table th {
+    color: #ffffff;
+    background-color: #555555;
+    border: 1px solid #555555;
+}
+th {
+    text-align: left;
+}
+td, th {
+    padding: 0;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table tr:nth-child(odd) {
+    background-color: #F6F4F0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+</style>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="js/csv-convert-table.js"></script>
+<div class="col-md-9">
+	<script>
+		$(function() {
+			$(".operateTB input[type='radio']").change(function() {
+				$("#lineSep7").val("");
+			});
+		});
+	</script>
+	<div id="mainContent">
+		<h2 align="center">在线CSV转HTML表格</h2>
+		<p class="alert alert-success">这是一款将CSV格式数据转换成HTML表格形式的工具，可实现按照逗号(,)，tab，竖线(|)，空格及自定义字符作为分隔符号进行转换的功能。</p>
+		<div>
+			<form method="post" action="" class="online-tools">
+				<div class="topBar">
+					<div>
+						<label>待转换CSV文本：</label>
+					</div>
+					<textarea id="oldText" name="oldText" rows="6"
+						onclick="javascript:this.form.oldText.innerHTML='';"
+						class="textareas form-control">年,制造商,型号,说明,价值
+1997,Ford,E350,"ac, abs, moon",3000.00
+1999,Chevy,"Venture ""Extended Edition""","",4900.00
+1999,Chevy,"Venture ""Extended Edition, Very Large""","",5000.00
+1996,Jeep,Grand Cherokee,"MUST SELL!
+air, moon roof, loaded",4799.00</textarea>
+				</div>
+				<div class="operateTB">
+					<div class="alert alert-info radio">
+						<span>分割符号：</span> <label class="radio checkbox-inline radiomid">
+							<input type="radio" id="lineSep1" name="lineSep" value="comma"
+							checked="checked">逗号
+						</label> <label class="radio checkbox-inline radiomid"> <input
+							type="radio" id="lineSep2" name="lineSep" value="tab">TAB
+						</label> <label class="radio checkbox-inline radiomid"> <input
+							type="radio" id="lineSep3" name="lineSep" value="quotetab">"TAB"
+						</label> <label class="radio checkbox-inline radiomid"> <input
+							type="radio" id="lineSep4" name="lineSep" value="quotecomma">","
+						</label> <label class="radio checkbox-inline radiomid"> <input
+							type="radio" id="lineSep5" name="lineSep" value="quotespace">|
+						</label> <label class="radio checkbox-inline radiomid"> <input
+							type="radio" id="lineSep6" name="lineSep" value="quotespace">单空格
+						</label> <label class="radio checkbox-inline radiomid"> 自定义：<input
+							type="text" class="span1" id="lineSep7" name="lineSep">
+						</label>
+						<button type="button" class="btn btn-primary"
+							onclick="dataToTable()" style="margin: 0 10px;">转换</button>
+					</div>
+				</div>
+				<div class="bottomBar">
+					<label>已转换Table：</label>
+					<textarea id="newText" name="newText" rows="6" cols="36"
+						onclick="javascript:this.form.newText.focus();this.form.newText.select();"
+						class="textareas form-control"></textarea>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="csv2tb"></div>
+		<script type="text/javascript">
+			
+		</script>
+
+	</div>
+
+</div>
