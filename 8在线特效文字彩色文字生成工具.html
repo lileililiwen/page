@@ -1,0 +1,303 @@
+<style>
+.container {
+	width: 1000px;
+	margin: 0 auto
+}
+
+.row {
+	min-height: 2em;
+	line-height: 2em;
+	width: 100%
+}
+
+.span {
+	float: left;
+	display: inline;
+	min-height: 1em;
+}
+
+.span:first-child {
+	margin-left: 0
+}
+
+.span:last-child {
+	margin-right: 0
+}
+
+.two {
+	width: 16%
+}
+
+.ten {
+	width: 80%
+}
+
+.container:after {
+	content: "\0020";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden
+}
+
+.row:before, .row:after {
+	content: '\0020';
+	display: block;
+	overflow: hidden;
+	visibility: hidden;
+	width: 0;
+	height: 0
+}
+
+.row:after {
+	clear: both
+}
+
+.row {
+	zoom: 1;
+	margin: 10px 0;
+}
+
+.button {
+	border: 0;
+	border-radius: 4px;
+	outline: 0;
+	cursor: pointer;
+}
+
+.button.small {
+	padding: 7px 10px;
+	font-size: .95em
+}
+
+.button.primary {
+	color: #FFF;
+	background: #5f90b0
+}
+
+.button.primary:hover {
+	background: #5589ab
+}
+
+.select {
+	padding: 0 10px;
+	margin: 0 5px;
+	height: 2.3em;
+	line-height: 2.3em;
+	text-align: left;
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	font-size: .98em;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+	resize: vertical;
+	border: 1px solid #CCC;
+	padding: 4px;
+	box-shadow: 2px 2px 5px #d3d6da;
+	-moz-box-shadow: 2px 2px 5px #d3d6da;
+}
+
+.alert.success {
+	background: #daeee4;
+	border: 1px #b6dfca solid
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+.button.primary {
+    color: #FFF;
+    background: #5f90b0;
+}
+.button.small {
+    padding: 7px 10px;
+    font-size: .95em;
+}
+.button {
+    border: 0;
+    border-radius: 4px;
+    outline: 0;
+    cursor: pointer;
+}
+small, .small {
+    font-size: 85%;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+button, select {
+    text-transform: none;
+}
+button {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.span:last-child {
+    margin-right: 0;
+}
+.two {
+    width: 16%;
+}
+.span {
+    float: left;
+    display: inline;
+    min-height: 1em;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center">在线特效文字/彩色文字生成工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">
+		这是一款可在线生成文字样式的工具，用户可选择按字母或单词进行区分，点击按钮即可随机生成不同大小与颜色的文字供用户预览，还可多次点击直到生成满意的效果为止。复制预览区下方对应的代码到用户的网页中即可得到对应的文字效果。方便快捷，提供给需要的朋友使用。</h2>
+	<div class="container">
+		<form name="myform">
+			<div class="row">
+				<h4 class="span ten">输入你要添加特效的文字:</h4>
+			</div>
+			<div class="row">
+				<textarea style="height: 70px" name="wordlist"
+					placeholder="输入你要添加特效的文字，如：在线工具" spellcheck="false">输入你要添加特效的文字，如：在线工具</textarea>
+			</div>
+			<div class="row">
+				<div class="span two">
+					<select class="select" name="randomiseby">
+						<option value="">区分字母</option>
+						<option value=" ">区分单词</option>
+					</select>
+				</div>
+				<div class="span two">
+					<button type="button" class="button primary small"
+						onclick="randomise();return false;">增加特效</button>
+				</div>
+			</div>
+			<hr>
+			<div class="row">
+				<h4 class="span ten">生成文字特效预览:</h4>
+			</div>
+			<div class="row">
+				<div class="alert success" id="looks_like">
+					<font color="#444298" size="5">输</font><font color="#F07C17"
+						size="6">入</font><font color="#3E695F" size="2">你</font><font
+						color="#EBF27A" size="4">要</font><font color="#6419BD" size="2">添</font><font
+						color="#993817" size="2">加</font><font color="#3382B9" size="4">特</font><font
+						color="#6A818A" size="6">效</font><font color="#4A55BA" size="1">的</font><font
+						color="#A46E8D" size="6">文</font><font color="#CB2B74" size="1">字</font><font
+						color="#36BC18" size="2">，</font><font color="#52F770" size="5">如</font><font
+						color="#6971A1" size="7">：</font><font color="#D6958A" size="4">在</font><font
+						color="#B7A99C" size="2">线</font><font color="#177D92" size="5">工</font><font
+						color="#67D7A3" size="4">具</font>
+				</div>
+			</div>
+			<div class="row">
+				<textarea placeholder="生成文字特效代码在这里显示" name="code"
+					onclick="this.select();"></textarea>
+			</div>
+		</form>
+		<script language="JavaScript">
+			function randomise() {
+				var words = document.myform.wordlist.value;
+				words = words
+						.split(document.myform.randomiseby.options[document.myform.randomiseby.selectedIndex].value)
+				document.myform.code.value = "";
+				var colourscheme = new Array("0", "1", "2", "3", "4", "5", "6",
+						"7", "8", "9", "A", "B", "C", "D", "E", "F")
+				for (var time = 0; time <= (words.length - 1); time++) {
+					if (words[time] == " ") {
+						document.myform.code.value += " "
+					}
+					if (words[time] != " ") {
+						var c1 = Math.round(Math.random()
+								* (colourscheme.length - 1));
+						var c2 = Math.round(Math.random()
+								* (colourscheme.length - 1));
+						var c3 = Math.round(Math.random()
+								* (colourscheme.length - 1));
+						var c4 = Math.round(Math.random()
+								* (colourscheme.length - 1));
+						var c5 = Math.round(Math.random()
+								* (colourscheme.length - 1));
+						var c6 = Math.round(Math.random()
+								* (colourscheme.length - 1));
+						var size = 1 + Math.round(Math.random() * 6);
+						document.myform.code.value += "<font color=\"#" + colourscheme[c1] + colourscheme[c2] + colourscheme[c3] + colourscheme[c4] + colourscheme[c5] + colourscheme[c6] + "\" size=\"" + size + "\">"
+								+ words[time] + "</font>";
+					}
+				}
+				looks_like.innerHTML = document.myform.code.value;
+			}
+		</script>
+
+	</div>
+	<h2 align="center" class="alert alert-warning">关于文字特效转换工具</h2>
+	<div class="alert alert-info" style="font-size: 16px;">
+		<p>可以按照两种转换模式：字母区分和单词区分，建议中文使用字母区分，英文采用单词区分。</p>
+		<p>随机生成文字的大小和颜色，并显示出来，给人一个杂乱错杂的感觉，有一定的美感。</p>
+		<p>可以多次点击生成转换按钮，知道生成出一个你喜欢的样式。</p>
+		<p>然后将生成的代码粘贴到你的网站即可形成文字特效。</p>
+	</div>
+	<hr>
+
+	<div style="clear: both;"></div>
+	<div class="well">
+		<div id="SOHUCS" sid="colortext"></div>
+		<script type="text/javascript">
+			
+		</script>
+
+	</div>
+
+</div>
