@@ -1,0 +1,371 @@
+<style>
+
+.form-block {
+    display: block;
+    width: 100%;
+}
+.form-textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: .375rem .5rem;
+    font-size: .9rem;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    height: initial;
+    min-height: 13.75rem;
+    resize: vertical;
+}
+
+input[type=button], input[type=reset], input[type=submit], textarea {
+    -webkit-appearance: none;
+}
+button, div, input, pre, select, textarea {
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+}
+body, button, caption, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, iframe, input, ol, p, pre, select, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+.form-btn .btn:not(:last-child), .form-btn .form-input:not(:last-child) {
+    margin-right: .4rem;
+}
+.form-btn .btn, .form-btn .form-input {
+    margin-bottom: .4rem;
+}
+input[type=button], input[type=reset], input[type=submit], textarea {
+    -webkit-appearance: none;
+}
+.btn {
+    border-radius: 3px;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid #eee;
+    background-color: #eee;
+    padding: .375rem .75rem;
+    font-size: .9rem;
+    height: 2.25rem;
+    line-height: 1;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+.btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #ec971f;
+    border-color: #d58512;
+}
+button, input, select {
+    vertical-align: middle;
+}
+button, div, input, pre, select, textarea {
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+}
+body, button, caption, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, iframe, input, ol, p, pre, select, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+.form-btn .btn:not(:last-child), .form-btn .form-input:not(:last-child) {
+    margin-right: .4rem;
+}
+.form-btn .btn, .form-btn .form-input {
+    margin-bottom: .4rem;
+}
+.form-input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: .375rem .5rem;
+    font-size: .9rem;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    max-width: 100%;
+    height: 2.25rem;
+}
+button, div, input, pre, select, textarea {
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+}
+body, button, caption, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, iframe, input, ol, p, pre, select, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+.form-btn {
+    margin-bottom: .5rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.form-block {
+    display: block;
+    width: 100%;
+}
+.form-textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: .375rem .5rem;
+    font-size: .9rem;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    height: initial;
+    min-height: 13.75rem;
+    resize: vertical;
+}
+.row {
+    margin-right: -1rem;
+    margin-left: -1rem;
+}
+@media only screen and (max-width: 980px){
+	.content-body {
+	    width: 92%;
+	}
+}
+
+@media only screen and (max-width: 1024px){
+	.content-body {
+	    width: 90%;
+	}
+}
+
+@media only screen and (max-width: 1440px){
+	.content-body {
+	    width: 86%;
+	}
+}
+.content-body {
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+.form-btn {
+    margin-bottom: .5rem;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+button, div, input, pre, select, textarea {
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+}
+body, button, caption, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, iframe, input, ol, p, pre, select, textarea, ul {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-list:after, .form-btn:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.tips {
+    font-size: .75rem;
+    line-height: 1.8;
+    color: #888;
+    padding: .2rem 0;
+}
+#tool-result, #tool-result2 {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: .375rem .5rem;
+    font-size: .9rem;
+    color: #555;
+    background-image: none;
+    margin-bottom: 1rem;
+    word-break: break-word;
+}
+.tool-info pre {
+    display: block;
+    overflow-x: auto;
+    padding: .8rem;
+    margin-bottom: .8rem;
+    background: #f6f6f6;
+    -webkit-text-size-adjust: none;
+    border-radius: 4px;
+    font-size: .8rem;
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+    text-align: left;
+    line-height: 1.42857143;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: #555;
+}
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+}
+.tool-info p {
+    font-size: .8rem;
+    line-height: 1.6;
+    padding-bottom: .8rem;
+    color: #666;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin: 0 10px 5px 0;
+}
+.form-field {
+    margin-bottom: 1rem;
+    position: relative;
+}
+.tool-name {
+    font-size: 1.3rem;
+    float: left;
+}
+.tool-title {
+    padding-bottom: 1.7rem;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+em, h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400;
+    font-style: normal;
+}
+button, div, input, pre, select, textarea {
+    font-size: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Segoe UI","Lucida Grande",Helvetica,Arial,"Microsoft YaHei",FreeSans,Arimo,"Droid Sans","wenquanyi micro hei","Hiragino Sans GB","Hiragino Sans GB W3",FontAwesome,sans-serif;
+}
+.row:after {
+    clear: both;
+    display: table;
+    content: " ";
+}
+</style>
+<!-- https://www.iamwawa.cn/xuhao.html -->
+<div class="content-body" style="height: auto !important;">
+	<div class="tool-title clearfix">
+		<h1 class="tool-name">文本增加序号工具</h1>
+	</div>
+	<div class="tool-form">
+		<div class="row">
+			<div class="col-2">
+				<div class="form-field">
+					<textarea id="tool-text" class="form-textarea form-block"
+						tabindex="1" name="text" placeholder="请输入要增加序号的文本（用回车分隔每段文本）"
+						spellcheck="false"></textarea>
+				</div>
+				<div class="form-btn">
+					<label for="number_format">序号格式</label> <select
+						name="number_format" id="number_format" class="form-input">
+						<option value="$n." selected="selected">n.</option>
+						<option value="$n,">n,</option>
+						<option value="$n、">n、</option>
+						<option value="($n)">(n)</option>
+						<option value="$n#">n#</option>
+						<option value="$n-">n-</option>
+					</select> <input class="btn btn-success" id="btn-submit" type="button"
+						value="增加序号">
+				</div>
+				<div id="tool-tips"></div>
+				<p class="tips">提示：请用回车分隔每段文本，每一行为一个项目。结果自己复制</p>
+			</div>
+			<div class="col-2">
+				<div class="form-field">
+					<textarea id="tool-result" class="form-textarea form-block" readonly="readonly"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tool-info">
+		<h5>示例</h5>
+		<p>输入的文本</p>
+		<pre><code>我是1文本
+我是2文本
+我是3文本
+我是4文本
+我是5文本</code>
+		</pre>
+		<p>使用本工具增加序号后的结果</p>
+		<pre><code>1.我是1文本
+2.我是2文本
+3.我是3文本
+4.我是4文本
+5.我是5文本</code>
+		</pre>
+		<p>输入的文本按每一行为一个排序项目，序号的格式可按需选择。</p>
+	</div>
+	<div style="margin-top: 20px;"></div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	var tool_tips = $("#tool_tips");
+
+	function tips_clear() {
+		tool_tips.empty();
+	}
+	function tips_error(e) {
+		tool_tips.html('<div class="alert alert-error">' + e + "</div>");
+		setTimeout(function() {
+			tool_tips.html("")
+		}, 3e3);
+	}
+
+	function tips_success(e) {
+		tool_tips.html('<div class="alert alert-success">' + e + "</div>"),
+				setTimeout(function() {
+					tool_tips.html("")
+				}, 1500)
+	}
+
+	$(function() {
+		$("#btn-submit").click(function() {
+				var t = $.trim($("#tool-text").val());
+				if ("" == t)
+					return tips_error("请填写需要增加序号的文本！每一行为一个项目。"), $(
+							"#tool-text").focus(), !1;
+				var n = t.split("\n"), r = "", o = $("#number_format")
+						.val();
+				$.each(n, function(t, n) {
+					num = o.replace("$n", t + 1), r += num + n + "\n"
+				});
+				tips_clear();
+				$("#tool-result").val(r);
+		});
+	});
+</script>
