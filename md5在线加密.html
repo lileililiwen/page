@@ -1,0 +1,61 @@
+<!--
+https://www.toolnb.com/tools/md5create.html-->
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/bootstrap3.5min.css"></link>
+<style>
+
+</style>
+<div id="myTabContent" class="tab-content container">
+    <div class="tab-pane fade in active" id="main">
+        <div class="col-xs-12 col-lg-5 col-md-5"><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension>
+            <h3>字符串</h3>
+            <textarea class="form-control" rows="15" id="input" spellcheck="false"></textarea>
+        </div>
+        <div class="col-xs-12 col-lg-2 col-md-2">
+            <h3>操作</h3>
+            <select id="type" class="form-control" style="margin-bottom: 10px;">
+                <option value="11">32大写</option>
+                <option value="12">32小写</option>
+                <option value="21">16大写</option>
+                <option value="22">16小写</option>
+            </select>
+            <button class="btn btn-success" onclick="encode()">加密字符串&gt;</button>
+        </div>
+        <div class="col-xs-12 col-lg-5 col-md-5">
+            <h3>结果</h3>
+            <textarea class="form-control" rows="15" id="result"></textarea>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/md5.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<script>
+    function encode() {
+        var data = $('#input').val(), type = parseInt($('#type').val());
+        if (data == '') {
+            layer.msg('加密文本是空的！');
+            return;
+        }
+        var result;
+        switch (type){
+            case 11:
+                result = data.MD5(32).toUpperCase();
+                break;
+            case 12:
+                result = data.MD5(32);
+                break;
+            case 21:
+                result = data.MD5(16).toUpperCase();
+                break;
+            case 22:
+                result = data.MD5(16);
+                break;
+            default:
+                layer.msg('无效的加密类型!');
+                break;
+        }
+
+        $('#result').val(result);
+    }
+</script>
