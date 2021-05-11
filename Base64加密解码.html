@@ -1,0 +1,47 @@
+<!-- https://www.toolnb.com/tools/base64.html -->
+<link rel="stylesheet" href="css/bootstrap3.5min.css">
+<style>
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+</style>
+<div id="myTabContent" class="container">
+	<div class="tab-pane fade in active" id="home">
+
+		<div class="col-xs-12 col-lg-5 col-md-5">
+			<h3>字符串</h3>
+			<textarea class="form-control" rows="15" id="str" spellcheck="false">base64 加密解密</textarea>
+		</div>
+		<div class="col-xs-12 col-lg-2 col-md-2">
+			<h3>操作</h3>
+			<button class="btn btn-success" onclick="ebase64()">Base64加密</button>
+			<br> <br>
+			<button class="btn btn-primary" onclick="dbase64()">Base64解密</button>
+		</div>
+		<div class="col-xs-12 col-lg-5 col-md-5">
+			<h3>结果</h3>
+			<textarea class="form-control" rows="15" id="content"></textarea>
+		</div>
+
+	</div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/jbase64.js"></script>
+<script type="text/javascript">
+function ebase64() {
+    var str = $('#str').val();
+    $('#content').val(BASE64.encoder(str));
+}
+function dbase64() {
+    var string = $('#str').val();
+    string = BASE64.decoder(string);
+    var str = '';
+    for (var i = 0, len = string.length; i < len; ++i) {
+        str += String.fromCharCode(string[i]);
+    }
+    $('#content').val(str);
+}
+</script>
