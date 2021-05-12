@@ -1,0 +1,450 @@
+<!-- http://tools.jb51.net/aideddesign/rnd_pwd_tool -->
+<meta charset="UTF-8"/>
+<meta charset="utf-8"><style>
+.ontr {
+	background-color: #f0fff0;
+}
+
+.blktr {
+	background-color: #FFF;
+}
+
+.tbl {
+	border: 1px solid #ddd;
+	width: 90%;
+	font-size: 14px;
+	font-family: "Microsoft Yahei";
+}
+
+.tbl th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+	padding: 4px 8px;
+}
+
+.tbl tr td {
+	padding: 4px 8px;
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+	function clear_field(field) {
+		if (field.value==field.defaultValue) {
+			field.value=''
+		}
+	}
+	var Seed;
+	
+	function Rand(min,max)
+	{
+	  Seed=(1103515245*Seed+12345)&0x7FFFFFFF;
+	  return (((Seed>>16)&0x7FFF)%(max-min+1))+min;
+	}
+	
+	var RndChars="0123456789aeiouybcdfghjklmnpqrstvwxzAEIOUYBCDFGHJKLMNPQRSTVWXZ!@#$%^&*()_-+={}[]|\/?:;<>,.~ ";
+	
+	var DIGIT_START  =  0;
+	var DIGIT_END    =  9;
+	var VOCAL_START  =  10;
+	var VOCAL_END    =  15;
+	var CONS_START   =  16;
+	var CONS_END     =  35;
+	var CVOCAL_START  =  36;
+	var CVOCAL_END    =  41;
+	var CCONS_START   =  42;
+	var CCONS_END     =  61;
+	var OCHRS_START   =  62;
+	var OCHRS_END     =  90;
+	var SPACE_START   =  91;
+	var SPACE_END     =  91;
+	
+	var RndLow=new Array();
+	var RndHigh=new Array();
+	var RndLen;
+	
+	function InitRndArrays(str)
+	{
+	  var n;
+	
+	  str=str.toUpperCase();
+	  RndLen=str.length;
+	  if (RndLen<1)
+	  {
+	    document.getElementById("relarea").value+="(没有模式)";
+	    return false;
+	  }  
+	  if (RndLen>40)  // Limit only to make output result look nice
+	  {
+	    document.getElementById("relarea").value+="(字符太多)";
+	    return false;
+	  }  
+	  for (n=0; n<RndLen; n++)
+	  {
+	    if (str.charAt(n)=="A") //alpha numeric
+	    {
+	      RndLow[n]=DIGIT_START;
+	      RndHigh[n]=CCONS_END;
+	    }  
+	    else if (str.charAt(n)=="K") //all legal
+	    {
+	      RndLow[n]=DIGIT_START;
+	      RndHigh[n]=OCHRS_END;
+	    }  
+	    else if (str.charAt(n)=="D") //numeric only
+	    {
+	      RndLow[n]=DIGIT_START;
+	      RndHigh[n]=DIGIT_END;
+	    }  
+	    else if (str.charAt(n)=="L") //lower case all
+	    {
+	      RndLow[n]=VOCAL_START;
+	      RndHigh[n]=CONS_END;
+	    }  
+	    else if (str.charAt(n)=="V") //lower case vowels only
+	    {
+	      RndLow[n]=VOCAL_START;
+	      RndHigh[n]=VOCAL_END;
+	    }  
+	    else if (str.charAt(n)=="C") //lower case consonants only
+	    {
+	      RndLow[n]=CONS_START;
+	      RndHigh[n]=CONS_END;
+	    }  
+	    else if (str.charAt(n)=="U") //all upper case
+	    {
+	      RndLow[n]=CVOCAL_START;
+	      RndHigh[n]=CCONS_END;
+	    }  
+	    else if (str.charAt(n)=="W") //upper case vowels only
+	    {
+	      RndLow[n]=CVOCAL_START;
+	      RndHigh[n]=CVOCAL_END;
+	    }  
+	    else if (str.charAt(n)=="B") //upper case consonants only
+	    {
+	      RndLow[n]=CCONS_START;
+	      RndHigh[n]=CCONS_END;
+	    }  
+	    else if (str.charAt(n)=="Q") //all lower or upper case only
+	    {
+	      RndLow[n]=VOCAL_START;
+	      RndHigh[n]=CCONS_END;
+	    }  
+	    else if (str.charAt(n)=="H") //other characters
+	    {
+	      RndLow[n]=OCHRS_START;
+	      RndHigh[n]=OCHRS_END;
+	    }  
+	    else if (str.charAt(n)=="S") //include space with other characters
+	    {
+	      RndLow[n]=OCHRS_START;
+	      RndHigh[n]=SPACE_END;
+	    }  
+	    else
+	    {
+	      document.getElementById("relarea").value+="(无效的模式)";
+	      return false;
+	    }  
+	  }
+	  return true;
+	}
+	
+	function OnClickCalc()
+	{
+	  var n;
+	  var m;
+	  var curdat=new Date;
+	
+	  window.defaultStatus="Wait...";
+	  Seed=curdat.getTime()&0xFFFFFFFF;
+	  document.getElementById("relarea").value="";
+	  if (InitRndArrays(document.getElementById("pattern").value))
+	  {
+	    for (m=0; m<40; m++)
+	    {
+	      for (n=0; n<RndLen; n++)
+	      {
+	        document.getElementById("relarea").value+=RndChars.charAt(Rand(RndLow[n],RndHigh[n]));
+	      }
+	      document.getElementById("relarea").value+="\r\n";
+	    }
+	  }
+	  window.defaultStatus="Done.";
+	}
+	
+	function OnChangeCalc()
+	{
+	    var unit = "";
+		unit = document.getElementById("unit").value;
+	    document.getElementById("pattern").value = unit;
+		if(unit=="kqadlvcuwbhs"){
+			for(i=0,n=12;i<12;i++){
+				$("#val_"+unit[i]).attr("class","ontr");
+			}
+		}
+		else{
+			$('tr[id^="val_"]').attr("class","blktr");
+			$("#val_"+unit[0]).attr("class","ontr");
+		}
+	} 
+</script>
+<div class="col-md-9">
+	<h1 align="center">在线随机数/随机密码批量生成工具</h1>
+	<h2 class="alert alert-success" style="font-size: 15px;">这是一款可在线批量生成随机数与随机字符串的工具，用户只需在“备选条件”的下拉列表中选择需要生成的随机字符串模式（同时对应模式的掩码说明项会高亮显示），再点击“生成”按钮即可一键生成所需随机密码。还可根据密码字符定义表中的掩码字符来手动输入需要生成的随机密码格式与位数。非常方便实用！提供给需要的朋友参考使用。</h2>
+	
+
+	<script type="text/javascript"></script>
+	<div align="center">
+		<form name="form">
+		<table border="1" cellspacing="0" cellpadding="2" align="middle"
+			class="tbl">
+			<thead>
+			</thead>
+			<tbody>
+				<tr>
+					<td width="20%">密码</td>
+					<td><input onfocus="clear_field(this)" size="40"
+						style="background-color: #f0fff0" name="pattern" id="pattern"
+						type="text">&nbsp;可手动编辑模式条目(如：qqaauvwb)</td>
+				</tr>
+				<tr>
+					<td width="20%">备选条件</td>
+					<td><select onchange="OnChangeCalc()" size="1"
+						style="background-color: #ffc4c4" name="unit" id="unit">
+							<option value="kqadlvcuwbhs" selected="selected">选择指定的掩码</option>
+							<option value="kqadlvcuwbhs">(12位)默认</option>
+							<option value="qqqqqqqq">8位 字母字符</option>
+							<option value="aaaaaaaa">8位 字母数字的字符</option>
+							<option value="kkkkkkkk">8位 任何的字符</option>
+							<option value="llllllll">8位 字符字母小写</option>
+							<option value="uuuuuuuu">8位 字符的字母只大写</option>
+							<option value="dddddddd">8位 只有数字的字符</option>
+							<option value="qqqqqqqqqqqqqqqq">16位 字母字符</option>
+							<option value="aaaaaaaaaaaaaaaa">16位 字母数字的字符</option>
+							<option value="kkkkkkkkkkkkkkkk">16位 任何字符</option>
+							<option value="llllllllllllllll">16位 字符的字母只小写</option>
+							<option value="uuuuuuuuuuuuuuuu">16位 字符的字母只小写</option>
+							<option value="dddddddddddddddd">16位 只有数字的字符</option>
+							<option value="aaaaaaaaaaaaaaaaaaaaaaaa">24位 字母数字的字符</option>
+							<option value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">32位
+								字母数字的字符</option>
+							<option value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">40位
+								字母数字的字符</option>
+							<option value="kkkkkkkk">8位 集内的所有字符 1</option>
+							<option value="qqqqqqqq">8位 集内的所有字符 2</option>
+							<option value="aaaaaaaa">8位 集内的所有字符 3</option>
+							<option value="dddddddd">8位 集内的所有字符 4</option>
+							<option value="llllllll">8位 集内的所有字符 5</option>
+							<option value="vvvvvvvv">8位 集内的所有字符 6</option>
+							<option value="cccccccc">8位 集内的所有字符 7</option>
+							<option value="uuuuuuuu">8位 集内的所有字符 8</option>
+							<option value="wwwwwwww">8位 集内的所有字符 9</option>
+							<option value="bbbbbbbb">8位 集内的所有字符 10</option>
+							<option value="hhhhhhhh">8位 集内的所有字符 11</option>
+							<option value="kkkkkkkkkkkkkkkk">16位 集内的所有字符 1</option>
+							<option value="qqqqqqqqqqqqqqqq">16位 集内的所有字符 2</option>
+							<option value="aaaaaaaaaaaaaaaa">16位 集内的所有字符 3</option>
+							<option value="dddddddddddddddd">16位 集内的所有字符 4</option>
+							<option value="llllllllllllllll">16位 集内的所有字符 5</option>
+							<option value="vvvvvvvvvvvvvvvv">16位 集内的所有字符 6</option>
+							<option value="cccccccccccccccc">16位 集内的所有字符 7</option>
+							<option value="uuuuuuuuuuuuuuuu">16位 集内的所有字符 8</option>
+							<option value="wwwwwwwwwwwwwwww">16位 集内的所有字符 9</option>
+							<option value="bbbbbbbbbbbbbbbb">16位 集内的所有字符 10</option>
+							<option value="hhhhhhhhhhhhhhhh">16位 集内的所有字符 11</option>
+							<option value=""></option>
+					</select></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><b>密码字符定义</b></td>
+				</tr>
+				<tr>
+					<!--ROW 1-->
+					<th width="20%"><center>掩码字符</center></th>
+					<th><center>以下是有效的字符</center></th>
+				</tr>
+				<tr id="val_k" class="ontr">
+					<td width="20%">1：k</td>
+					<td>任何合法字母<a style="text-decoration: none"
+						href="http://www.ab126.com"><font color="#000000">数字</font></a>和其他字符
+					</td>
+				</tr>
+				<tr id="val_q" class="ontr">
+					<td width="20%">2：q</td>
+					<td>字母字符 a-z, A-Z</td>
+				</tr>
+				<tr id="val_a" class="ontr">
+					<td width="20%">3；a</td>
+					<td>字母数字 0-9, a-z, A-Z</td>
+				</tr>
+				<tr id="val_d" class="ontr">
+					<td width="20%">4：d</td>
+					<td>数字 0-9</td>
+				</tr>
+				<tr id="val_l" class="ontr">
+					<td width="20%">5：l</td>
+					<td>小写字母 a-z</td>
+				</tr>
+				<tr id="val_v" class="ontr">
+					<td width="20%">6: v</td>
+					<td>小写元音 a,e,i,o,u,y</td>
+				</tr>
+				<tr id="val_c" class="ontr">
+					<td width="20%">7：c</td>
+					<td>辅音字母小写b,c,d,f,g,h,j,k,l,m,n,p,q,r,s,t,v,w,x,z</td>
+				</tr>
+				<tr id="val_u" class="ontr">
+					<td width="20%">8：u</td>
+					<td>大写字母 A-Z</td>
+				</tr>
+				<tr id="val_w" class="ontr">
+					<td width="20%">9：w</td>
+					<td>大写元音 A,E,I,O,U,Y</td>
+				</tr>
+				<tr id="val_b" class="ontr">
+					<td width="20%">10：b</td>
+					<td>大写辅音 B,C,D,F,G,H,J,K,L,M,N,P,Q,R,S,T,V,W,X,Z</td>
+				</tr>
+				<tr id="val_h" class="ontr">
+					<td width="20%">11：h</td>
+					<td>其他字符! @ # $ % ^ &amp; * () _ - + = { }[] | \ / ? : ;
+						&lt;&gt; , .</td>
+				</tr>
+				<tr id="val_s" class="ontr">
+					<td width="20%">12：s</td>
+					<td>其他字符(设置 h 再加上空格字符）</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><input onclick="OnClickCalc()"
+						type="button" class="submit btn btn-success" name="calc"
+						value="  生成  "> &nbsp;&nbsp;&nbsp; <input type="reset"
+						class="reset btn btn-default" value="  清除所有值  ">
+						（在手动编辑模式生成随机密码后，再次使用需要点击"清除所有值"）</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"><textarea rows="12"
+							class="form-control" name="textarea" id="relarea"
+							ondblclick="this.select();" title="双击可选中所有生成结果"></textarea></td>
+				</tr>
+
+			</tbody>
+
+		</table>
+		</form>
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="rnd_pwd_tool"></div>
+		<script type="text/javascript"> 
+		</script>
+
+	</div>
+
+</div>

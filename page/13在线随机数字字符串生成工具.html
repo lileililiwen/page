@@ -1,0 +1,308 @@
+<!-- http://tools.jb51.net/aideddesign/suijishu-->
+<meta charset="utf-8"><style>
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+.alert>p+p {
+    margin-top: 5px;
+}
+.alert>p, .alert>ul {
+    margin-bottom: 0;
+}
+p {
+    margin: 0 0 10px;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9"
+	style="height: auto !important; min-height: 0px !important;">
+	<h1 align="center">在线随机数字/字符串生成工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px">这是一款多功能的在线随机数/随机字符串生成工具。可按照用户的要求生成指定位数与个数的随机数与随机字符串，随机数还可指定小数点位数、整数范围、生成组数等。字符随机数还可指定字符长度、字符组合模式等。下方的工具说明还给出了该工具各种常见的应用说明。提供给需要的朋友使用。</h2>
+	<script type="text/javascript">
+		jQuery(document).ready(function() {
+
+			$("#Button2").click(function() {
+				var fw = $("#fw").text();
+				var t1 = "";
+				var t2 = "";
+				if (fw == "范围：") {
+					t1 = $("#Text2").val();
+					t2 = $("#Text3").val();
+					if (!$.isNumeric(t1)) {
+						return false;
+					}
+					if (!$.isNumeric(t2)) {
+						return false;
+					}
+					if (parseFloat(t1) >= parseFloat(t2)) {
+						return false;
+					}
+					if (parseFloat(t2) > 10000000) {
+						return false;
+					}
+				}
+				;
+
+				if (fw == "长度：") {
+					t1 = $("#Text2").val();
+					t2 = 10;
+					if (!$.isNumeric(t1)) {
+						return false;
+					}
+					if (parseFloat(t1) > 100) {
+						return false;
+					}
+					var zdy = $("#Text1").val();
+					var ln = zdy.length;
+					if (ln > 100) {
+						$("#Text1").val(zdy.substring(0, 99));
+					}
+				}
+				;
+				var rd;//类型
+				var xsd;//小数点
+				var ms;//模式
+				var txtzdy = $("#Text1").val();//自定义模式
+				var zs;//组数
+				var cf;//是否重复
+				var dl;//单列显示结果
+				var New = document.getElementsByName("styles");
+				if (New.item(0).checked) {
+					rd = 0;
+				} else {
+					rd = 1;
+				}
+				;
+				xsd = $("#Select2").val();
+				ms = $("#Select1").val();
+				zs = $("#Select3").val();
+				if ($("#Checkbox2").is(':checked')) {
+					cf = 0;
+				} else {
+					cf = 1;
+				}
+				;
+				if ($("#Checkbox3").is(':checked')) {
+					dl = 0;
+				} else {
+					dl = 1;
+				}
+				;
+
+				var args = {
+					vt1 : t1,
+					vt2 : t2,
+					vrd : rd,
+					vxsd : xsd,
+					vms : ms,
+					vtxtzdy : txtzdy,
+					vzs : zs,
+					vcf : cf,
+					vdl : dl
+				};
+				
+				//TODO ，需要后台加一个这样的功能
+				$.post("https://cdn.jsdelivr.net/gh/lileililiwen/static/api/rnd/rnds.php", args, function(rel) {
+					$("#qinmsdiv_jguo").html(rel);
+				});
+
+			});
+		});
+
+		function t(obj) {
+			if (obj.value == "7") {
+				document.getElementById("Text1").hidden = false;
+			} else {
+				document.getElementById("Text1").hidden = true;
+			}
+		}
+		function rd(obj) {
+			var New = document.getElementsByName("styles");
+
+			if (New.item(0).checked) {
+				document.getElementById("qinmsdiv_zms").hidden = true;
+				document.getElementById("fw").innerText = "范围：";
+				document.getElementById("fw2").hidden = false;
+				document.getElementById("Text3").hidden = false;
+				document.getElementById("qinmsdiv_xsd").hidden = false;
+				document.getElementById("Checkbox2").hidden = false;
+				document.getElementById("CheckBox2wb").hidden = false;
+			} else {
+				document.getElementById("qinmsdiv_zms").hidden = false;
+				document.getElementById("fw").innerText = "长度：";
+				document.getElementById("fw2").hidden = true;
+				document.getElementById("Text3").hidden = true;
+				document.getElementById("qinmsdiv_xsd").hidden = true;
+				document.getElementById("Checkbox2").hidden = true;
+				document.getElementById("CheckBox2wb").hidden = true;
+			}
+		}
+	</script>
+
+	<form method="post" action="" id="form1">
+
+		<div id="qinmsdiv_firstAnchor"
+			style="padding: 0.625em; background-color: #99CCFF; font-size: 1.25em">
+			<input id="Radio1" type="radio" name="styles" checked="checked"
+				onclick="rd(this)" style="width: 2em; height: 2em;">数学随机数<br>
+			<input id="Radio2" type="radio" name="styles" onclick="rd(this)"
+				style="width: 2em; height: 2em">字符随机数<br> <span id="fw">范围：</span><br>
+			<input id="Text2" type="text" value="1"
+				style="font-size: 1.125em; width: 30%"><span id="fw2">
+				- </span><input id="Text3" type="text" value="10"
+				style="width: 30%; font-size: 1.125em"><br>
+			<br>
+			<div id="qinmsdiv_xsd">
+				小数点位数： <select id="Select2" style="font-size: 1.125em">
+					<option value="0">0位</option>
+					<option value="1">1位</option>
+					<option value="2">2位</option>
+					<option value="3">3位</option>
+					<option value="4">4位</option>
+					<option value="5">5位</option>
+					<option value="6">6位</option>
+					<option value="7">7位</option>
+					<option value="8">8位</option>
+					<option value="9">9位</option>
+					<option value="10">10位</option>
+				</select>
+
+			</div>
+			<div id="qinmsdiv_zms" hidden="">
+				模式： <select id="Select1" onchange="t(this)"
+					style="font-size: 1.125em; max-width: 100%">
+					<option value="0">数字+大小写字母</option>
+					<option value="1">纯数字</option>
+					<option value="2">大写字母</option>
+					<option value="3">小写字母</option>
+					<option value="4">数字+小写字母</option>
+					<option value="5">数字+大写字母</option>
+					<option value="6">大小写字母</option>
+					<option value="7">自定义字库</option>
+				</select><br> <input id="Text1" type="text" value="自定义字库"
+					style="font-size: 1.125em; width: 80%" hidden="">
+			</div>
+			<br> 组数： <select id="Select3" style="font-size: 1.125em">
+				<option value="1">1组</option>
+				<option value="2">2组</option>
+				<option value="3">3组</option>
+				<option value="4">4组</option>
+				<option value="5">5组</option>
+				<option value="6">6组</option>
+				<option value="7">7组</option>
+				<option value="8">8组</option>
+				<option value="9">9组</option>
+				<option value="10">10组</option>
+				<option value="15">15组</option>
+				<option value="20">20组</option>
+				<option value="50">50组</option>
+				<option value="100">100组</option>
+			</select><br> <input id="Checkbox2" type="checkbox" checked="checked"
+				style="margin-left: 2.5em; width: 2em; height: 2em"><span
+				id="CheckBox2wb">不重复</span><br> <input id="Checkbox3"
+				type="checkbox" checked="checked"
+				style="margin-left: 2.5em; width: 2em; height: 2em"><span
+				id="CheckBox3wb">结果单列显示</span> <br>
+			<br> <input id="Button2" type="button" value="随机数生成"
+				style="font-size: 1.5em; max-width: 90%"> <br>
+			<br>
+		</div>
+		<div id="qinmsdiv_admidle"
+			style="text-align: center; overflow: hidden; max-width: 100%; margin-left: 0.625em; margin-right: 0.625em; margin-top: 5px; margin-bottom: 1.25em"></div>
+		<div id="qinmsdiv_2" style="text-align: center">
+			<div id="qinmsdiv_jguo"
+				style="font-size: 1.5em; margin: 0px 1% 0.625em 1%; border: 1px #99CCFF inset;"></div>
+		</div>
+	</form>
+
+	<script>
+		var sl = document.getElementById("Select1");
+		if (sl.value == "自定义字库") {
+			//document.getElementById("msi").style.display = "none";
+			document.getElementById("Text1").hidden = false;
+		} else {
+			//document.getElementById("msi").style.display = "";
+			document.getElementById("Text1").hidden = true;
+		}
+
+		var New = document.getElementsByName("styles");
+
+		if (New.item(0).checked) {
+			document.getElementById("qinmsdiv_zms").hidden = true;
+			document.getElementById("fw").innerText = "范围：";
+			document.getElementById("fw2").hidden = false;
+			document.getElementById("Text3").hidden = false;
+			document.getElementById("qinmsdiv_xsd").hidden = false;
+
+		} else {
+			document.getElementById("qinmsdiv_zms").hidden = false;
+			document.getElementById("fw").innerText = "长度：";
+			document.getElementById("fw2").hidden = true;
+			document.getElementById("Text3").hidden = true;
+			document.getElementById("qinmsdiv_xsd").hidden = true;
+		}
+	</script>
+	<h2 align="center" class="alert alert-warning">在线随机数字/字符串生成工具使用说明</h2>
+	<div class="alert alert-info"
+		style="font-size: 16px; height: auto !important;">
+		<p>随机数生成是专门随机试验的结果。</p>
+		<p>在统计学的不同技术中，比如在从统计总体中抽取有代表性的样本的时候，或者在将实验动物分配到不同的试验组的过程中，或者在进行蒙特卡罗模拟法计算的时候等,用处多多。</p>
+		<p>生活中有时候也需要到高强度的随机密码，使用随机密码可防止居心叵测的人按照一定设想的规律猜测性的对密码轻易破解，造成损失。</p>
+		<p>本随机数生成器可以在线生成字符类型和数字类型两种类型的随机数，其中字符类型可随机生成乱七八糟固定长度的字符串，可当做高强度的随机密码使用，而数字类型则是生成一定范围内的数字，包括特定的小数点位，在统计学和大量科学实验中有广泛使用，在计算机未普及的时候还使用现成编制的随机表格，信息化大大增加了获取的简便性，当然也可用作随机抽奖等使用。</p>
+		<p>在这里你可以有多种的选择，生成多种的类型，可在大小写数字中随意选择，很方便。</p>
+		<p>
+			在生成数值类型的随机数时，你还可选择<strong>允许重复/不允许重复</strong>，若勾选不重复的选择框，在满足特定条件时可生成多组不重复的数字。
+		</p>
+		<p>你生成随机数，别人猜不透，快快选择并按下随机生成按钮吧</p>
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="suijishu"></div>
+		<script type="text/javascript">
+		</script>
+
+	</div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>

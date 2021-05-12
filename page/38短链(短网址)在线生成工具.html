@@ -1,0 +1,256 @@
+<!-- http://tools.jb51.net/password/dwzcreate -->
+<meta charset="utf-8"><style>
+.ShortURL_copybtn {
+	cursor: pointer;
+	border: none;
+	color: #fff;
+	background-color: #449d44;
+}
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+</style>
+<!-- -TODO ph之提供服务 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+
+<div class="col-md-9">
+	<h1 align="center">短链(短网址)在线生成工具</h1>
+	<h2 style="font-size: 16px" class="alert alert-success">这是一款可现在生成短链(短网址)的工具，可根据用户提交的网址生成相对应的百度短连接地址，做到有效的隐藏真实地址，方便实用，感兴趣的朋友快来试试吧！</h2>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/clipboard.min.js"></script>
+	<table class="table" style="border: solid 10px #F6F4F0; padding: 10px;">
+		<tbody>
+			<tr style="font-size: 14px;" border="2px" bordercolor="#D4E6F7">
+				<td align="center">
+					<form action="" method="post">
+						请输入地址(<font color="#285e8e">如输入：http://www.jb51.net</font>)：<input
+							type="text" value="" size="40" id="lurl" name="lurl"
+							class="input"> <input type="hidden" name="timestamp"
+							id="timestamp" value="1620097578"> <input type="hidden"
+							name="token" id="token" value="52f7763e4f14f04834980397ebcc39d9">
+						<input type="button" id="getdwz" value="获取短网址"
+							class="submit btn btn-primary">
+						<div class="h5">
+							<a target="_blank"
+								href="https://3w.cn/app/shorturl.html?from=3206"
+								rel="nofollow noopener noreferrer" style="color: #FF6600;">推荐三维推短链：跳转快，全国连通性高，防误拦截，支持独享专属域名，多维度统计
+							</a>
+						</div>
+					</form>
+					<div id="showrel">
+						<table width="90%"
+							style="background-color: #B2B2B2; border: 0; margin: 15px auto;">
+							<tbody>
+								<tr style="background-color: #FFF; border: solid 2px #D4E6F7">
+									<td align="center"><span
+										style="font-weight: bold; color: #EA5F00">短网址为：</span></td>
+									<td align="left"><span id="shortUrlText">http://mrw.so/6rVthC</span>
+										<button id="fz" class="ShortURL_copybtn" type="button"
+											title="复制短链接" data-clipboard-action="copy"
+											data-clipboard-target="#shortUrlText">
+											<i class="iconfont icon-fuzhi"></i> 复制链接
+										</button></td>
+								</tr>
+								<tr style="background-color: #FFF; border: solid 2px #D4E6F7">
+									<td align="center"><span
+										style="font-weight: bold; color: #EA5F00">原网址为：</span></td>
+									<td align="left"
+										style="width: 80%; word-break: break-all; word-wrap: break-word;">http://www.baidu.com</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script language="javascript">
+		$(function() {
+			$("#getdwz").click(function() {
+				var urlval = $("#lurl").val();
+				var tokenval = $("#token").val();
+				var timestampval = $("#timestamp").val();
+				$.post("http://tools.jb51.net/static/api/dwz.php", {
+					vurl : urlval,
+					token : tokenval,
+					timestamp : timestampval
+				}, function(rel) {
+					$("#showrel").html(rel);
+				})
+			});
+		})
+		var clipboard = new Clipboard('#fz');
+		clipboard.on('success', function(e) {
+		});
+		clipboard.on('error', function(e) {
+		});
+		$("#fz").click(function() {
+			$(this).val("已复制√");
+		});
+		$("#fz").mouseout(function() {
+			$("#fz").val("复制结果");
+		});
+	</script>
+	<div class="well">
+		<div id="SOHUCS" sid="dwzcreate"></div>
+		<script type="text/javascript">
+		</script>
+	</div>
+</div>

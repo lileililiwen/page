@@ -1,0 +1,39 @@
+<!--
+https://www.toolnb.com/tools/xmlToJson.html-->
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/bootstrap3.5min.css"></link>
+<meta charset="utf-8"><style>
+
+</style>
+<div id="myTabContent" class="tab-content container">
+    <div class="tab-pane fade in active" id="cqrcode">
+        <div class="col-md-5 col-xs-12"><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: 0px; left: 0px; pointer-events: none;" class="cGcvT"></grammarly-extension>
+            <h3>输入</h3>
+            <textarea id="input" placeholder="待转换字符串" class="form-control" rows="10" spellcheck="false"></textarea>
+        </div>
+        <div class="col-md-2 col-xs-12">
+            <h3>操作</h3>
+            <button class="btn btn-primary" onclick="jsonToXml()">json转xml</button>
+            <br>
+            <br>
+            <button class="btn btn-primary" onclick="xmlToJson()">xml转json</button>
+        </div>
+        <div class="col-md-5 col-xs-12">
+            <h3>结果</h3>
+            <textarea id="content" placeholder="输出" class="form-control" rows="10"></textarea>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/ObjTree.js"></script>
+<script>
+    function jsonToXml(){
+        var xotree = new XML.ObjTree();
+        var json = eval("(" + $("#input").val() + ")");
+        $("#content").val(formatXml(xotree.writeXML(json)));
+    }
+    function xmlToJson(){
+        var xotree = new XML.ObjTree();
+        var xml = parseXML($("#input").val());
+        $("#content").val(formatXml(xotree.write(json)));
+    }
+</script>

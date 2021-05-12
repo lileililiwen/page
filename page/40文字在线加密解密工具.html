@@ -1,0 +1,257 @@
+<!-- http://tools.jb51.net/password/txt_encode -->
+<meta charset="utf-8"><style>
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+</style>
+<!-- -TODO ph之提供服务 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<link
+		href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/txtencode/txtencode.css"
+		rel="stylesheet" type="text/css"></link>
+<div class="col-md-9">
+	<h1 align="center">文字在线加密解密工具</h1>
+	<h2 style="font-size: 16px" class="alert alert-success">这是一款可实现文字加密与解密功能的在线工具，可实现针对AES、DES、RC4、Rabbit、TripleDes等多种算法的加密与解密功能，且用户可自定义加密的密码，非常方便实用。提供给需要的朋友使用。</h2>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/txtencode/core-min.js"
+		type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/txtencode/aes.js"
+		type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/txtencode/rabbit.js"
+		type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/txtencode/rc4.js"
+		type="text/javascript"></script>
+	<script
+		src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/txtencode/tripledes.js"
+		type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/txtencode/jq-tools.js"
+		type="text/javascript"></script>
+	<div class="jb51_content">
+
+		<div class="wrapper wwlr">
+			<form>
+				<div class="clearfix">
+					<!--GuoLvWrap-begin-->
+					<div class="JsTxtW-r fl pr">
+						<textarea class="JsTxtCo bor-a1s h200 WrapHid wwlr-l" id="content"
+							name="content"></textarea>
+						<b class="search-hint CentHid" style="display: block;">请把你需要加密的内容粘贴在这里</b>
+					</div>
+
+					<div class="JsTxtW-r fr mr15 pr zI0">
+						<textarea class="JsTxtCo bor-a1s h200 WrapHid wwlr-r" id="result"></textarea>
+						<b class="search-hint CentHid">请把你需要解密的内容粘贴在这里</b>
+					</div>
+
+				</div>
+				<!--GuoLvWrap-end-->
+				<div class="GuoLvWrapCenter pt10 clearfix">
+					<div class="GuoLvCbtn">
+						<input type="button" id="encrypt" value="加密" class="GLOkBtn"><input
+							type="button" id="decrypt" value="解密" class="GLOkBtn"><input
+							type="button" id="clear" value="清空" class="bg-blue02 YaHei">
+					</div>
+					<div class="MainCate-choese ToolChoese pr fr zI1">
+						<div class="MainCateW-cont SearChoese w90">AES</div>
+						<input name="encrypt_type" value="aes" type="hidden"> <span
+							class="MCicon-drop-down SearChoese"></span>
+						<ul class="MainCateC-down SearChoese-show w100">
+							<li><a href="javascript:" val="aes">AES</a></li>
+							<li><a href="javascript:" val="des">DES</a></li>
+							<li><a href="javascript:" val="rc4">RC4</a></li>
+							<li><a href="javascript:" val="rabbit">Rabbit</a></li>
+							<li><a href="javascript:" val="tripledes">TripleDes</a></li>
+						</ul>
+					</div>
+					<div class="GlOtherWay">
+						<span>密码：</span><input type="text" class="w70 bor-a1s" id="pwd">
+					</div>
+				</div>
+
+
+			</form>
+		</div>
+
+		<script>
+			ted.textEncrypt();
+		</script>
+
+		<div class="wrapper mt10">
+			<div class="ToolAbout wrapper03">
+				<div class="clearfix">
+					<h2 class="alert alert-warning" align="center">工具简介</h2>
+				</div>
+				<div class="alert alert-info" style="font-size: 16px;">
+					<p>提供在线文本加密/解密，提供AES、DES、RC4、Rabbit、TripleDes等多种算法。</p>
+					<p>
+						<strong>特别提示:</strong>使用的默认的密文字符将可能让他人轻易破解您的加密文字,因此为了安全请在加密之前设定您自己特有的密文字符,设定后请记录下来,以免无法解密。
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="txt_encode"></div>
+		<script type="text/javascript"> 
+		</script>
+
+	</div>
+
+</div>

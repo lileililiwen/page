@@ -1,0 +1,250 @@
+<!-- https://www.bejson.com/httputil/getip/ -->
+<meta charset="utf-8"><style>
+    .font-18 {
+        font-size: 18px;
+    }
+
+    .no-padding-v {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .v-big-margin {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h1, h2, h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, 'PingFang SC', 'Source Han Sans CN', 'Source Han Sans', 'Source Han Serif', 'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Microsoft YaHei', sans-serif;
+        font-weight: 700;
+        line-height: 1.1;
+        color: inherit;
+    }
+
+    h1 {
+        margin: .67em 0;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    *, :after, :before {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .t-big-margin {
+        margin-top: 10px;
+    }
+
+    .input-group {
+        position: relative;
+        display: table;
+        border-collapse: separate;
+    }
+
+    .input-group-addon:first-child {
+        border-right: 0;
+    }
+
+    .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group-vertical > .btn, .input-group-btn:first-child > .btn-group > .btn, .input-group-btn:first-child > .dropdown-toggle, .input-group-btn:last-child > .btn-group-vertical:not(:last-child) > .btn, .input-group-btn:last-child > .btn-group:not(:last-child) > .btn, .input-group-btn:last-child > .btn:not(:last-child):not(.dropdown-toggle) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .input-group-addon {
+        padding: 5px 12px;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1;
+        color: #222;
+        text-align: center;
+        background-color: #e5e5e5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .input-group-addon, .input-group-btn {
+        width: 1%;
+        white-space: nowrap;
+        vertical-align: middle;
+    }
+
+    .input-group .form-control, .input-group-addon, .input-group-btn {
+        display: table-cell;
+    }
+
+    .input-group .form-control:not(:first-child):not(:last-child), .input-group-addon:not(:first-child):not(:last-child), .input-group-btn:not(:first-child):not(:last-child) {
+        border-radius: 0;
+    }
+
+    .input-group .form-control, .input-group-addon, .input-group-btn {
+        display: table-cell;
+    }
+
+    .input-group .form-control {
+        position: relative;
+        z-index: 2;
+        float: left;
+        width: 100%;
+        margin-bottom: 0;
+    }
+
+    .form-control {
+        display: block;
+        width: 100%;
+        height: 32px;
+        padding: 5px 8px;
+        font-size: 13px;
+        line-height: 1.53846154;
+        color: #222;
+        vertical-align: middle;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+        -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+        box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+        -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    }
+
+    input {
+        outline: 0;
+    }
+
+    button, input, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    button, input, select, textarea {
+        margin: 0;
+    }
+
+    .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group, .input-group-btn:last-child > .btn-group-vertical {
+        margin-left: -1px;
+    }
+
+    .input-group .form-control:last-child, .input-group-addon:last-child, .input-group-btn:first-child > .btn-group-vertical:not(:first-child) > .btn, .input-group-btn:first-child > .btn-group:not(:first-child) > .btn, .input-group-btn:first-child > .btn:not(:first-child), .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group-vertical > .btn, .input-group-btn:last-child > .btn-group > .btn, .input-group-btn:last-child > .dropdown-toggle {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .input-group-btn > .btn {
+        position: relative;
+    }
+
+    .btn {
+        color: #353535;
+        background-color: #f2f2f2;
+        border-color: #bfbfbf;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 5px 12px;
+        margin-bottom: 0;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.53846154;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        border-radius: 2px;
+        -webkit-transition: .4s cubic-bezier(.175, .885, .32, 1);
+        -o-transition: .4s cubic-bezier(.175, .885, .32, 1);
+        transition: .4s cubic-bezier(.175, .885, .32, 1);
+        -webkit-transition-property: background, border, outline, opacity, -webkit-box-shadow;
+        -o-transition-property: background, border, box-shadow, outline, opacity;
+        transition-property: background, border, outline, opacity, -webkit-box-shadow;
+        transition-property: background, border, box-shadow, outline, opacity;
+        transition-property: background, border, box-shadow, outline, opacity, -webkit-box-shadow;
+    }
+
+    button {
+        outline: 0;
+        border-style: none;
+        line-height: 1;
+        cursor: pointer;
+    }
+
+    button, input, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    button, html input[type=button], input[type=reset], input[type=submit] {
+        -webkit-appearance: button;
+        cursor: pointer;
+    }
+
+    button, select {
+        text-transform: none;
+    }
+
+    .container {
+        padding-left: 0;
+        padding-right: 0;
+        width: 1160px !important;
+        max-width: 1160px !important;
+    }
+
+    .t-small-margin {
+        margin-top: 10px;
+    }
+
+    @media (min-width: 768px) {
+        .container {
+            max-width: 740px;
+        }
+    }
+
+    .container, .container-fixed, .container-fixed-md, .container-fixed-sm, .container-fixed-xs, .container-fluid {
+        padding-right: 10px;
+        padding-left: 10px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+</style>
+<div class="container">
+    <h1 class="font-18 v-big-margin no-padding-v">获取你的IP</h1>
+    <div class="input-group t-big-margin">
+        <span class="input-group-addon">您的IP:</span>
+        <input type="text" class="form-control" id="getIpStr" value="IP检查中......">
+        <span class="input-group-btn">
+            <button class="btn" type="button" id="copyIp">复制</button>
+        </span>
+    </div>
+    <div class="input-group t-big-margin">
+        <span class="input-group-addon">您的IPv6:</span>
+        <input type="text" class="form-control" id="getIpIpv6" value="">
+        <span class="input-group-btn">
+            <button class="btn" type="button" id="copyIpv6">复制</button>
+        </span>
+    </div>
+</div>

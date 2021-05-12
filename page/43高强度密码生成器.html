@@ -1,0 +1,424 @@
+<!-- http://tools.jb51.net/password/CreateStrongPassword -->
+<meta charset="utf-8"><style>
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+textarea.form-control {
+	height: auto;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+textarea {
+	overflow: auto;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+kbd {
+    padding: 2px 4px;
+    font-size: 90%;
+    color: #fff;
+    background-color: #333;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 -1px 0 rgb(0 0 0 / 25%);
+    box-shadow: inset 0 -1px 0 rgb(0 0 0 / 25%);
+}
+code, kbd, pre, samp {
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+code, kbd, pre, samp {
+    font-family: monospace,monospace;
+    font-size: 1em;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9">
+	<div id="container">
+		<!--body-->
+		<div id="wrapper">
+			<h2 style="text-align: center">高强度密码生成器</h2>
+			<div class="alert alert-success">这是一个帮助你生成高强度密码的工具，你可以选择密码长度，是否包含标点符号，系统会自动为你生成一个难以破解的密码。</div>
+			<main role="main">
+				<form role="form" aria-labelledby="StrongPasswordGenerator">
+					<fieldset>
+						<legend id="StrongPasswordGenerator">高强度密码生成器：</legend>
+						<ul>
+							<li><label for="ddlLength">密码长度:</label> <select
+								id="ddlLength">
+									<optgroup label="Not recommended">
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<!-- Internet Explorer needs each option to have a value, so it can execute the script-->
+									</optgroup>
+									<optgroup label="Recommended">
+										<option value="15" selected="selected">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
+										<option value="21">21</option>
+										<option value="22">22</option>
+										<option value="23">23</option>
+										<option value="24">24</option>
+										<option value="25">25</option>
+										<option value="26">26</option>
+										<option value="27">27</option>
+										<option value="28">28</option>
+										<option value="29">29</option>
+										<option value="30">30</option>
+										<option value="31">31</option>
+										<option value="32">32</option>
+										<option value="33">33</option>
+										<option value="34">34</option>
+										<option value="35">35</option>
+										<option value="36">36</option>
+										<option value="37">37</option>
+										<option value="38">38</option>
+										<option value="39">39</option>
+										<option value="40">40</option>
+										<option value="41">41</option>
+										<option value="42">42</option>
+										<option value="43">43</option>
+										<option value="44">44</option>
+										<option value="45">45</option>
+										<option value="46">46</option>
+										<option value="47">47</option>
+										<option value="48">48</option>
+										<option value="49">49</option>
+										<option value="50">50</option>
+										<option value="51">51</option>
+										<option value="52">52</option>
+										<option value="53">53</option>
+										<option value="54">54</option>
+										<option value="55">55</option>
+										<option value="56">56</option>
+										<option value="57">57</option>
+										<option value="58">58</option>
+										<option value="59">59</option>
+										<option value="60">60</option>
+										<option value="61">61</option>
+										<option value="62">62</option>
+										<option value="63">63</option>
+										<option value="64">64</option>
+										<option value="65">65</option>
+										<option value="66">66</option>
+										<option value="67">67</option>
+										<option value="68">68</option>
+										<option value="69">69</option>
+										<option value="70">70</option>
+										<option value="71">71</option>
+										<option value="72">72</option>
+										<option value="73">73</option>
+										<option value="74">74</option>
+										<option value="75">75</option>
+										<option value="76">76</option>
+										<option value="77">77</option>
+										<option value="78">78</option>
+										<option value="79">79</option>
+										<option value="80">80</option>
+										<option value="81">81</option>
+										<option value="82">82</option>
+										<option value="83">83</option>
+										<option value="84">84</option>
+										<option value="85">85</option>
+										<option value="86">86</option>
+										<option value="87">87</option>
+										<option value="88">88</option>
+										<option value="89">89</option>
+										<option value="90">90</option>
+										<option value="91">91</option>
+										<option value="92">92</option>
+										<option value="93">93</option>
+										<option value="94">94</option>
+										<option value="95">95</option>
+										<option value="96">96</option>
+										<option value="97">97</option>
+										<option value="98">98</option>
+										<option value="99">99</option>
+										<option value="100">100</option>
+									</optgroup>
+							</select></li>
+							<li><input id="chkSymbols" checked="checked" type="checkbox">
+								<label for="chkSymbols">包含标点符号 (<kbd>!</kbd>, <kbd>"</kbd>,
+									<kbd>£</kbd>, <kbd>$</kbd>, <kbd>%</kbd>等等)
+							</label></li>
+							<li><input id="btnGenerate" type="button" value="生成高强度密码">
+							</li>
+						</ul>
+						<dl>
+							<dt>你的新密码是:</dt>
+							<dd id="ddForOutputPassword" style="padding: 5px;">
+								<kbd id="outputPassword" tabindex="-1" aria-live="assertive"
+									spellcheck="false"
+									style="border: 1px double; padding: 4px; color: red;">f&gt;_&amp;%8{a*["K1&gt;O</kbd>
+								<!-- contenteditable="true" might be causing issues on iPhones and on Safari on Macs -->
+							</dd>
+							<dt>可按照下面的方式记住密码:</dt>
+							<dd id="ddForOutputMnemonic" style="padding: 5px;">
+								<span id="outputMnemonic" spellcheck="false"
+									style="border: 1px double; color: brown; padding: 4px; line-height: 40px;">foxtrot
+									&gt; _ &amp; % 8 { alpha * [ " KILO 1 &gt; OSCAR </span>
+							</dd>
+						</dl>
+					</fieldset>
+					<script
+						src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/passcreate/StrongPasswordGenerator.js"></script>
+				</form>
+				<article role="article" aria-labelledby="IsThisSecure"
+					class="alert alert-warning">
+					<h3 id="IsThisSecure">生成的密码保密吗?</h3>
+					<p>是的. 本站生成的密码是通过JS脚本在浏览器内生成，不通过Internet传输</p>
+				</article>
+				<article role="article" aria-labelledby="StrongPasswordGuidelines"
+					class="alert alert-info">
+					<h3 id="StrongPasswordGuidelines">什么样的密码算是高强度密码</h3>
+					<dl>
+						<dt>一个强壮的密码包含:</dt>
+						<dd>
+							至少包含 <strong>15 个字符</strong>;
+						</dd>
+						<dd>
+							包含 <strong>大写字母</strong>;
+						</dd>
+						<dd>
+							包含 <strong>小写字母</strong>;
+						</dd>
+						<dd>
+							包含 <strong>数字</strong>;
+						</dd>
+						<dd>
+							包含 <strong>符号</strong>, 如
+							<kbd>` ! " ? $ ? % ^ &amp; * ( ) _ - + = { [ } ] : ; @ ' ~
+								# | \ &lt; , &gt; . ? /</kbd>
+						</dd>
+						<dd>不能类似以前使用过的密码</dd>
+						<dd>不能包含你的名字</dd>
+						<dd>不能是你的登录名</dd>
+						<dd>不能是你朋友的名字，尤其是女朋友</dd>
+						<dd>不能是你家庭成员的名字，包括狗狗</dd>
+						<dd>不能是字典中的某个单词</dd>
+						<dd>不能是常用的人名</dd>
+						<dd>
+							不能是在键盘上经常连续敲击的字符串比如：
+							<kbd>asdfghjkl</kbd>
+							, or
+							<kbd>12345678</kbd>
+							.
+						</dd>
+					</dl>
+				</article>
+			</main>
+			<script type="text/javascript">
+				addEventHandlers();
+			</script>
+			<!--[if lt IE 8]><script src="http://tools.jb51.net/static/passcreate/ReplaceDataURIsWithAltTextInIE7.js"></script><![endif]-->
+		</div>
+		<!--body end-->
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="CreateStrongPassword"></div>
+		<script type="text/javascript">
+			
+		</script>
+	</div>
+</div>

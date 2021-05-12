@@ -1,0 +1,225 @@
+<!-- http://tools.jb51.net/password/my_password_safe -->
+<meta charset="utf-8"><style>
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+</style>
+<!-- -TODO ph之提供服务 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/passcheck/style.css"></link>
+<div class="col-md-9">
+	<div class="page-header">
+		<h1>
+			我的密码安全吗？ <small></small>
+		</h1>
+		<p>输入密码,告诉您用一台普通PC电脑需多长时间可以破解它！！！</p>
+	</div>
+	<div class="well">
+		<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/passcheck/hsimp.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/passcheck/dictionary.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/passcheck/passcheck.js"></script>
+		<div class="form-group">
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8 col-xs-12 text-center">
+					<label for="password">在下面输入你想要检测的密码，瞬间即会得到答案:)</label> <input
+						type="password" class="form-control input-lg" id="password"
+						maxlength="60" placeholder="请输入密码" onkeyup="passcheck(this);"
+						oninput="passcheck(this);"> <br>
+					<p id="result">
+						一台普通PC破解你的密码需要<br> <span>0.00004 seconds</span>
+					</p>
+					<ul id="warnings">
+						<li class="warning"><h3>可以替换为电话号码或日期</h3>
+							<p>你的密码可以是一个电话号码或日期，最好是你比较熟悉但别人不容易猜测到的特殊号码或日期。</p></li>
+						<li class="warning"><h3>长度: 太短了！</h3>
+							<p>你的密码太短了，较长的密码更难以破解。</p></li>
+						<li class="advice"><h3>字符组合规则: 没有符号</h3>
+							<p>你的密码只包含数字或字母，添加符号可以极大增强密码安全性，不要忘了有空格这个符号喔:)</p></li>
+					</ul>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="alert alert-success" role="alert">
+		<strong>此功能安全吗？</strong><br>
+		此功能完全基于JavaScript实现，这是一个客户端脚本语言，即所有计算都由你的电脑执行。这意味着，此网页一旦在浏览器里加载完毕后，就再没有其他任何数据需要从服务器上读取了，即不会再与服务器连接，当然也不会取得你电脑里任何信息了。如果你想确认一下，可以在此网页加载完毕后，关闭网络连接，一切都将继续工作:)
+	</div>
+
+	<div class="alert alert-info" role="alert">
+		<strong>为什么不使用HTTPS？</strong><br>
+		因为你的电脑没有向服务器传递任何数据，所以无需HTTPS安全认证来加密:)
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="my_password_safe"></div>
+		<script type="text/javascript">
+		</script>
+	</div>
+</div>

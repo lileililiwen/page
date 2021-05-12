@@ -1,0 +1,242 @@
+<meta charset="UTF-8"/>
+<meta charset="utf-8"><style>
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h1, .h1 {
+    font-size: 36px;
+}
+.clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+    display: table;
+    content: " ";
+}
+:before, :after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical>.btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
+    clear: both;
+}
+.v {
+	margin-left: 20px
+}
+.btn-sm, .btn-group-sm>.btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-sm, .btn-group-sm>.btn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+textarea.form-control {
+    height: auto;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.panel-body {
+    padding: 3px;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/bootstrap.min.js"></script>
+<div class="col-md-9">
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/phpfmt/FileSaver.js"></script>
+
+	<h1 align="center">在线中英文根据首字母排序工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px">这是一款给出中英文后可根据其首字母进行排序显示的工具，用户只需输入需要排序的中英文，将其用英文逗号隔开，即可实现根据其英文首字母一键排序的功能。提供给需要的朋友使用。</h2>
+	<div class=" aw-main-content" style="max-height: 2000px">
+
+		<div
+			style="font-size: 16px; border: 2px solid #faebcc; border-radius: 4px; padding: 10px; margin: 10px 0;">
+			<font color="#FF0000">在线根据首字母排序,请用逗号(中英文)分隔。</font>使用这款工具你可以很方便的将<strong>通讯录里的人名</strong>或者<strong>出席会议的人员</strong>进行简单的拼音排序！效率杠杠滴~&nbsp;&nbsp;试一下看看是不是很方便~
+		</div>
+		<div class="panel panel-default">
+
+			<div class="panel-body">
+				<!--内容块开始-->
+				<p style="margin-top: 20px;">
+					<textarea id="txt" class="form-control" style="height: 300px;"
+						spellcheck="false"></textarea>
+				</p>
+
+				<p>
+					<button type="button" id="parse" data-toggle="modal"
+						data-target="#myModal" class="btn btn-success btn-sm">排序</button>
+					<button type="button" class="btn btn-primary btn-sm" id="testCase">来个案例试试</button>
+					<button type="button" class="btn btn-default btn-sm"
+						onclick="txt.value=''">清空</button>
+				</p>
+
+
+				<!-- Modal -->
+				<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+					aria-labelledby="myModalLabel" aria-hidden="true"
+					style="display: none;">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"
+									aria-label="Close">
+									<span aria-hidden="true">×</span>
+								</button>
+								<h4 class="modal-title" id="myModalLabel">在线根据首字母排序结果</h4>
+							</div>
+							<div class="modal-body" id="resData">
+								<div>
+									<span>A</span>
+									<div class="v">afafasdfaasdfasdfafasf</div>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default"
+									data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-primary"
+									onclick="save_changes()">保存</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--内容块结束-->
+			</div>
+			<div class="panel-footer"></div>
+		</div>
+		<script>
+			$("#testCase")
+					.click(
+							function() {
+								$("#txt")
+										.val(
+												"王,李,张,刘,陈,杨,黄,吴,赵,周,,徐,孙,马,朱,胡,林,郭,何,高,罗,,郑,梁,谢,宋,唐,许,邓,A,冯,韩,曹,,曾,彭,C,萧,蔡,F,潘,田,董,袁,于,余,,叶,蒋,杜,苏,魏,程,吕,丁,沈,任，白，卞 ");
+							});
+
+			$("#parse").click(function() {
+				var tt = $("#txt").val();
+				tt = tt.replace(/\n/g, "");
+				tt = tt.replace(/，/g, ",");
+				tt = tt.replace(/\t/g, ",");
+				tt = tt.replace(/\s+/g, ",");
+				/* $.ajax({
+					type : 'POST',
+					url : '/api/zh_sort.php',
+					async : false,
+					data : {
+						"txt" : tt
+					},
+					success : function(rel) {
+						$("#resData").html(rel);
+					}
+				}) */
+				$("#resData").html("<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>");
+
+			});
+			$("#myModal").modal();
+			function save_changes() {
+				if ($("#resData").html() == "") {
+					alert("待保存的内容不能为空");
+					return;
+				} else {
+					var savecodes = document.getElementById("resData").innerText;
+					var blob = new Blob([ savecodes ], {
+						type : "text/plain;charset=utf-8"
+					});
+					saveAs(blob, "jb51_paixu.txt");
+				}
+			}
+		</script>
+
+		<!-- content ed -->
+	</div>
+	<br>
+	<div class="well">
+		<div id="SOHUCS" sid="zh_paixu"></div>
+		<script type="text/javascript">
+		</script>
+
+	</div>
+
+</div>
+<!-- http://tools.jb51.net/aideddesign/zh_paixu -->

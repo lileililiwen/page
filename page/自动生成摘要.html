@@ -1,0 +1,1155 @@
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/webuploader.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/clipboard.min.js"></script>
+<meta charset="utf-8"><style>
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2,
+	.col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3,
+	.col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5,
+	.col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
+	.col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8,
+	.col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9,
+	.col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11,
+	.col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
+	{
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+	background-color: #f5f5f5;
+	color: #4e4e50;
+}
+
+body {
+	font-family: "Arial", "Microsoft YaHei", "黑体", "宋体", sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #333333;
+	background-color: #fff;
+}
+
+html {
+	font-size: 10px;
+	-webkit-tap-highlight-color: transparent;
+}
+
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+*:before, *:after {
+	box-sizing: border-box;
+}
+
+#bot #main .block {
+	margin-bottom: 2em;
+}
+
+#uploader .placeholder {
+	min-height: 120px;
+	padding-top: 30px;
+	text-align: center;
+	color: #cccccc;
+	font-size: 18px;
+	position: relative;
+}
+
+.webuploader-container {
+	position: relative;
+}
+
+#uploader .placeholder .webuploader-pick {
+	font-size: 18px;
+	background: #00b7ee;
+	border-radius: 3px;
+	line-height: 44px;
+	padding: 0 30px;
+	*width: 120px;
+	color: #fff;
+	display: inline-block;
+	margin: 0 auto 20px auto;
+	cursor: pointer;
+	box-shadow: 0 1px 1px rgb(0 0 0/ 10%);
+}
+
+.webuploader-pick {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	background: #00b7ee;
+	padding: 10px 15px;
+	color: #fff;
+	text-align: center;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+input[type="file"] {
+	display: block;
+}
+
+.webuploader-element-invisible {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+#uploader .queueList {
+	margin: 20px;
+	border: 3px dashed #e6e6e6;
+}
+
+#uploader p {
+	margin: 0;
+}
+
+#bot #main .block h2 {
+	margin-top: 0;
+}
+
+#bot #main header h2 {
+	border-bottom: 1px solid #d5d5d5;
+	font-size: 1.15em;
+	font-weight: 600;
+	padding-bottom: 0.5em;
+	margin-bottom: 1em;
+	text-transform: uppercase;
+}
+
+#main .block header h2 {
+	font-size: 1em;
+	font-weight: 600;
+	text-transform: uppercase;
+	border-bottom: 1px solid #d5d5d5;
+	padding-bottom: 0.5em;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+.btn-primary:hover {
+	color: #fff;
+	background-color: #286090;
+	border-color: #204d74;
+}
+
+.btn:hover, .btn:focus, .btn.focus {
+	color: #333;
+	text-decoration: none;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+}
+
+.btn {
+	display: inline-block;
+	margin-bottom: 0;
+	font-weight: normal;
+	text-align: center;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	border-radius: 4px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.col-xs-12 {
+	width: 100%;
+}
+
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6,
+	.col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+	float: left;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2,
+	.col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3,
+	.col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5,
+	.col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6,
+	.col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8,
+	.col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9,
+	.col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11,
+	.col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12
+	{
+	position: relative;
+	min-height: 1px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.btn-warning {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+button, select {
+	text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"]
+	{
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.text-danger {
+	color: #a94442;
+}
+
+#bot #main .block h3 {
+	margin-top: 0;
+}
+
+.nav-tabs {
+	border-bottom: 1px solid #ddd;
+}
+
+.nav {
+	margin-bottom: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+ul, ol {
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+.nav-tabs>li {
+	float: left;
+	margin-bottom: -1px;
+}
+
+.nav>li {
+	position: relative;
+	display: block;
+}
+
+.nav:after {
+	clear: both;
+}
+
+.nav:before, .nav:after {
+	content: " ";
+	display: table;
+}
+
+textarea.form-control {
+	height: auto;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #555555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+textarea {
+	overflow: auto;
+}
+
+button, input, optgroup, select, textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+.panel-primary>.panel-heading {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+
+.panel-heading {
+	padding: 10px 15px;
+	border-bottom: 1px solid transparent;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.panel-default {
+    border-color: #ddd;
+}
+.panel-body:after {
+    clear: both;
+}
+.panel-body:before, .panel-body:after {
+    content: " ";
+    display: table;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+@media (min-width: 768px){
+	.form-inline .form-control {
+	    display: inline-block;
+	    width: auto;
+	    vertical-align: middle;
+	}
+}
+.panel-default > .panel-heading {
+    color: #333333;
+    background-color: #f5f5f5;
+    border-color: #ddd;
+}
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgb(0 0 0/ 5%);
+}
+
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+.pull-right {
+	float: right;
+}
+
+.pull-right {
+	float: right !important;
+}
+
+p {
+	margin: 0 0 10px;
+}
+
+.panel-body:after {
+	clear: both;
+}
+
+.panel-body:before, .panel-body:after {
+	content: " ";
+	display: table;
+}
+
+textarea.form-control {
+	height: auto;
+}
+
+.panel-body {
+	padding: 15px;
+}
+
+.row {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.btn-danger {
+	color: #fff;
+	background-color: #d9534f;
+	border-color: #d43f3a;
+}
+
+.col-xs-4 {
+	width: 33.3333333333%;
+}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    color: #555555;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+.nav-tabs > li > a {
+    margin-right: 2px;
+    line-height: 1.428571429;
+    border: 1px solid transparent;
+    border-radius: 4px 4px 0 0;
+}
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+</style>
+<div id="main" class="col-md-8">
+	<div id="content" class="block">
+		<h3>在线文章自动摘要/自动生成摘要</h3>
+		<small>此工具能够为你的文章自动生成一定字数的摘要，使用非常方便快捷。</small>
+		<hr>
+		<div class="cms-content">
+			<div class="row">
+				<div class="col-md-12" style="margin-bottom: 10px;">
+					<grammarly-extension data-grammarly-shadow-root="true"
+						style="position: absolute; top: 0px; left: 0px; pointer-events: none;"
+						class="cGcvT"></grammarly-extension>
+					<grammarly-extension data-grammarly-shadow-root="true"
+						style="position: absolute; top: 0px; left: 0px; pointer-events: none;"
+						class="cGcvT"></grammarly-extension>
+					<!-- Nav tabs -->
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#via_input"
+							aria-controls="via_input" role="tab" data-toggle="tab">通过输入数据</a></li>
+						<li role="presentation"><a href="#via_file"
+							aria-controls="via_file" role="tab" data-toggle="tab">通过上传文件</a></li>
+					</ul>
+					<!-- Tab panes -->
+					<div class="tab-content">
+						<!-- via input -->
+						<div role="tabpanel" class="tab-pane active" id="via_input">
+							<div class="panel panel-default"
+								style="border-top: 0; border-radius: 0px 0px 5px 5px;">
+								<div class="panel-body">
+									<p>
+										<textarea id="title" class="form-control" rows="1"
+											placeholder="请输入标题（可选）"></textarea>
+									</p>
+									<p>
+										<textarea id="text" class="form-control" rows="6"
+											placeholder="请输入文章内容（必填）" spellcheck="false"></textarea>
+									</p>
+									<p class="pull-right">
+										<a href="#" onclick="example();">点我输入例子数据&gt;&gt;</a>
+									</p>
+								</div>
+							</div>
+							<div class="panel panel-primary">
+								<!-- Default panel contents -->
+								<div class="panel-heading">自动摘要结果：</div>
+								<div class="panel-body">
+									<textarea id="result" class="form-control" rows="8"
+										placeholder="结果将在这里显示~" spellcheck="false"></textarea>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-3 col-xs-4">
+									<p>
+										<select id="limit_words" class="form-control">
+											<option value="200">200字以内</option>
+											<option value="300">300字以内</option>
+											<option value="400">400字以内</option>
+											<option value="500">500字以内</option>
+										</select>
+									</p>
+								</div>
+								<div class="col-md-9 col-xs-8">
+									<p>
+										<a id="submit" class="btn btn-success" onclick="submit(1);">提交自动摘要</a>
+										<a class="btn btn-success btn-copy"
+											data-clipboard-target="#result">复制</a> <a
+											class="btn btn-success btn-cut" data-clipboard-action="cut"
+											data-clipboard-target="#result">剪切</a> <a
+											class="btn btn-danger" onclick="clean();">清空</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<!-- via file -->
+						<div role="tabpanel" class="tab-pane" id="via_file">
+							<div id="uploader" class="collapse in">
+								<div class="queueList">
+									<div id="dndArea" class="placeholder">
+										<div id="filePicker" class="webuploader-container">
+											<div class="webuploader-pick">选择文件</div>
+											<div id="rt_rt_1f52nggps11mj3rv9m71nivvjo1"
+												style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;">
+												<input type="file" name="file"
+													class="webuploader-element-invisible" multiple="multiple"
+													accept=""><label
+													style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+											</div>
+										</div>
+										<p>将数据文件拖到这里（支持txt,限制10M）</p>
+										<p>如果没有“按钮”请刷新</p>
+									</div>
+									<ul class="filelist"></ul>
+								</div>
+								<div class="statusBar" style="display: none;">
+									<div class="progress" style="display: none;">
+										<span class="text">0%</span> <span class="percentage"
+											style="width: 0%;"></span>
+									</div>
+									<div class="info">共0份（0B），已传0份</div>
+									<div class="btns">
+										<div id="filePicker2" class="webuploader-container">
+											<div class="webuploader-pick">选择文件</div>
+											<div id="rt_rt_1f52nggpuvb2b0hlkggls1kaq6"
+												style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;">
+												<input type="file" name="file"
+													class="webuploader-element-invisible" multiple="multiple"
+													accept=""><label
+													style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+											</div>
+										</div>
+										<div class="uploadBtn state-pedding">开始上传</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<span>参数</span>
+								</div>
+								<div class="panel-body">
+									<div class="form-inline">
+										<label> 标题： </label> <select id="limit_words_file"
+											class="form-control">
+											<option value="200">200字以内</option>
+											<option value="300">300字以内</option>
+											<option value="400">400字以内</option>
+											<option value="500">500字以内</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<!-- Default panel contents -->
+								<div class="panel-heading">
+									<span>转换结果下载（文件）</span> <a class="pull-right badge" href="#"
+										onclick="download_all();">下载全部</a>
+								</div>
+								<!-- List group -->
+								<ul id="result_file" class="list-group">
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- JavaScripts -->
+<script type="text/javascript">
+/* param */
+func    = 'AutoSummary';
+islogin = 0;
+ismobile= 0;
+par_upload_size = 10 * 1024 * 1024;
+par_file_num_limit = 10;
+uploadApi = 'upload';
+ids     = '';
+ts      = '';
+is_request_submit = 0;
+is_request_package = 0;
+
+/* copy/cut */
+
+
+/* get example */
+function example(){
+  //alert(info['example']);
+  $('#title').val('华为技术有限公司');
+  $('#text').val("        华为技术有限公司是一家生产销售通信设备的民营通信科技公司，于1987年正式注册成立，总部位于中国广东省深圳市龙岗区坂田华为基地。华为是全球领先的信息与通信技术（ICT）解决方案供应商，专注于ICT领域，坚持稳健经营、持续创新、开放合作，在电信运营商、企业、终端和云计算等领域构筑了端到端的解决方案优势，为运营商客户、企业客户和消费者提供有竞争力的ICT解决方案、产品和服务，并致力于实现未来信息社会、构建更美好的全联接世界。2013年，华为首超全球第一大电信设备商爱立信，排名《财富》世界500强第315位。\
+\r\n        截至2016年底，华为有17万多名员工，华为的产品和解决方案已经应用于全球170多个国家，服务全球运营商50强中的45家及全球1/3的人口。\
+\r\n2016年8月，全国工商联发布“2016中国民营企业500强”榜单，华为以3950.09亿元的年营业收入成为500强榜首。8月，华为在“2016中国企业500强”中排名第27位。2017年6月6日，《2017年BrandZ最具价值全球品牌100强》公布，华为名列第49位。2018年7月19日美国《财富》杂志发布了最新一期的世界500强名单 ，华为排名第72位。2018年《中国500最具价值品牌》华为居第六位。12月18日，世界品牌实验室编制的《2018世界品牌500强》揭晓，华为排名第58位。\
+\r\n        2018年2月，沃达丰和华为完成首次5G通话测试；2018年8月，澳大利亚政府以国家安全担忧为由，禁止华为和中兴为其规划中的5G移动网络供应设备。2019年3月，华为表示，美国政府涉嫌攻击华为服务器。");
+}
+/* submit/down/clean */
+function submit(type){
+    $("#submit").addClass('disabled');
+    $('#result').addClass('disabled');
+    $('#submit').html("正在转换...");
+    $.ajax({
+        url: '/SmallTools/'+func,
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            title:$('#title').val(),
+            text: $('#text').val(),
+            limit_words:$("#limit_words").val(),
+        },
+    })
+    .done(function(data) {
+        //console.log(data);
+        if(data.errno >0){
+            alert(data.desc);
+        }else{
+            $('#result').val(data.text);
+        }
+    })
+    .fail(function() {
+        //console.log("error");
+    })
+    .always(function() {
+        $('#submit').removeClass('disabled');
+        $('#result').removeClass('disabled');
+        $('#submit').html("提交自动摘要");
+        //console.log("complete");
+    });
+}
+function submit_file(file,id,time){
+    $.ajax({
+        url: '/SmallTools/'+func,
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            id: id,
+            time: time,
+            limit_words:$("#limit_words_file").val(),
+        },
+    })
+    .done(function(data) {
+        console.log(data);
+        if(data.errno >0){
+            $('#file_'+file.file.__hash).html('文件《'+file.file.name+'》转换失败，如有问题请联系客服（网站底部邮箱）');
+        }else{
+            $('#file_'+file.file.__hash).html('文件《'+file.file.name+'》转换完成，请点击下载<a class="badge" target="_blank" href="download?id='+data.id+'&t='+data.time+'">Down</a>');
+            if(ids == '') {
+                ids = data.id;
+                ts  = data.time;
+            }
+            else{
+                ids = ids+','+data.id;
+                ts  = ts+','+data.time;
+            }
+        }
+    })
+    .fail(function() {
+        //console.log("error");
+    })
+    .always(function() {
+        //console.log("complete");
+    });
+}
+function download_all(){
+    if(is_request_package === 1){
+        return false;
+    }
+    is_request_package = 1;
+    $.ajax({
+        url: 'package',
+        type: 'POST',
+        dataType: 'json',
+        data: {ids: ids,ts:ts},
+      }).done(function(data) {
+        is_request_package = 0;
+        //console.log(data);
+        if(data.errno >0){
+            alert(data.desc);
+        }
+        if(data.errno == 0){
+            $(window).attr('location','download?id='+data.id+'&t='+data.time);
+        }
+      }).fail(function() {
+        //console.log("error");
+      }).always(function() {
+        //console.log("complete");
+      });
+}
+function clean(){
+    $('#title').val('');
+    $('#text').val('');
+    $('#result').val('');
+}
+    jQuery(function() {
+        var $ = jQuery,    // just in case. Make sure it's not an other libaray.
+            $wrap = $('#uploader'),
+            $queue = $('<ul class="filelist"></ul>').appendTo($wrap.find('.queueList')),
+            $statusBar = $wrap.find('.statusBar'),
+            $info = $statusBar.find('.info'),
+            $upload = $wrap.find('.uploadBtn'),
+            $placeHolder = $wrap.find('.placeholder'),
+            $progress = $statusBar.find('.progress').hide(),
+            fileCount = 0,
+            fileSize = 0,
+            ratio = window.devicePixelRatio || 1,
+            thumbnailWidth = 110 * ratio,
+            thumbnailHeight = 110 * ratio,
+            state = 'pedding',
+            percentages = {},
+            supportTransition = (function(){
+                var s = document.createElement('p').style,
+                    r = 'transition' in s ||
+                        'WebkitTransition' in s ||
+                        'MozTransition' in s ||
+                        'msTransition' in s ||
+                        'OTransition' in s;
+                s = null;
+                return r;
+            })(),
+            //init
+            uploader;
+        if (!WebUploader.Uploader.support()){
+            alert('Web Uploader 不支持您的浏览器！如果你使用的是IE浏览器，请尝试升级 flash 播放器');
+            throw new Error( 'WebUploader does not support the browser you are using.');
+        }
+        //$('#free_ids').val('');
+        uploader = WebUploader.create({
+            pick: {
+                id: '#filePicker',
+                label: '选择文件'
+            },
+            dnd: '#uploader .queueList',
+            paste: document.body,
+            accept: {
+                title: '请选择文件',
+                extensions: '*.*',
+                mimeTypes: '',
+            },
+            swf: '/public/webuploader/Uploader.swf',
+            threads:1,
+            disableGlobalDnd: true,
+            chunked: false,
+            auto: true,
+            dupliacate:true,
+            server: uploadApi,
+            fileNumLimit: par_file_num_limit,
+            fileSizeLimit: par_upload_size,
+            fileSingleSizeLimit: par_upload_size,
+            compress: false,
+            resize: false,
+        });
+        uploader.addButton({
+            id: '#filePicker2',
+            label: '选择文件'
+        });
+        // 当有文件添加进来时执行，负责view的创建
+        function addFile( file ) {
+            var $li = $( '<li id="' + file.id + '">' +
+                '<p class="title">' + file.name + '</p>' +
+                '<p class="imgWrap"></p>'+
+                '<p class="progress"><span></span></p>' +
+                '</li>'),
+
+                $btns = $('<div class="file-panel">' +
+                    '<span class="cancel">删除</span>' +
+                    '</div>').appendTo( $li ),
+                $prgress = $li.find('p.progress span'),
+                $wrap = $li.find( 'p.imgWrap' ),
+                $info = $('<p class="error"></p>'),
+
+                showError = function(code) {
+                    switch( code ) {
+                        case 'exceed_size':
+                            if(islogin){
+                                text = '单个文件大小超出最大限制（' + par_upload_size/1024/1024 +'M）';
+                            }
+                            else{
+                                text = '未注册用户仅能上传最大 ' + par_upload_size/1024/1024 +'M 文件'
+                            }
+
+                            break;
+
+                        case 'interrupt':
+                            text = '上传暂停';
+                            break;
+
+                        default:
+                            text = '上传失败，请重试';
+                            break;
+                    }
+
+                    $info.text( text ).appendTo( $li );
+                };
+            if ( file.getStatus() === 'invalid' ) {
+                showError(file.statusText);
+            } else {
+                // @todo lazyload
+                $wrap.text('预览中');
+                uploader.makeThumb( file, function( error, src ) {
+                    if (error) {
+                        $wrap.text('非图片无预览');
+                        return;
+                    }
+
+                    var img = $('<img src="'+src+'">');
+                    $wrap.empty().append(img);
+                }, thumbnailWidth, thumbnailHeight );
+
+                percentages[ file.id ] = [ file.size, 0 ];
+                file.rotation = 0;
+            }
+            file.on('statuschange', function( cur, prev ) {
+                if ( prev === 'progress' ) {
+                    $prgress.hide().width(0);
+                } else if ( prev === 'queued' ) {
+                    $li.off( 'mouseenter mouseleave' );
+                    $btns.remove();
+                }
+
+                // 成功
+                if ( cur === 'error' || cur === 'invalid' ) {
+                    //console.log( file.statusText );
+                    showError( file.statusText );
+                    percentages[ file.id ][ 1 ] = 1;
+                } else if ( cur === 'interrupt' ) {
+                    showError( 'interrupt' );
+                } else if ( cur === 'queued' ) {
+                    percentages[ file.id ][ 1 ] = 0;
+                } else if ( cur === 'progress' ) {
+                    $info.remove();
+                    $prgress.css('display', 'block');
+                } else if ( cur === 'complete' ) {
+                    $li.append( '<span class="success"></span>' );
+                }
+
+                $li.removeClass( 'state-' + prev ).addClass( 'state-' + cur );
+            });
+            $li.on( 'mouseenter', function() {
+                $btns.stop().animate({height: 30});
+            });
+            $li.on( 'mouseleave', function() {
+                $btns.stop().animate({height: 0});
+            });
+            $btns.on( 'click', 'span', function() {
+                var index = $(this).index(),
+                    deg;
+                switch ( index ) {
+                    case 0:
+                        uploader.removeFile( file );
+                        return;
+                    case 1:
+                        file.rotation += 90;
+                        break;
+                    case 2:
+                        file.rotation -= 90;
+                        break;
+                }
+                if ( supportTransition ) {
+                    deg = 'rotate(' + file.rotation + 'deg)';
+                    $wrap.css({
+                        '-webkit-transform': deg,
+                        '-mos-transform': deg,
+                        '-o-transform': deg,
+                        'transform': deg
+                    });
+                } else {
+                    $wrap.css( 'filter', 'progid:DXImageTransform.Microsoft.BasicImage(rotation='+ (~~((file.rotation/90)%4 + 4)%4) +')');
+                }
+            });
+            $li.appendTo( $queue );
+        }
+
+        // 负责view的销毁
+        function removeFile(file) {
+            var $li = $('#'+file.id);
+
+            delete percentages[ file.id ];
+            updateTotalProgress();
+            $li.off().find('.file-panel').off().end().remove();
+        }
+        function updateTotalProgress() {
+            var loaded = 0,
+                total = 0,
+                spans = $progress.children(),
+                percent;
+
+            $.each( percentages, function( k, v ) {
+                total += v[ 0 ];
+                loaded += v[ 0 ] * v[ 1 ];
+            } );
+
+            percent = total ? loaded / total : 0;
+
+            spans.eq( 0 ).text( Math.round( percent * 100 ) + '%' );
+            spans.eq( 1 ).css( 'width', Math.round( percent * 100 ) + '%' );
+            updateStatus();
+        }
+        function updateStatus() {
+            var text = '', stats;
+
+            if (state === 'ready') {
+                text = '选中' + fileCount + '份文件，共' +
+                    WebUploader.formatSize(fileSize) + '。';
+            } else if ( state === 'confirm' ) {
+                stats = uploader.getStats();
+                if (stats.uploadFailNum) {
+                    text = '已上传' + stats.successNum+ '份，'+
+                        stats.uploadFailNum + '份文件上传失败，<a class="retry" href="#">重新上传</a>失败我文件或<a class="ignore" href="#">忽略</a>'
+                }
+
+            }else{
+                stats = uploader.getStats();
+                text = '共' + fileCount + '份（' +
+                    WebUploader.formatSize( fileSize )  +
+                    '），已传' + stats.successNum + '份';
+
+                if ( stats.uploadFailNum ) {
+                    text += '，失败' + stats.uploadFailNum + '份';
+                }
+            }
+
+            $info.html( text );
+        }
+        function setState( val ) {
+            var file, stats;
+
+            if ( val === state ) {
+                return;
+            }
+
+            $upload.removeClass('state-' + state);
+            $upload.addClass('state-' + val);
+            state = val;
+
+            switch (state) {
+                case 'pedding':
+                    $placeHolder.removeClass( 'element-invisible' );
+                    $queue.parent().removeClass('filled');
+                    $queue.hide();
+                    $statusBar.addClass( 'element-invisible' );
+                    uploader.refresh();
+                    break;
+
+                case 'ready':
+                    $placeHolder.addClass( 'element-invisible' );
+                    $('#filePicker2').removeClass( 'element-invisible');
+                    $queue.parent().addClass('filled');
+                    $queue.show();
+                    $statusBar.removeClass('element-invisible');
+                    uploader.refresh();
+                    break;
+
+                case 'uploading':
+                    $( '#filePicker2' ).addClass( 'element-invisible' );
+                    $progress.show();
+                    $upload.text( '暂停上传' );
+                    break;
+
+                case 'paused':
+                    $progress.show();
+                    $upload.text( '继续上传' );
+                    break;
+
+                case 'confirm':
+                    $progress.hide();
+                    //$upload.text( '开始上传' ).addClass( 'disabled' );
+                    $upload.addClass( 'element-invisible' );
+                    $('#filePicker2').removeClass( 'element-invisible');
+                    stats = uploader.getStats();
+                    if ( stats.successNum && !stats.uploadFailNum ) {
+                        setState( 'finish' );
+                        return;
+                    }
+                    break;
+                case 'finish':
+                    stats = uploader.getStats();
+                    if (stats.successNum) {
+                        //alert( '上传成功' );
+                    } else {
+                        // 没有成功的图片，重设
+                        state = 'done';
+                        location.reload();
+                    }
+                    break;
+            }
+            updateStatus();
+        }
+        uploader.onUploadProgress = function( file, percentage ) {
+            var $li = $('#'+file.id),
+                $percent = $li.find('.progress span');
+
+            $percent.css( 'width', percentage * 100 + '%' );
+            percentages[ file.id ][ 1 ] = percentage;
+            updateTotalProgress();
+        };
+        uploader.onFileQueued = function(file) {
+            fileCount++;
+            fileSize += file.size;
+            if (fileCount === 1) {
+                $placeHolder.addClass('element-invisible');
+                $statusBar.show();
+            }
+            addFile(file);
+            setState('ready');
+            updateTotalProgress();
+        };
+        uploader.onFileDequeued = function(file) {
+            fileCount--;
+            fileSize -= file.size;
+
+            if (!fileCount) {
+                setState('pedding');
+            }
+
+            removeFile(file);
+            updateTotalProgress();
+        };
+        uploader.on('uploadComplete', function( file ){
+        });
+        uploader.on('uploadStart', function(file){
+            //console.log(file);
+            $('#result_file').append('<li id="file_'+file.__hash+'" class="list-group-item">文件《'+file.name+'》正在上传...</li>');
+        });
+        uploader.on('uploadAccept', function(file,response){
+            //console.log(response);
+            if(response.errno != 0){
+                //console.log("上传失败，原因：("+ response.desc+")请截图并发送邮件到ocr@wdku.net可快速解决问题");
+                $('#file_'+file.file.__hash).html('文件《'+file.file.name+'》上传失败，如有问题请联系客服（网站底部邮箱）');
+                return false;
+            }else{
+                //console.log(file.file.__hash);
+                $('#file_'+file.file.__hash).html('文件《'+file.file.name+'》正在转换，请稍后');
+                submit_file(file,response.data.id,response.data.time);
+
+            }
+        });
+        uploader.on('all',function( type ) {
+            var stats;
+            switch(type) {
+                case 'uploadFinished':
+                    setState('confirm');
+                    break;
+
+                case 'startUpload':
+                    setState('uploading');
+                    break;
+
+                case 'stopUpload':
+                    setState('paused');
+                    break;
+
+            }
+        });
+        uploader.onError = function(code) {
+            if(code == 'Q_TYPE_DENIED'){
+                alert('对不起，该后缀文件不支持');
+            }
+            else if(code == 'Q_EXCEED_NUM_LIMIT'){
+                if(!islogin){
+                    alert('对不起，未注册登录用户不能使用批量上传');
+                    $(window).attr('location','https://www.wdku.net/user/reg');
+                }else{
+                    alert("对不起，最大允许上传" +par_file_num_limit+"份文件");
+                }
+            }
+            else if(code == 'F_EXCEED_SIZE'){
+                if(!islogin){
+                    alert('对不起，未注册登录用户最大仅能上传 '+par_upload_size/1024/1024+'M 文件');
+                    $(window).attr('location','https://www.wdku.net/user/reg');
+                }else{
+                    alert("对不起，单个上传文件尺寸最大只能上传"+par_upload_size/1024/1024 +'M');
+                }
+            }
+            else if(code == 'Q_EXCEED_SIZE_LIMIT'){
+                if(!islogin){
+                    alert('对不起，未注册登录用户最大仅能上传 '+par_upload_size/1024/1024+'M 文件');
+                    $(window).attr('location','https://www.wdku.net/user/reg');
+                }else{
+                    alert("对不起，所有上传文件总尺寸最大" +par_upload_size/1024/1024 +'M，请缩小');
+                }
+            }
+            else if(code == 'F_DUPLICATE'){
+                alert('该文件已经存在。');
+            }
+            else{
+                alert('Error: ' + code);
+            }
+        };
+        $upload.on('click', function() {
+            if ( $(this).hasClass( 'disabled' ) ) {
+                return false;
+            }
+            if ( state === 'ready' ) {
+                uploader.upload();
+            } else if ( state === 'paused' ) {
+                uploader.upload();
+            } else if ( state === 'uploading' ) {
+                uploader.stop();
+            }
+        });
+        $info.on( 'click', '.retry', function() {
+            uploader.retry();
+        });
+        $info.on( 'click', '.ignore', function() {
+            alert( 'todo' );
+        });
+        $upload.addClass( 'state-' + state );
+        updateTotalProgress();
+    });
+</script>
+
+<script>
+    $(function () {
+        $(".dropdown").mouseover(function () {
+            $(this).addClass("open");
+        });
+        $(".dropdown").mouseleave(function(){
+            $(this).removeClass("open");
+        })
+     });
+ </script>
+<!-- 	https://www.wdku.net/SmallTools/AutoSummary.html -->

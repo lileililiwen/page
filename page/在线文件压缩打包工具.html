@@ -1,0 +1,240 @@
+<!-- https://uutool.cn/file-zip/ -->
+<meta charset="utf-8"><style>
+.tool-box {
+    border: 1px solid #eaeaea;
+    padding: 10px;
+    box-shadow: 4px 4px 8px #eaeaea;
+}
+.drag-box .file-picker {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+}
+[type=file] {
+    width: 100%;
+}
+[type=checkbox], [type=file], [type=radio] {
+    margin: 0 0 1rem;
+}
+button, input, optgroup, select, textarea {
+    font-family: inherit;
+}
+input {
+    overflow: visible;
+}
+button, input, optgroup, select, textarea {
+    font-family: sans-serif;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+}
+*, ::after, ::before {
+    box-sizing: inherit;
+}
+.drag-box {
+    border: 2px dashed #bbb;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    text-align: center;
+    height: 200px;
+    font: 20pt bold, "Vollkorn";
+    color: #bbb;
+    position: relative;
+}
+blockquote, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, li, ol, p, pre, td, th, ul {
+    margin: 0;
+    padding: 0;
+}
+main.theme .aside-item.tool-tip {
+    position: relative;
+    margin-top: 0;
+}
+.aside-item {
+    border: 1px solid #eaeaea;
+    margin-top: 20px;
+    box-shadow: 2px 2px 6px #eaeaea;
+}
+.aside-item .aside-body {
+    padding: 10px;
+}
+
+.aside-item.green-tool-tip {
+    color: #009100;
+    font-size: 14px;
+    font-weight: 600;
+    background: #F0FFF0;
+    margin-bottom: 20px;
+    border: 1px solid #DFFFDF;
+}
+.aside-item .aside-title {
+    color: #555;
+    font-size: 16px;
+    line-height: 2.2;
+    background: #f5f5f5;
+    color: #555;
+    padding-left: 10px;
+}
+.button.expanded {
+    display: block;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem 0;
+    font-family: inherit;
+    padding: .85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    font-size: .9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    background-color: #1779ba;
+    color: #fefefe;
+}
+p {
+    margin-bottom: 1rem;
+    font-size: inherit;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+}
+</style>
+<div class="grid-container">
+	<div class="grid-x grid-margin-x">
+		<div id="toolWrapper" class="cell large-9 small-12">
+			<div class="tool-box">
+				<div id="dragBox" class="drag-box">
+					<input type="file" id="filePicker" accept="https://cdn.jsdelivr.net/gh/lileililiwen/static/image/*"
+						multiple="multiple" class="file-picker">
+					<div class="tip-word">将图片拖入此处或点击上传（CTRL+V）</div>
+				</div>
+				<div>
+					<button class="button expanded ">打包以下文件</button>
+				</div>
+				<div v-if="0!=fileArr.length" v-cloak>
+					<p>
+						以下文件将会打包到同一个压缩包中（共计 <b v-text="fileArr.length"></b>）：
+					</p>
+					<ul>
+						<li v-for="(item,index) in fileArr">{{item.name}}</li>
+					</ul>
+					<button class="button expanded " @click="downloadAll">打包以上文件</button>
+				</div>
+				<!---->
+				<p>点击选择或直接将文件拖入到页面中，点击打包按钮即可完成打包下载，支持全格式（任意后缀）文件。</p>
+				<p>只适用于小文件，受限于浏览器内存，大文件可能会因内存不足而压缩失败，建议只用于小文件压缩打包。</p>
+				<p>速度超快，实测百文件仅需一秒，具体速度取决于您的计算机性能。</p>
+			</div>
+		</div>
+		<aside id="sidebar" class="cell large-3 small-12 small-order-2">
+			<div style="height: 0px; overflow: hidden;">
+				<img src="/icon/file-zip.jpg" alt="在线文件压缩打包工具">
+			</div>
+			<div class="aside-item tool-tip">
+				<div class="aside-title">工具简介</div>
+				<div class="aside-body">
+					<div class="text-collapse collapse">
+						<p style="margin-bottom: 20px;">
+							在线文件压缩打包工具，可以在线将多个文件打包成一个zip格式的压缩文档，将文件拖入页面，点击打包下载即可完成文件打包压缩。<br>
+							<br> 如果您的电脑没有安装压缩软件，本工具将很轻易地为您打包压缩文件。
+						</p>
+						<div title="展开/折叠工具简介" class="toggle-btn"></div>
+					</div>
+				</div>
+			</div>
+			<div class="aside-item green-tool-tip">
+				<div class="aside-body">本工具数据均在本地浏览器处理，不会上传到网络服务器中，请放心使用！</div>
+			</div>
+		</aside>
+	</div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/require.js"></script>
+<script>
+	require([ "vue", "layers" ], function(a) {
+		app = new Vue({
+			el : "#app",
+			data : {
+				fileArr : []
+			},
+			methods : {
+				dragFileInit : function() {
+					var e = this;
+					var d = document.getElementById("app");
+					if (!d.addEventListener) {
+						return
+					}
+					var g = function(j) {
+						if (0 == j.length) {
+							layer.msg("没有需要处理的文件");
+							return
+						}
+						for (var i = 0; i < j.length; i++) {
+							e.fileArr.push({
+								name : j[i].name,
+								file : j[i],
+								newName : ""
+							})
+						}
+					};
+					var b = function(i) {
+						g(i.target.files)
+					};
+					var h = function(i) {
+						i.stopPropagation();
+						i.preventDefault();
+						g(i.dataTransfer.files)
+					};
+					var c = function(i) {
+						i.stopPropagation();
+						i.preventDefault();
+						i.dataTransfer.dropEffect = "copy"
+					};
+					d.addEventListener("dragenter", c, false);
+					d.addEventListener("dragover", c, false);
+					d.addEventListener("drop", h, false);
+					var f = document.getElementById("filePicker");
+					f.addEventListener("change", b, false)
+				},
+				downloadAll : function() {
+					if (0 === this.fileArr.length) {
+						layer.msg("请选择文件后重试！");
+						return
+					}
+					layer.msg("文件打包中...", {
+						icon : 16,
+						time : 0,
+						shade : 0.62
+					});
+					var b = this;
+					require([ "jszip", "fileSaver" ], function(d) {
+						var c = new d();
+						b.fileArr.forEach(function(f, e) {
+							c.file(f.name, f.file)
+						});
+						c.generateAsync({
+							type : "blob"
+						}).then(
+								function(e) {
+									layer.msg("打包成功！");
+									saveAs(e, "文件压缩包-" + (new Date()).valueOf()
+											+ ".zip")
+								})
+					})
+				}
+			},
+			mounted : function() {
+				this.dragFileInit()
+			}
+		})
+	});
+</script>

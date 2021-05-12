@@ -1,0 +1,202 @@
+<meta charset="utf-8"><style>
+h1, .h1 {
+    font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.btn-group>.btn:first-child {
+    margin-left: 0;
+}
+.btn-group>.btn, .btn-group-vertical>.btn {
+    position: relative;
+    float: left;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+</style>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9">
+
+	<h1 align="center" style="font-size: 30px;">在线HTML/MarkDown相互转换工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">
+		这是一款Html/MarkDown相互转换工具，可实现HTML标记与MarkDown的相互转换功能，并提供了一个MarkDown标记的例子供大家参考。欢迎需要的朋友使用。</h2>
+	<div class="panel panel-default">
+		<!--内容块开始-->
+		<div class="panel-body">
+			<div>
+				<div class="linedwrap">
+					<textarea id="text_input" name="json_input" onkeyup=""
+						class="form-control"
+						style="height: 200px; font-size: 11px !important; resize: both;"
+						rows="32" spellcheck="false" placeholder="请输入要处理的字符串"></textarea>
+				</div>
+			</div>
+			<div class="validateButtons clear">
+				<div class="left" style="float: left; margin: 10px auto;">
+					<div class="btn-group" role="group" aria-label="...">
+						<button type="button" class="btn btn-primary"
+							onclick="md_2_html();">Markdown转Html</button>
+						<button type="button" class="btn btn-primary"
+							onclick="html_2_md();">Html转Markdown</button>
+						<button type="button" class="btn btn-primary"
+							onclick="markdemo();">来个Markdown</button>
+						<button type="button" class="btn btn-danger" onclick="empty()">
+							清空结果</button>
+					</div>
+
+				</div>
+			</div>
+			<div class="top10">
+				<div class="linedwrap">
+					<textarea id="result_input" name="json_input" class="form-control"
+						style="height: 200px; font-size: 11px !important; resize: both;"
+						rows="32" placeholder="这里显示处理后的字符串"></textarea>
+				</div>
+			</div>
+			<input type="hidden" id="encode" value="1">
+			<pre id="results" class="top10" style="display: none;"></pre>
+		</div>
+		<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/code/markdown.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/code/to-markdown.js"></script>
+		<script type="text/javascript">
+        var demo = "# MarkDown示例"
+                   +"\n"
+                   + "### Header 3"
+                   + "\n"
+                    + "> This is a blockquote.\n"
+                    + ">\n "
+                    + "> This is the second paragraph in the blockquote.\n"
+                    + ">\n"
+                    + "> ## This is an H2 in a blockquote";
+
+        function markdemo(){
+        
+         $("#text_input").val(demo);
+        }
+        function html_2_md() {
+            $('#result_input').val(toMarkdown($('#text_input').val()));
+            $("#show_panel").hide();
+        }
+        function md_2_html() {
+            var result = markdown.toHTML($('#text_input').val());
+            $('#result_input').val(result);
+            $("#show_panel").show();
+            $("#show").html(result);
+        }
+        function empty() {
+            $("#show_panel").hide();
+            document.getElementById('text_input').value = '';
+            document.getElementById('result_input').value = '';
+            document.getElementById('text_input').focus();
+           
+        }
+			</script>
+
+		<!--内容块结束-->
+	</div>
+
+	<div class="well">
+		<hr>
+		<div id="SOHUCS" sid="html2markdown"></div>
+		<script type="text/javascript"> 
+</script>
+
+	</div>
+
+</div>

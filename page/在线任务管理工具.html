@@ -1,0 +1,277 @@
+<!-- http://www.jsons.cn/planlist/ -->
+<meta charset="utf-8"><style>
+body {
+	font-family: 'Microsoft Yahei', '微软雅黑', '宋体', \5b8b\4f53, Tahoma, Arial,
+		Helvetica, STHeiti;
+	margin: 0;
+	background-color: #fff;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert-dismissable, .alert-dismissible {
+	padding-right: 35px;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#add-input {
+	width: 100%;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control {
+	padding: 0 10px;
+	height: 34px;
+	max-width: 98%;
+	line-height: normal;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-sizing: content-box;
+}
+
+#list {
+	margin-top: 20px;
+}
+
+.list-group {
+	padding-left: 0;
+	margin-bottom: 20px;
+}
+
+.list-group-item:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+a.list-group-item, button.list-group-item {
+	color: #555;
+}
+
+.list-group-item {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+
+a.list-group-item, button.list-group-item {
+	color: #555;
+}
+
+.list-group-item .value.checked {
+	text-decoration: line-through;
+	color: #999999;
+}
+
+.list-group-item .value {
+	margin-left: 30px;
+	height: 20px;
+}
+
+.list-group-item .delete {
+	float: right;
+	cursor: pointer;
+	top: 7px;
+}
+
+.list-group-item {
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+	margin-bottom: -1px;
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
+
+.glyphicon {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-family: 'Glyphicons Halflings';
+	font-style: normal;
+	font-weight: 400;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.list-group-item .check {
+	display: block;
+	top: 12px;
+	margin: 0;
+	padding: 0;
+	width: 20px;
+	height: 20px;
+	background: url(image/check.png) no-repeat;
+	border: none;
+	cursor: pointer;
+	position: absolute;
+}
+
+.glyphicon-trash:before {
+	content: "\e020";
+}
+
+.list-group-item .check.checked {
+	background-position: -22px 0;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+</style>
+<div class="container">
+	<div class="accordion" id="Div1" style="height: auto !important;">
+		<div class="accordion-group">
+			<div class="alert alert-success alert-dismissible" role="alert">
+				在线任务管理工具：今日事今日毕，干掉拖延的坏毛病</div>
+			<div class="panel">
+				<div id="wrap">
+					<div class="content">
+						<div id="box">
+							<div id="add">
+								<input id="add-input" type="text" class="form-control"
+									style="max-width: 98%;" placeholder="添加任务（按回车键确认Enter）">
+							</div>
+							<div id="list" class="list-group">
+								<a href="#" class="list-group-item" data-time="1620378441042"><span
+									class="check"></span><span class="value">abc</span><span
+									class="delete glyphicon glyphicon-trash" style="display: none;"></span></a><a
+									href="#" class="list-group-item" data-time="1"><span
+									class="check checked"></span><span class="value checked">采用浏览器本地存储
+										功能实现，请大胆刷新页面！（兼容绝大部分现代浏览器）</span><span
+									class="delete glyphicon glyphicon-trash"></span></a><a href="#"
+									class="list-group-item" data-time="0"><span
+									class="check checked"></span><span class="value checked">在线任务管理工具，干掉你的拖延症-Json在线解析格式化工具</span><span
+									class="delete glyphicon glyphicon-trash"></span></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group" style="display: none;">
+			<div id="demo1" class="in collapse bs-docs-demoexample">
+				<h4 style="color: #66be8c; margin-bottom: 20px;">
+					在线任务管理防拖延-在线任务统计工具</h4>
+				<h5>1,帮助你合理有效的利用时间,统计每天所干的任务,让工作过程看得见</h5>
+				<h5>2,采用浏览器本地存储 功能实现，请大胆刷新页面，信息不会丢失！（兼容绝大部分现代浏览器）</h5>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function () {
+    $('#add-input').focus();
+    $('#add-input').bind('keypress', function (event) {
+        var value = $(this).val();
+        if (event.keyCode == "13" && value) {
+            var time = (new Date()).getTime();
+            addItem(time, value, false);
+            store(time, value, false);
+            $(this).val('');
+        }
+    });
+    $('#list').click(function (event) {
+        var target = $(event.target);
+        if (target.hasClass('delete')) {
+            target.parents('.list-group-item').remove();
+            localStorage.removeItem(target.parents('.list-group-item').attr('data-time'));
+            return false;
+        }
+        if (!target.hasClass('list-group-item')) {
+            target = $(target).parents('.list-group-item');
+        }
+        var check = target.children('.check').not('.checked');
+        if (check.length) {
+            changeStatus(target.attr('data-time'), true);
+            check.addClass('checked');
+            check.next('.value').addClass('checked');
+            check.next('.value').next('.delete').show();
+        } else {
+            changeStatus(target.attr('data-time'), false);
+            target.children('.check.checked').removeClass('checked');
+            target.children('.value.checked').removeClass('checked');
+            target.children('.delete').hide();
+        }
+        return false;
+    });
+    store(0, '在线任务管理工具，干掉你的拖延症-Json在线解析格式化工具', true);
+    store(1, '采用浏览器本地存储 功能实现，请大胆刷新页面！（兼容绝大部分现代浏览器）', true);
+    var z = /^[0-9]*$/;
+    for (x in localStorage) {
+        if (z.test(x)) {
+            var obj = JSON.parse(localStorage.getItem(x));
+            addItem(obj.time, obj.value, obj.checked);
+        }
+    }
+});
+
+function store(time, value, checked) {
+    localStorage.setItem(time, stringify(time, value, checked));
+}
+function changeStatus(time, checked) {
+    var obj = JSON.parse(localStorage.getItem(time));
+    obj.checked = checked ? true : false;
+    localStorage.setItem(time, JSON.stringify(obj));
+}
+function stringify(time, value, checked) {
+    var obj = new Object;
+    obj.time = time;
+    obj.value = value;
+    obj.checked = checked;
+    return JSON.stringify(obj);
+}
+function addItem(time, value, checked) {
+    var node = checked ? '<a href="#" class="list-group-item" data-time="' + time + '"><span class="check checked"></span><span class="value checked">' + value + '</span><span class="delete glyphicon glyphicon-trash"></span></a>' : '<a href="#" class="list-group-item" data-time="' + time + '"><span class="check"></span><span class="value">' + value + '</span><span class="delete glyphicon glyphicon-trash" style="display: none;"></span></a>';
+    $('#list').prepend(node);
+}
+</script>

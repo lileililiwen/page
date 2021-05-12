@@ -1,0 +1,894 @@
+<!-- https://mailpad.cn/ -->
+<meta charset="utf-8"><style>
+body {
+	display: block;
+	min-height: 500px;
+}
+html, body {
+	font-family: "Microsoft YaHei";
+}
+
+.button {
+	background-color: #00CC00;
+}
+
+.clearfix {
+	overflow: hidden;
+	_zoom: 1;
+}
+
+.clearfix ::after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+h1 {
+	font-size: 28px;
+}
+
+@media ( max-width : 760px) {
+	h1 {
+		font-size: 22px;
+	}
+}
+
+p {
+	font-size: 14px;
+}
+
+[v-cloak] {
+	display: none;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.captcha-box {
+	height: 50px;
+	margin-bottom: 10px;
+}
+
+.form-error {
+	display: block;
+	margin-bottom: 6px;
+	color: #CC3333;
+}
+
+.form-required {
+	color: #CC3333;
+	font-weight: 700;
+}
+
+.page-title {
+	margin-top: 25px;
+	margin-bottom: 20px;
+}
+
+.tool-des {
+	color: #666;
+	font-size: 14px;
+	margin-bottom: 25px;
+}
+
+.checkbox-group input[type='checkbox'], .checkbox-group input[type='radio']
+	{
+	display: none;
+}
+
+.checkbox-group label {
+	font-size: 17px;
+	height: 20px;
+	line-height: 20px;
+	display: inline-block;
+}
+
+.checkbox-group label::before {
+	font-size: 14px;
+	border: 1px solid #ccc;
+	padding: 1px;
+	width: 20px;
+	height: 20px;
+	text-align: center;
+	line-height: 16px;
+	display: inline-block;
+	font-family: iconfont;
+	vertical-align: text-bottom;
+	content: '00';
+	text-indent: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	margin-right: 6px;
+}
+
+.checkbox-group label:hover::before {
+	content: '\e607';
+	color: #ccc;
+	text-indent: 0;
+}
+
+.checkbox-group input[type='checkbox']:checked ~ label, .checkbox-group input[type='radio']:checked 
+	~ label {
+	color: #1779ba;
+}
+
+.checkbox-group input[type='checkbox']:checked ~ label::before,
+	.checkbox-group input[type='radio']:checked ~ label::before {
+	content: '\e607';
+	border-color: #1779ba;
+	color: #fff;
+	background: #1779ba;
+	text-indent: 0;
+}
+
+.checkbox-group input[type='radio'] ~ label::before {
+	border-radius: 50%;
+	line-height: 17px;
+}
+
+@media ( max-width : 760px) {
+	.banner-swiper {
+		height: auto;
+	}
+	.banner-swiper .swiper-slide {
+		background-position: center center;
+		background-size: cover;
+	}
+	.banner-swiper.inited .swiper-slide {
+		padding-bottom: 32.5%;
+	}
+}
+
+@media ( max-width : 640px) {
+	fieldset.fieldset {
+		padding: 20px 4px;
+	}
+	fieldset.fieldset span.checkbox-group {
+		margin-top: 8px;
+		margin-bottom: 8px;
+		display: inline-block;
+	}
+}
+
+header {
+	border-bottom: 1px solid #eaeaea;
+}
+
+header .logo {
+	height: 38px;
+}
+
+header .logo img {
+	padding: 10px 20px;
+}
+
+header .logo span {
+	line-height: 38px;
+	font-size: 16px;
+	vertical-align: middle;
+}
+
+header .main-nav-box ul {
+	list-style-type: none;
+	display: block;
+	margin: 0;
+}
+
+header .main-nav-box ul li a i {
+	font-size: 16px;
+	margin-right: 6px;
+}
+
+header .main-nav-box ul li.has-child::after {
+	content: '\e61c';
+	margin-left: 4px;
+	font-family: iconfont;
+	color: #7d7d7d;
+}
+
+header .main-nav-box ul li.has-child:hover::after {
+	content: '\e61f';
+}
+
+header .main-nav-box ul.main-nav {
+	text-align: right;
+}
+
+header .main-nav-box ul.main-nav>li {
+	display: inline-block;
+	padding: 0 15px;
+	line-height: 38px;
+	font-size: 16px;
+	position: relative;
+}
+
+header .main-nav-box ul.main-nav>li.active a, header .main-nav-box ul.main-nav>li:hover a
+	{
+	color: #14679e;
+}
+
+@media ( max-width : 760px) {
+	header .main-nav-box ul.main-nav>li.active a, header .main-nav-box ul.main-nav>li:hover a
+		{
+		color: #fff;
+	}
+}
+
+header .main-nav-box ul.main-nav>li.active, header .main-nav-box ul.main-nav>li:hover::before
+	{
+	content: '';
+	display: block;
+	width: 100%;
+	height: 4px;
+	background: #14679e;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+header .main-nav-box ul.main-nav>li a {
+	color: #000;
+}
+
+header .main-nav-box ul.main-nav>li.has-child>ul {
+	display: none;
+	z-index: 999;
+	position: absolute;
+	font-size: 16px;
+	min-width: 120px;
+	text-align: left;
+	top: 90px;
+	left: 0;
+}
+
+header .main-nav-box ul.main-nav>li.has-child>ul li {
+	margin: 10px 0;
+	padding: 0 6px;
+}
+
+header .main-nav-box ul.main-nav>li.has-child:hover>ul {
+	display: block;
+}
+
+@media ( max-width : 760px) {
+	header .main-nav-box .toggle-btn {
+		width: 40px;
+		height: 40px;
+		float: right;
+		position: relative;
+		margin: 0;
+		opacity: 0;
+		filter: alpha(opacity = 0);
+	}
+	header .main-nav-box .toggle-btn:checked ~ label.toggle-label::before {
+		content: '\e81b';
+		font-size: 24px;
+	}
+	header .main-nav-box .toggle-btn:checked ~ ul.main-nav {
+		display: block;
+	}
+	header .main-nav-box .toggle-label::before {
+		font-size: 24px;
+		color: #14679e;
+		height: 40px;
+		width: 40px;
+		text-align: center;
+		line-height: 40px;
+		font-family: iconfont;
+		content: '\e81b';
+		position: absolute;
+		right: 10px;
+		top: 0;
+	}
+	header .main-nav-box ul.main-nav {
+		display: none;
+		position: absolute;
+		width: 100%;
+		left: 0;
+		top: 40px;
+		z-index: 999;
+		background: #14679e;
+	}
+	header .main-nav-box ul.main-nav li {
+		display: block;
+		width: 100%;
+		text-align: left;
+		line-height: 40px;
+		border-top: 1px solid #eaeaea;
+	}
+	header .main-nav-box ul.main-nav li a {
+		color: #fff;
+		display: block;
+	}
+}
+
+footer, .footer {
+	background: #373d41;
+	margin-top: 30px;
+	padding: 30px 0;
+	border-top: 1px solid #eaeaea;
+	color: #999;
+}
+
+footer a, .footer a {
+	color: #73777a;
+}
+
+footer a:hover, .footer a:hover {
+	color: #fff;
+}
+
+footer .footer-nav a, .footer .footer-nav a {
+	color: #9b9ea0;
+	margin-right: 35px;
+}
+
+@media ( max-width : 760px) {
+	footer .footer-nav a, .footer .footer-nav a {
+		margin-right: 10px;
+		font-size: 13px;
+	}
+}
+
+footer .footer-nav a:hover, .footer .footer-nav a:hover {
+	color: #fff;
+}
+
+footer .friend-link, .footer .friend-link {
+	margin-bottom: 20px;
+	margin-top: 30px;
+}
+
+footer .friend-link a, .footer .friend-link a {
+	font-size: 14px;
+	margin-left: 0;
+	margin-right: 15px;
+}
+
+footer p.copyright, .footer p.copyright {
+	font-size: 14px;
+	text-align: left;
+	color: #73777a;
+}
+
+.sidebar {
+	z-index: 999;
+	position: fixed;
+	right: 0;
+	bottom: 100px;
+}
+
+@media ( max-width : 760px) {
+	.sidebar {
+		right: 10px;
+		bottom: 60px;
+	}
+	.sidebar ul li {
+		padding: 0 !important;
+	}
+}
+
+.sidebar ul {
+	list-style-type: none;
+	box-shadow: 0 0 3px #ccc;
+}
+
+.sidebar ul li {
+	background: #fff;
+	width: 50px;
+	text-align: center;
+	cursor: pointer;
+	padding: 6px 0;
+	position: relative;
+	border-top: 1px solid #ddd;
+}
+
+.sidebar ul li:hover {
+	background: #991010;
+}
+
+.sidebar ul li:hover i {
+	color: #fff;
+}
+
+.sidebar ul li:hover .hidden-box {
+	display: block;
+}
+
+.sidebar ul li i {
+	color: #991010;
+	font-size: 30px;
+}
+
+.sidebar ul li .hidden-box {
+	z-index: 999;
+	display: none;
+	position: absolute;
+	border: 1px solid #ccc;
+	padding: 6px;
+	right: 50px;
+	top: 0;
+	background: #fff;
+}
+
+.sidebar ul li .hidden-box img {
+	max-width: none;
+}
+
+.sidebar ul li .hidden-box span {
+	color: #3c3c3c;
+	font-size: 14px;
+}
+
+.thanks-box {
+	text-align: center;
+}
+
+.thanks-box-title {
+	font-size: 18px;
+}
+
+.thanks-box-title:after {
+	display: block;
+	content: '▼';
+	margin-bottom: 15px;
+	color: #7d7d7d;
+}
+
+.thanks-box-content {
+	text-align: left;
+	width: 100%;
+	border: 1px solid #d0d0d0;
+	border-radius: 10px;
+	padding: 25px 60px;
+	margin-bottom: 20px;
+}
+
+.thanks-box-content>.title {
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.thanks-box .qr-box {
+	border: 1px solid #305c67;
+	padding: 30px 50px;
+	font-size: 13px;
+}
+
+.thanks-box .qr-box figure {
+	margin-bottom: 20px;
+}
+
+.thanks-box .qr-box span.red {
+	color: #ca0a17;
+}
+
+.text-collapse {
+	position: relative;
+	padding-bottom: 10px;
+}
+
+.text-collapse p {
+	margin-bottom: 0;
+}
+
+.text-collapse .toggle-btn {
+	width: 100%;
+	user-select: none;
+	cursor: pointer;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: none;
+}
+
+.text-collapse .toggle-btn::after {
+	background: #fff;
+	display: block;
+	text-align: center;
+	line-height: 1.6;
+	font-size: 18px;
+	cursor: pointer;
+	font-family: "iconfont";
+	content: '\e61b';
+}
+
+.text-collapse.collapse {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 6;
+	-webkit-box-orient: vertical;
+}
+
+.text-collapse.collapse .toggle-btn {
+	display: block;
+}
+
+.text-collapse.collapse .toggle-btn::after {
+	content: '\e618';
+}
+
+main.theme {
+	min-height: 550px;
+}
+
+main.theme .tool-box {
+	border: 1px solid #eaeaea;
+	padding: 10px;
+	box-shadow: 4px 4px 8px #eaeaea;
+}
+
+main.theme .breadcrumbs-wrapper .breadcrumbs {
+	display: inline-block;
+}
+
+main.theme .breadcrumbs-wrapper .breadcrumbs li h1 {
+	font-size: .6875rem;
+	line-height: 20px;
+	margin-bottom: 0;
+}
+
+main.theme .breadcrumbs-wrapper .tool-extend-btn {
+	color: #555;
+	padding: 0 6px;
+	margin-top: -5px;
+}
+
+main.theme .breadcrumbs-wrapper .tool-extend-btn i {
+	font-size: 20px;
+}
+
+main.theme aside#sidebar.collapse {
+	display: none;
+}
+
+main.theme .aside-item {
+	border: 1px solid #eaeaea;
+	margin-top: 20px;
+	box-shadow: 2px 2px 6px #eaeaea;
+}
+
+main.theme .aside-item .aside-title {
+	color: #555;
+	font-size: 16px;
+	line-height: 2.2;
+	background: #f5f5f5;
+	color: #555;
+	padding-left: 10px;
+}
+
+main.theme .aside-item .aside-body {
+	padding: 10px;
+}
+
+main.theme .aside-item.green-tool-tip {
+	color: #009100;
+	font-size: 14px;
+	font-weight: 600;
+	background: #F0FFF0;
+	margin-bottom: 20px;
+	border: 1px solid #DFFFDF;
+}
+
+main.theme .aside-item.tool-tip {
+	position: relative;
+	margin-top: 0;
+}
+
+main.theme .aside-item.tool-tip .text-collapse {
+	margin-bottom: -10px;
+	color: #555;
+	min-height: 70px;
+	font-size: 14px;
+	word-break: break-all;
+}
+
+main.theme .aside-item.tool-tip .text-collapse.collapse {
+	-webkit-line-clamp: 2;
+	height: 70px;
+}
+
+main.theme .share-box input {
+	cursor: pointer;
+	font-size: 13px;
+	padding-right: 45px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	background: #fff url("images/icon/copy.png")
+		no-repeat top right;
+}
+
+main.theme .relative-tool ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+main.theme .relative-tool ul li {
+	margin: 4px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+main.theme .relative-tool ul li a {
+	font-size: 14px;
+}
+
+button.js-copy {
+	color: #fff !important;
+}
+
+@media screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+	}
+	aside {
+		border-top: 1px solid #eaeaea;
+		margin-top: 50px;
+	}
+}
+
+h1 {
+	margin-top: 35px !important;
+	margin-bottom: 40px;
+}
+
+h1 a {
+	color: #00CC00;
+}
+
+p {
+	font-size: 18px;
+}
+
+.send-tip {
+	line-height: 38px;
+}
+
+.send-tip .success {
+	color: green;
+}
+
+.send-tip .failure {
+	color: red;
+}
+
+.Validation-tip {
+	margin-left: 6px;
+	color: red;
+}
+
+article {
+	margin-top: 50px;
+}
+
+h2 {
+	font-size: 22px;
+	border-left: 5px solid #888;
+	line-height: 1;
+	padding-left: 15px;
+	margin-bottom: 10px;
+}
+
+.p-item {
+	margin-top: 55px;
+}
+
+.drag-box {
+	border: 2px dashed #bbb;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	text-align: center;
+	height: 200px;
+	font: 20pt bold, "Vollkorn";
+	color: #bbb;
+	position: relative;
+}
+
+.drag-box .tip-word {
+	line-height: 200px;
+	text-align: center;
+}
+
+.drag-box .file-picker {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+
+.file-box {
+	margin-bottom: 25px;
+}
+
+.file-box .file-item {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	position: relative;
+	line-height: 2.2;
+	padding: 0 10px;
+	border: 1px dashed #999;
+	font-size: 14px;
+	margin-bottom: 15px;
+}
+
+.file-box .file-item.upload-ok {
+	border-color: #00CC00;
+}
+
+.file-box .file-item .size {
+	color: #555;
+	margin-left: 10px;
+}
+
+.file-box .file-item .op {
+	display: none;
+	position: absolute;
+	background: #eaeaea;
+	top: 0;
+	right: 10px;
+}
+
+.file-box .file-item .op a {
+	color: red;
+}
+
+.file-box .file-item:hover {
+	background: #eaeaea;
+}
+
+.file-box .file-item:hover .op {
+	display: block;
+}
+</style>
+
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/request.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript" charset="utf-8"	src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/layer.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/vue.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/clipboard.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/css.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/requester.amd.js"></script>
+
+
+<div class="grid-container">
+	<div class="grid-x grid-margin-x data-box">
+		<div class="cell large-12 small-12">
+			<h1 class="text-center">
+				<a href="/">邮推 - 让邮件推送更简单！</a>
+			</h1>
+			<div class="mail-box">
+				<div class="info-group">
+					<label>邮箱地址：<a class="Validation-tip" href="javascript:;"
+						v-if="!isEmailValidation" @click="showValidationBox" v-cloak>该邮箱尚未验证，请点此花10秒完成验证！</a>
+						<input type="text" v-model="emailAddress" autocomplete
+						@blur="checkEmail" placeholder="第一次使用邮推需要先验证邮箱所有权">
+					</label>
+				</div>
+				<div class="info-group">
+					<label>邮件主题： <input type="text" v-model="emailSubject"
+						placeholder="默认为：YYYY-MM-DD无主题邮件">
+					</label>
+				</div>
+				<div class="info-group">
+					<label>邮件内容： <textarea cols="30" rows="10"
+							v-model="emailBody"
+							placeholder="邮件内容严禁含有敏感词汇、微信、QQ、二维码、群信息、FACEBOOK、网盘等社交类和资源分享类信息，否则将会推送失败！"></textarea>
+					</label>
+				</div>
+				<div class="info-group">
+					<label for="">邮件附件： <small>（最多5个文件，总大小5M内）</small>
+					</label>
+					<div class="drag-box" id="dragBox">
+						<input type="file" id="filePicker" class="file-picker" multiple />
+						<div class="tip-word">请点击上传或将文本文件拖到此处</div>
+					</div>
+					<div class="file-box" v-cloak v-if="0!=fileArr.length">
+						<div class="grid-x large-up-4 small-up-1 grid-margin-x">
+							<div class="cell file-item"
+								:class="{'upload-ok':''!=item.file_id}" title="item.name"
+								v-for="(item,index) in fileArr">
+								<span class="name">{{item.name}}</span> <span class="size">{{getFileSize(item.size)}}</span>
+								<span class="op"><a href="javascript:;"
+									@click="removeFile(index)">删除</a></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid-x grid-margin-x">
+					<div class="cell large-2">
+						<button class="button expanded" @click="submitEmail">推送到邮箱</button>
+					</div>
+					<div class="cell large-10">
+						<div v-html="resultTip" class="send-tip">准备就绪...</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cell large-12">
+			<article>
+				<hr>
+				<div class="p-item">
+					<h2>关于邮推</h2>
+					<p>
+						邮推（MailPad.cn）是一个免费的在线邮件推送平台，支持免登陆向自己邮箱推送文本或附件数据，首次使用需要花几秒验证邮件所有权，
+						避免被恶意用于滥发广告，一经验证后，即可限时无限量推送邮件，高效快捷！ <br /> <a
+							href="https://pic3.zhimg.com/80/v2-77a2fa07d8780cecfa01673a8415e80c_720w.gif"
+							target="_blank" rel="nofollow">点击查看使用动画</a>
+					</p>
+				</div>
+				<div class="p-item">
+					<h2>邮推的应用场景？</h2>
+					<ul>
+						<li>随时随地可以将文本数据推送到邮箱永久保存，无需登录，打开即用</li>
+						<li>支持附件推送，可以用于Kindle电子书推送</li>
+						<li>更多功能等您去发现</li>
+					</ul>
+				</div>
+				<div class="p-item">
+					<h2>如何使用邮推？</h2>
+					<p>
+						建议直接打开MailPad.cn使用，首次使用验证时，系统会发送一个6位数字验证码，输入验证码后即可完成验证，后续将可直接使用邮件推送服务。<br />
+						直接输入邮箱地址，邮件主题以及邮件正文，点击推送，一秒直达您的邮箱，首次完成推送后，系统会自动记住您的邮箱地址，后续使用更方便！
+					</p>
+				</div>
+				<div class="p-item">
+					<h2>支持每日推送数量？</h2>
+					<p>限时免费，无限制推送，赶紧试试吧！</p>
+				</div>
+				<div class="p-item">
+					<h2>收不到邮件？</h2>
+					<p>
+						请检查邮箱的垃圾邮件，若被误判为垃圾邮件，请移出到收件箱中。如有任何疑问，欢迎 <a target="_blank"
+							href="http://wpa.qq.com/msgrd?v=3&amp;uin=2011689829&amp;site=qq&amp;menu=yes"
+							title="QQ:2011689829"><img
+							src="https://imgcache.qq.com/bossweb/service/touch/pic/pro_logo_90_90/mobile.png"
+							alt="QQ" style="width: 22px; vertical-align: text-top;">
+							反馈给我们 </a>。
+					</p>
+				</div>
+			</article>
+		</div>
+	</div>
+</div>
+<div style="height: 0; overflow: hidden;">
+	<div id="ValidationTpl" style="padding: 15px;">
+		<div class="grid-x grid-margin-x">
+			<div class="cell large-6">
+				<label for="">邮箱地址： <input type="text" placeholder="需要验证的邮箱"
+					v-model="ValidationEmailAddress" />
+				</label>
+			</div>
+			<div class="cell large-6">
+				<label for=""><br />
+					<button class="button expanded" @click="sendValidationCode">发送验证码</button>
+				</label>
+			</div>
+			<div class="cell large-12">
+				<label for=""> 邮箱验证码： <input type="text"
+					v-model="ValidationCode" placeholder="请检查垃圾箱并移出到收件箱">
+				</label>
+			</div>
+			<div class="cell large-12">
+				<button class="button expanded" @click="ValidationEmail">验证邮箱</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+    var emailData = {"body":""};
+    var emailBody = emailData.body;
+    
+    var isDebug = document.location.protocol != 'https:';
+
+</script>

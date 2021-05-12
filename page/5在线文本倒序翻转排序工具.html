@@ -1,0 +1,207 @@
+<style type="text/css">
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+h2, .h2 {
+	font-size: 30px;
+}
+.flipped_tool textarea {
+    font-family: "Arial Unicode MS", Batang;
+    margin: 10px auto;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.btn-primary {
+	color: #fff;
+	background-color: #428bca;
+	border-color: #357ebd;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.flipped_tool {
+	width: 100%;
+	font-size: 14px;
+}
+
+.flipped_tool textarea {
+	font-family: "Arial Unicode MS", Batang;
+	margin: 10px auto;
+}
+
+.flipped_tool h1 {
+	margin-bottom: 2px;
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center">在线文本倒序翻转排序工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">
+		该工具可实现针对文本内容进行在线翻转排序的功能，支持中英文字，同时可实时显示翻转的结果，有多种用途，方便需要的朋友使用。</h2>
+	<script>
+function flip() {
+ var result = flipString(document.f.original.value.toLowerCase());
+ document.f.flipped.value = result;
+}
+
+function flipString(aString) {
+ var last = aString.length - 1;
+ //Thanks to Brook Monroe for the suggestion to use Array.join
+ var result = new Array(aString.length)
+ for (var i = last; i >= 0; --i) {
+  var c = aString.charAt(i)
+  var r = flipTable[c]
+  result[last - i] = r ? r : c
+ }
+ return result.join('')
+}
+
+var flipTable = {
+a : '\u0250',
+b : 'q',
+c : '\u0254', //open o -- from pne
+d : 'p',
+e : '\u01DD',
+f : '\u025F', //from pne
+g : '\u0183',
+h : '\u0265',
+i : '\u0131', //from pne
+j : '\u027E',
+k : '\u029E',
+//l : '\u0283',
+m : '\u026F',
+n : 'u',
+r : '\u0279',
+t : '\u0287',
+v : '\u028C',
+w : '\u028D',
+y : '\u028E',
+'.' : '\u02D9',
+'[' : ']',
+'(' : ')',
+'{' : '}',
+'?' : '\u00BF', //from pne
+'!' : '\u00A1',
+"\'" : ',',
+'<' : '>',
+'_' : '\u203E',
+'\u203F' : '\u2040',
+'\u2045' : '\u2046',
+'\u2234' : '\u2235',
+'\r' : '\n' //thank you, Yeeliberto
+}
+
+for (i in flipTable) {
+  flipTable[flipTable[i]] = i
+}
+</script>
+	<div class="flipped_tool">
+		<form name="f">
+			原文本: <br>
+			<textarea rows="5" cols="50" name="original" onkeyup="flip()"
+				class="form-control" spellcheck="false"></textarea>
+			<input value="翻转文本" onclick="flip()" type="button"
+				class="submit btn btn-primary">
+			<hr>
+			翻转后的文本: <br>
+			<textarea rows="5" cols="50" name="flipped" class="form-control"></textarea>
+		</form>
+		<h2 align="center" class="alert alert-warning">关于在线翻转排序工具</h2>
+		<h2 class="alert alert-info" style="font-size: 16px;">
+			这是一款脚本之家转自国外网站的字符在线翻转工具，可实现中英文字符翻转功能。非常简便实用，看似不起眼却能实现很多功能，比如变相的伪原创，比较敏感词汇的隐藏....更多功能相信你懂的~O(∩_∩)O~
+		</h2>
+	</div>
+
+</div>
+<div class="well">
+	<hr>
+	<div id="SOHUCS" sid="flipped_txt"></div>
+	<script type="text/javascript"> 
+</script>
+
+</div>
+
+</div>

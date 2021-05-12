@@ -1,0 +1,373 @@
+<!-- http://tools.jb51.net/aideddesign/txt_diff-->
+<style type="text/css">
+#error_msg {
+	border: 1px dashed #C00;
+	padding: 5px;
+	color: #C00;
+	margin: 10px 2px;
+	display: none;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+textarea.form-control {
+	height: auto;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+.table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+
+table {
+	background-color: transparent;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+b, strong {
+    font-weight: 700;
+}
+input[type=file] {
+    display: block;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+
+table.diff {
+	border-collapse: collapse;
+	border: 1px solid darkgray
+}
+
+table.diff tbody {
+	font-family: Courier, monospace
+}
+
+table.diff tbody th {
+	font-family: verdana, arial, 'Bitstream Vera Sans', helvetica,
+		sans-serif;
+	background: #EED;
+	font-size: 11px;
+	font-weight: normal;
+	border: 1px solid #BBC;
+	color: #886;
+	padding: .3em .5em .1em 2em;
+	text-align: right;
+	vertical-align: top
+}
+
+table.diff thead {
+	border-bottom: 1px solid #BBC;
+	background: #EFEFEF;
+	font-family: Verdana
+}
+
+table.diff thead th.texttitle {
+	text-align: left
+}
+
+table.diff tbody td {
+	padding: 0px .4em;
+	padding-top: .4em;
+	vertical-align: top;
+	text-align: left;
+}
+
+table.diff .empty {
+	background-color: #DDD;
+}
+
+table.diff .replace {
+	background-color: #FD8
+}
+
+table.diff .delete {
+	background-color: #E99;
+}
+
+table.diff .skip {
+	background-color: #EFEFEF;
+	border: 1px solid #AAA;
+	border-right: 1px solid #BBC;
+}
+
+table.diff .insert {
+	background-color: #9E9
+}
+
+table.diff th.author {
+	text-align: right;
+	border-top: 1px solid #BBC;
+	background: #EFEFEF
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center">在线文本比较工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">
+		这是一款可针对输入文本进行比较的工具，可快速对比两个文本内容，并高亮显示文本的不同行，是一款非常简单实用的文本工具，免费提供给需要的朋友使用。</h2>
+	<div align="center">
+		<table border="0" width="900" id="table1">
+			<tbody>
+				<tr>
+					<td><pre id="error_msg" class="error_msg"></pre> <input
+						type="hidden" id="contextSize" value="">
+						<div style="color: #777; font-size: 24px;">
+							<strong>结果查看方式:</strong> <input type="radio" name="_viewtype"
+								checked="checked" id="sidebyside"> 左右并排 &nbsp;&nbsp; <input
+								type="radio" name="_viewtype" id="inline"> 上下对比
+						</div>
+
+						<div style="float: left; margin: 10px auto;">
+							<div style="width: 48%; float: left;">
+								<h4>Base Text（基础文本）：</h4>
+								<form action="" method="post" id="upload-form1"
+									enctype="multipart/form-data">
+									<input type="hidden" name="timestamp1" id="timestamp1"
+										value="1620106954"> <input type="hidden" name="token1"
+										id="token1" value="2ec9e1de264cac870fdf4a7d54cd83c6">
+									<input type="file" name="oldfile" class="btn btn-primary">
+								</form>
+								<br>
+								<textarea id="baseText" style="width: 410px; height: 400px"></textarea>
+							</div>
+
+							<div style="width: 48%; float: left; margin-left: 20px;">
+								<h4>New Text（对比文本）：</h4>
+								<form action="" method="post" id="upload-form2"
+									enctype="multipart/form-data">
+									<input type="hidden" name="timestamp2" id="timestamp2"
+										value="1620106954"> <input type="hidden" name="token2"
+										id="token2" value="4dfa92b158becad06fa78e4e1cc32a6e">
+									<input type="file" name="newfile" class="btn btn-primary">
+								</form>
+								<br>
+								<textarea id="newText" style="width: 410px; height: 400px"></textarea>
+							</div>
+						</div>
+						<div style="clear: both;"></div> <input type="button" value="提交"
+						onclick="javascript:diffUsingJS();" class="btn btn-primary"><br>
+						<br> <a name="diff"> </a>
+						<div id="diffoutput"
+							style="width: 100%; text-align: center; margin-bottom: 10px;">
+						</div></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h2 align="center" class="alert alert-warning">关于在线文本比较工具</h2>
+	<div class="alert alert-info" style="font-size: 16px;">
+		文本一键提交比较后，页面直接跳转到对比结果表格，对比结果提供了左右并排与上下对比两种查看方式，并针对2个本文的不同行进行高亮显示。
+	</div>
+	<div class="well">
+		<div id="SOHUCS" sid="txt_diff"></div>
+	</div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.form.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/dojo.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/diffjs/diffview.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/diffjs/difflib.js"></script>
+<script type="text/javascript">
+		var $1 = dojo.byId;
+		dojo.require("dojo.io");
+		var url = window.location.toString().split("#")[0];
+		function diffUsingJS() {
+			var base = difflib.stringAsLines($1("baseText").value);
+			var newtxt = difflib.stringAsLines($1("newText").value);
+			var sm = new difflib.SequenceMatcher(base, newtxt);
+			var opcodes = sm.get_opcodes();
+			var diffoutputdiv = $1("diffoutput");
+			while (diffoutputdiv.firstChild)
+				diffoutputdiv.removeChild(diffoutputdiv.firstChild);
+			var contextSize = $1("contextSize").value;
+			contextSize = contextSize ? contextSize : null;
+			diffoutputdiv.appendChild(diffview.buildView({
+				baseTextLines : base,
+				newTextLines : newtxt,
+				opcodes : opcodes,
+				baseTextName : "Base Text",
+				newTextName : "New Text",
+				contextSize : contextSize,
+				viewType : $1("inline").checked ? 1 : 0
+			}));
+			window.location = url + "#diff";
+		}
+		$(function() {
+
+			$('#upload-form1').find('input[name=oldfile]').on('change',
+					function(e) {
+						e.preventDefault();
+						$('#upload-form1').ajaxSubmit({
+							type : 'post',
+							url : '/static/jscode/diffjs/readtxt.php',
+							data : $("#upload-form1").serialize(),
+							success : function(data) {
+								var json = eval('(' + data + ')');
+								$('#error_msg').hide();
+								$('#error_msg').empty();
+								if (json.error) {
+									$('#error_msg').html(json.error);
+									$('#error_msg').show();
+								} else if (json.rel) {
+									$('#baseText').val(json.rel);
+								}
+							}
+						});
+					});
+			$('#upload-form2').find('input[name=newfile]').on('change',
+					function(e) {
+						e.preventDefault();
+						$('#upload-form2').ajaxSubmit({
+							type : 'post',
+							url : '/static/jscode/diffjs/readtxt.php',
+							data : $("#upload-form2").serialize(),
+							success : function(data) {
+								var json = eval('(' + data + ')');
+								$('#error_msg').hide();
+								$('#error_msg').empty();
+								if (json.error) {
+									$('#error_msg').html(json.error);
+									$('#error_msg').show();
+								} else if (json.rel) {
+									$('#newText').val(json.rel);
+								}
+							}
+						});
+					});
+		});
+	</script>

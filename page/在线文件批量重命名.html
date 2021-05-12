@@ -1,0 +1,246 @@
+<!--
+http://tools.bugscaner.com/filesrename.html-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/bootstrap3.5min.css"></link>
+<meta charset="utf-8"><style>
+    .dropzone.dz-clickable {
+        cursor: pointer;
+    }
+    .dropzone {
+        display: block;
+        min-height: 250px;
+        border: 2px dashed #fd4326;
+        border-radius: 20px;
+        background: white;
+        padding: 20px 20px;
+        background: url(image/upload-background.png) no-repeat center;
+    }
+    .dropzone, .dropzone * {
+        box-sizing: border-box;
+    }
+    .dropzone.dz-clickable * {
+        cursor: default;
+    }
+
+    .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+        cursor: pointer;
+        font-size: 30px;
+        color: #666;
+    }
+
+    .dropzone .dz-message {
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 55px;
+    }
+
+    .dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {
+        cursor: pointer;
+        font-size: 30px;
+        color: #666;
+    }
+    .dropzone .dz-message .click-here {
+        margin-top: 30px;
+        display: inline-block;
+        border-radius: 6px;
+        padding: 10px;
+        background: #fd4326;
+        color: rgb(255, 255, 255);
+        opacity: 0.7;
+    }
+    .view-box {
+        background: #ffffff none repeat scroll 0 0;
+        border-left: 5px solid #494747;
+        color: #494747;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .item-box {
+        border-bottom: 1px dotted #dddddd;
+        overflow: hidden;
+        padding: 20px 0 40px;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    @media (min-width: 768px){
+        .container {
+            width: 750px;
+        }
+    }
+    @media (min-width: 992px){
+        .container {
+            width: 970px;
+        }
+    }
+</style>
+<meta charset="UTF-8">
+<div class="container">
+    <hr>
+    <div class="row text-center" style="margin-top:30px;">
+        <div class="col-md-12"><h3>在线文件批量重命名</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="dropzone dz-clickable" id="my-awesome-dropzone">
+                <div class="dz-default dz-message"><span>拖拽文件添加<div style="clear: both;"></div><div class="click-here">或者点击这里添加需要批量重命名的文件</div></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:20px">
+        <div class="col-md-12">
+            <ul id="user-activate" class="nav nav-tabs" style="padding-top:30px;">
+                <li class="active"><a href="#home" data-toggle="tab">整体重命名</a></li>
+                <li><a href="#xuhao" data-toggle="tab">按数字重命名</a></li>
+                <li><a href="#ios" data-toggle="tab">替换</a></li>
+                <li><a href="#add" data-toggle="tab">添加</a></li>
+                <li><a href="#setting" data-toggle="tab">系统设置</a></li>
+                <li><a href="#exp" data-toggle="tab">使用教程</a></li>
+            </ul>
+        </div>
+    </div>
+    <div style="height:200px;">
+        <div class="tab-content" id="kongzhitai">
+            <div class="tab-pane in active" id="home" style="margin-top:30px;">
+                <div class="form-group"><label>文件名规则：</label><label class="radio-inline"><input type="radio"
+                                                                                                value="nametoupper"
+                                                                                                name="titlename">文件名改成大写
+                </label><label class="radio-inline"><input type="radio" value="nametolower" name="titlename">文件名改成小写
+                </label><label class="radio-inline"><input type="radio" value="namefiresttoupper" name="titlename">文件名中单词第一个字母大写
+                </label></div>
+                <hr>
+                <div class="form-group"><label>扩展名规则：</label><label class="radio-inline"><input type="radio"
+                                                                                                value="kuozhantoupper"
+                                                                                                name="kuozhan">扩展名改成大写
+                </label><label class="radio-inline"><input type="radio" value="kuozhantolower" name="kuozhan">扩展名改成小写
+                </label></div>
+                <hr>
+                <div class="form-group"><label class="input-inline">
+                    扩展名改成：<input type="text" id="kuozhanrename"></label></div>
+            </div>
+            <div class="tab-pane" id="ios" style="margin-top:30px;"><label class="input-inline">
+                替换文件名中的字符串：把<input type="text" id="tihuanqian"></label><label class="input-inline">
+                替换成：<input type="text" id="tihuanhou"></label>
+                <hr>
+                <p>备注,暂时不支持正则表达式,后期添加</p></div>
+            <div class="tab-pane" id="xuhao" style="margin-top:30px;">
+                <div class="form-group"><label>重命名排序规则：</label><label class="radio-inline"><input type="radio" value="1"
+                                                                                                  name="paixu"
+                                                                                                  checked="">按文件名排序
+                </label><label class="radio-inline"><input type="radio" value="2" name="paixu">按时间倒序
+                </label><label class="radio-inline"><input type="radio" value="3" name="paixu">按时间正序
+                </label><label class="radio-inline"><input type="radio" value="4" name="paixu">随机排序
+                </label></div>
+                <hr>
+                <div class="form-group"><label>模板：</label><input type="text" id="yusheinput"
+                                                                 value="#.<self>"><label>预设：</label><select name="yushe"
+                                                                                                            id="yusheflag">
+                    <option value="always" selected="selected">#.&lt;self&gt;</option>
+                    <option value="hourly">#--&lt;self&gt;</option>
+                    <option value="daily">#_ &lt;self&gt;</option>
+                    <option value="weekly">#</option>
+                    <option value="weekly">pic_#</option>
+                    <option value="monthly">file_#</option>
+                </select></div>
+                <hr>
+                <div class="form-group"><label>开始于：</label><input type="number" id="yushestart" min="0"
+                                                                  value="0"><label>增量：</label><input type="number"
+                                                                                                     id="yusheadd"
+                                                                                                     min="1"
+                                                                                                     value="1"><label>位数：</label><input
+                        type="number" id="yusheweishu" min="1" value="1"><label class="radio-inline"><input
+                        name="filter1" type="checkbox" value="1">不足位数补齐
+                </label></div>
+            </div>
+            <div class="tab-pane" id="add" style="margin-top:30px;">
+                <div class="form-group"><label>文件名前添加：</label><input type="text"
+                                                                     id="prefix"><label>文件名后添加：</label><input
+                        type="text" id="suffix"></div>
+            </div>
+            <div class="tab-pane" id="setting" style="margin-top:30px;">
+                <div class="form-group"><label>是否开启实时预览：</label><label class="radio-inline"><input type="radio"
+                                                                                                   value="top50"
+                                                                                                   name="settingvalue"
+                                                                                                   checked="">快速自动预览(只预览前50个,推荐)
+                </label><label class="radio-inline"><input type="radio" value="all" name="settingvalue">开启全部实时预览(文件多的话,浏览器会卡顿)
+                </label></div>
+            </div>
+            <div class="tab-pane" id="exp" style="margin-top:30px;">
+                <div class="roew"><p>每个tab,是单独的一个重命名功能,互不影响</p>
+                    <p>由于是采用js代码编码,与服务器不产生交互,所以处理速度会非常快</p>
+                    <p>程序会把您上传的文件写入的您的电脑内存(超大文件不太适合在本工具处理),然后重命名后,会以压缩包的形式返回给你</p>
+                    <p>作者以每个文档30KB左右,处理5000个文档,大概需要10秒左右！</p>
+                    <p>软件功能仿制了拖把更名器的大部分常用功能,有更高层次的需求,可以自行寻找</p></div>
+            </div>
+        </div>
+    </div>
+    <div id="jindutiaoshow" style="display: none;">
+        在线文件批量重命名处理进度条
+        <div class="progress">
+            <div class="progress progress-striped active">
+                <div id="jindutiao" class="progress-bar" role="progressbar" aria-valuenow="" aria-valuemin="0"
+                     aria-valuemax="100" style="width:0%;"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button id="download-button" class="btn btn-danger" type="button">开始批量重命名</button>
+            <button id="cleanuploadfile" class="btn btn-danger" type="button">清空添加的文件</button>
+        </div>
+    </div>
+    <div class="row" id="filelisthide" style="margin-top:50px;display: none;">
+        <div class="col-md-6"><p>原文件名</p>
+            <ul class="list-group" id="old-upload-files"></ul>
+        </div>
+        <p>处理后的文件名</p>
+        <div class="col-md-6">
+            <ul class="list-group" id="new-upload-files"></ul>
+        </div>
+    </div>
+    <div class="item-box"><h3>在线文件批量重命名工具介绍</h3>
+        <hr>
+        <div class="view-box"><p>在线批量文件更名器是一个免费的、方便大家批量进行文件更名</p>
+            <p>借助于强大的浏览器api,终于可以实现一些只有本地软件才能完成的事情!</p>
+            <p>如果电脑中有大量的文件需要重命名,而对重命名的规则有一定要求,单纯的全选右键重命名已经满足不了你,而电脑软件安装又嫌麻烦</p>
+            <p>可以使用本工具,来帮你一键批量重命名你的本地文件,借助于强大的jszip,把处理好的文件,以压缩包的形式,返还给你</p></div>
+    </div>
+    <div class="item-box"><h3>工具功能</h3>
+        <hr>
+        <div class="view-box"><p>可以看到重命名工具可以支持你多种文件命名的规则</p>
+            <p>- 基本的转换、添加、删除、替换、加序等更名操作</p>
+            <p>- 后缀大小写更名,自定义后缀名称</p>
+            <p>- 文件名大小写更改</p>
+            <p>- 支持自动预览</p>
+            <p>- 支持拖放操作</p>
+            <p>- 操作记录顺序化</p>
+            <p>- 内置了常见的一些预设规则</p></div>
+    </div>
+    <div class="item-box"><h3>问与答</h3>
+        <hr>
+        <div class="view-box"><p>Q: 我怎么添加需要批量重命名的文件？</p>
+            <p>A: 点击最上方的添加按钮,找到需要批量重命名的文件夹,在选择框点击Ctrl+a即可全选文件或者和Shift+鼠标左键选择,也可以Ctrl+鼠标左键选择</p>
+            <p>Q: 在‘数字重命名’选项中,#和
+                <self>分别代表什么？</self>
+            </p>
+            <p>A: #代表你选择数字递增中的规则,
+                <self>代表你文件本身的文件名,其中#和
+                    <self>还有其他字符串您可以随意组合</self>
+                </self>
+            </p>
+            <p>Q: 如何对扩展名进行替换、删除等操作？</p>
+            <p>A: 你不防添加几个文件,把规则来回试试,因为是实时预览,所以你立马可以看到文件重命名的结果,多比较,即可很快知道怎么使用！</p>
+            <p>Q: 如何对文件列表中的文件进行排序？</p>
+            <p>由于目前时间有限,暂时不支持文件排序,后期会添加</p></div>
+    </div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/filesrename.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jszip.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/phpfmt/FileSaver.js"></script>

@@ -1,0 +1,36 @@
+<!-- https://www.online-utility.org/math/compound_interest_calculator.jsp -->
+<link href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/bootstrap3.5min.css"></link>
+<meta charset="utf-8"><style>
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<!--复利计算器--计算逻辑需要放 -->
+<div id="my-page">
+	<h1>Compound Interest Calculator</h1>
+	This free online calculator will show you how your money can grow over
+	time with compound interest, for example in a bank.
+	<form action="" method="get">
+		Principal = <input type=text name="principal" value="300000.00">
+		<br /> Total number of years = <input type=text name="years"
+			value="30"> <br /> Yearly interest rate % = <input type=text
+			name="interest_rate" value="7.00"> <br /> <input type=button
+			id="calc" value="GO" class="alert-success">
+	</form>
+	<label id="message"></label>
+</div>
+<script>
+$(function(){
+	$("#calc").click(function(){
+		var compoundInterest = (p, t, r) => {
+		   var amount = p * (Math.pow((1 + r), t));
+		   var interest = Number(amount - p).toFixed(2);
+		   return interest;
+		};
+		var principal = parseFloat($("[name='principal']").val());
+		var time = parseInt($("[name='years']").val());
+		var rate = parseFloat($("[name='interest_rate']").val());
+		var interest=compoundInterest(principal, time, rate/100);
+		var total=Number(interest+principal).toFixed(2);
+		$("#message").text("In the end, "+principal+" has turned into "+total+" You have made "+interest);
+	});
+});
+</script>

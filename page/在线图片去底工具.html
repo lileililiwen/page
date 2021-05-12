@@ -1,0 +1,183 @@
+<!--
+https://www.aigei.com/bgremover/-->
+<meta charset="utf-8"><style>
+    .slider {
+        display: inline-block;
+        vertical-align: middle;
+        position: relative;
+    }
+    .slider.slider-horizontal .slider-track {
+        height: 10px;
+        width: 100%;
+        margin-top: -5px;
+        top: 50%;
+        left: 0;
+    }
+    .slider-track {
+        position: absolute;
+        cursor: pointer;
+        background-image: -webkit-gradient(linear,left 0,left 100%,from(#f5f5f5),to(#f9f9f9));
+        background-image: -webkit-linear-gradient(top,#f5f5f5,0%,#f9f9f9,100%);
+        background-image: -moz-linear-gradient(top,#f5f5f5 0,#f9f9f9 100%);
+        background-image: linear-gradient(to bottom,#f5f5f5 0,#f9f9f9 100%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5',endColorstr='#fff9f9f9',GradientType=0);
+        -webkit-box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+        box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+        border-radius: 4px;
+    }
+    .slider.slider-horizontal .slider-selection {
+        height: 100%;
+        top: 0;
+        bottom: 0;
+    }
+    .slider-selection {
+        position: absolute;
+        background-image: -webkit-gradient(linear,left 0,left 100%,from(#f9f9f9),to(#f5f5f5));
+        background-image: -webkit-linear-gradient(top,#f9f9f9,0%,#f5f5f5,100%);
+        background-image: -moz-linear-gradient(top,#f9f9f9 0,#f5f5f5 100%);
+        background-image: linear-gradient(to bottom,#f9f9f9 0,#f5f5f5 100%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff9f9f9',endColorstr='#fff5f5f5',GradientType=0);
+        -webkit-box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+        box-shadow: inset 0 -1px 0 rgb(0 0 0 / 15%);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+    slider.slider-horizontal .slider-handle {
+        margin-left: -10px;
+        margin-top: -5px;
+    }
+    .slider-handle.round {
+        border-radius: 50%;
+    }
+    .slider-handle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-image: -webkit-gradient(linear,left 0,left 100%,from(#149bdf),to(#0480be));
+        background-image: -webkit-linear-gradient(top,#149bdf,0%,#0480be,100%);
+        background-image: -moz-linear-gradient(top,#149bdf 0,#0480be 100%);
+        background-image: linear-gradient(to bottom,#149bdf 0,#0480be 100%);
+        background-repeat: repeat-x;
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf',endColorstr='#ff0480be',GradientType=0);
+        -webkit-box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 5%);
+        box-shadow: inset 0 1px 0 rgb(255 255 255 / 20%), 0 1px 2px rgb(0 0 0 / 5%);
+        opacity: .8;
+        border: 0 solid transparent;
+    }
+    .hide {
+        display: none;
+    }
+    .hide {
+        display: none!important;
+    }
+    .tooltip.top {
+        padding: 5px 0;
+        margin-top: -3px;
+    }
+    .tooltip {
+        position: absolute;
+        z-index: 1070;
+        display: block;
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1.42857143;
+        text-align: left;
+        text-align: start;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: none;
+        letter-spacing: normal;
+        word-break: normal;
+        word-spacing: normal;
+        word-wrap: normal;
+        white-space: normal;
+        filter: alpha(opacity=0);
+        opacity: 0;
+        line-break: auto;
+    }
+    * {
+        font-family: "microsoft Yahei","微软雅黑","Hiragino Sans GB",tahoma,arial;
+    }
+    li, ul li {
+        list-style: none;
+    }
+    #work-container ul {
+        float: left;
+        padding: 0 40px 0 0;
+    }
+    .clearfix:before, .clearfix:after, .dl-horizontal dd:before, .dl-horizontal dd:after, .container:before, .container:after, .container-fluid:before, .container-fluid:after, .row:before, .row:after, .form-horizontal .form-group:before, .form-horizontal .form-group:after, .btn-toolbar:before, .btn-toolbar:after, .btn-group-vertical>.btn-group:before, .btn-group-vertical>.btn-group:after, .nav:before, .nav:after, .navbar:before, .navbar:after, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after, .pager:before, .pager:after, .panel-body:before, .panel-body:after, .modal-footer:before, .modal-footer:after {
+        display: table;
+        content: " ";
+    }
+    *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .clearfix:after, .dl-horizontal dd:after, .container:after, .container-fluid:after, .row:after, .form-horizontal .form-group:after, .btn-toolbar:after, .btn-group-vertical>.btn-group:after, .nav:after, .navbar:after, .navbar-header:after, .navbar-collapse:after, .pager:after, .panel-body:after, .modal-footer:after {
+        clear: both;
+    }
+</style>
+<div class="tool-main-container">
+    <h3 class="tool-title">BgRemover - 在线图片去底工具 - 将纯色背景的图片转换为背景透明的图片</h3>
+    <form action="/gei-common/jsonComp/tool/image/upload" id="myForm" method="POST" enctype="multipart/form-data">
+        <input type="file" name="fileData" id="fileData" class="fileinput">
+    </form>
+    <br>
+    <b>容差值：</b>
+    <div class="slider slider-horizontal" id="ex1Slider" style="width: 161px;"><div class="slider-track"><div class="slider-selection" style="left: 0%; width: 0%;"></div><div class="slider-handle round" style="left: 0%;"></div><div class="slider-handle round hide" style="left: 0%;"></div></div><div class="tooltip top" style="top: -30px; left: -11.5px;"><div class="tooltip-arrow"></div><div class="tooltip-inner">1</div></div><input id="absValue" data-slider-id="ex1Slider" type="text" data-slider-min="1" data-slider-max="255" data-slider-step="1" data-slider-value="1" style="display: none;"></div>
+    <!-- <span id="swfuploadBtn"></span>
+      <div id="uploadFileProgress" class="hide"></div>
+      <div id="imageUploadErrorInfoDiv" class="alert alert-error fade in width-500  hide">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        <strong>上传失败：</strong> <span id="imageUploadErrorInfo"></span>
+      </div>
+      <div id="imageUploadSuccessInfoDiv" class="alert alert-success fade in width-500 hide">
+        <button type="button" class="close" data-dismiss="alert">×</button>
+        上传完毕,已成功上传 <strong id="imageUploadSuccessCount"></strong> 个文件!
+      </div> -->
+    <h4 id="infoTip"></h4>
+    <h4 id="warnTip"></h4>
+    <div id="resultBar" style="display: none;">
+        <span id="successTip">图片处理完毕，点击下载</span>
+    </div>
+    <div id="work-container">
+        <ul>
+            <li>
+                <b id="oldFileText">原始图片：</b>
+            </li>
+            <li id="cvBox">
+                <img src="https://cdn-sqn.aigei.com/assets/site/img/tool/demo-bgremover-old.png" alt="原始图片：纯色背景的图片">
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <b id="newFileText">去底后的图片：</b>
+            </li>
+            <li id="resultImageBox">
+                <img src="https://cdn-sqn.aigei.com/assets/site/img/tool/demo-bgremover-new.png" alt="处理后的：背景透明的图片">
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+    <div class="tool-desc above-line under-line">
+        <p>
+            <b>工具说明：</b>
+            当我们在提取一些素材图片的时候，可能由于图片格式等原因，使得原本背景透明的图片变成了纯色背景的图片。这时候我们可以使用BgRemover图片去底工具将“纯色背景的图片”再次还原成“透明背景的图片”。
+        </p>
+        <p>
+            <b>操作方法：</b>
+            点击“浏览文件”按钮，选择需要去底的图片，BgRemover会自动帮你完成图片去底工作，去底完成后点击下载按钮保存已去底的图片即可。
+        </p>
+        <p>
+            <b>浏览器要求：</b>
+            请使用IE9+,或者谷歌,火狐,360,搜狗等浏览器。
+        </p>
+    </div>
+</div>

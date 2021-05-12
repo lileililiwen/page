@@ -1,0 +1,402 @@
+<meta charset="utf-8"><style>
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    background-color: #f5f5f5;
+    color: #4e4e50;
+}
+body {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #fff;
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+#bot #main .block {
+    margin-bottom: 2em;
+}
+#uploader .placeholder {
+    min-height: 120px;
+    padding-top: 30px;
+    text-align: center;
+    color: #cccccc;
+    font-size: 18px;
+    position: relative;
+}
+.webuploader-container {
+    position: relative;
+}
+#uploader .placeholder .webuploader-pick {
+    font-size: 18px;
+    background: #00b7ee;
+    border-radius: 3px;
+    line-height: 44px;
+    padding: 0 30px;
+    *width: 120px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 auto 20px auto;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+}
+.webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+input[type="file"] {
+    display: block;
+}
+.webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+#uploader .queueList {
+    margin: 20px;
+    border: 3px dashed #e6e6e6;
+}
+#uploader p {
+    margin: 0;
+}
+#bot #main .block h2 {
+    margin-top: 0;
+}
+
+#bot #main header h2 {
+    border-bottom: 1px solid #d5d5d5;
+    font-size: 1.15em;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+#main .block header h2 {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: 0.5em;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn:hover, .btn:focus, .btn.focus {
+    color: #333;
+    text-decoration: none;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.col-xs-12 {
+    width: 100%;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+button, select {
+    text-transform: none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.text-danger {
+    color: #a94442;
+}
+</style>
+<div id="main" class="col-md-8">
+	<div id="about" class="block">
+		<h2>
+			在线PDF水印去除工具<sup class="text-danger">new</sup><a
+				style="float: right; font-size: 16px; line-height: 18px; text-decoration: none;"
+				href="https://www.wdku.net">&gt;&gt;返回主页</a>
+		</h2>
+		<hr>
+		<div class="cms-content">
+			功能介绍：很好用的PDF水印删除工具，PDF去水印功能，支持选择删除文字水印，图形水印，图像水印，保留原版排版，也可用于删除特定的文字，图形和图像，支持预览转换结果（缩略图）。<br>功能别名：pdf文字去除，pdf图片去除，pdf内容删除工具，PDF内容批量去除工具。
+		</div>
+	</div>
+	<div id="media" class="block">
+		<header>
+			<h2>
+				<span data-toggle="collapse" data-target="#uploader">第一步：上传文件<span
+					class="caret"></span></span><a style="float: right;" class="text-warning"
+					href="#" data-toggle="modal" data-target="#feedback">点我反馈问题？</a>
+			</h2>
+		</header>
+		<div id="uploader" class="wu-example collapse in">
+			<div class="queueList">
+				<div id="dndArea" class="placeholder"
+					style="padding-top: 20px; min-height: 120px;">
+					<div id="filePicker" class="webuploader-container">
+						<div class="webuploader-pick">选择文件</div>
+						<div id="rt_rt_1f52ngnjhgll1tbt1nre18dt1qgg1"
+							style="position: absolute; inset: 0px auto auto 271px; width: 132px; height: 44px; overflow: hidden;">
+							<input type="file" name="file"
+								class="webuploader-element-invisible" multiple="multiple"
+								accept=""><label
+								style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+						</div>
+					</div>
+					<p>或者将转换文件拖到这里</p>
+					<p>允许上传格式:pdf</p>
+					<p>如果没有“按钮”请刷新</p>
+				</div>
+				<ul class="filelist"></ul>
+			</div>
+			<div class="statusBar" style="display: none;">
+				<div class="progress" style="display: none;">
+					<span class="text">0%</span> <span class="percentage"
+						style="width: 0%;"></span>
+				</div>
+				<div class="info">共0张（0B），已传0张</div>
+				<div class="btns">
+					<div id="filePicker2"></div>
+					<div class="uploadBtn state-pedding">开始上传</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="related" class="block">
+		<div class="row">
+			<div id="selectForm" class="col-md-6">
+				<header>
+					<h2 data-toggle="collapse" data-target="#convparam">
+						第二步：转换参数/分析<span class="caret"></span>
+					</h2>
+				</header>
+				<div class="row collapse in" id="convparam">
+					<div class="col-md-12" style="margin-top: 10px;">
+						<label class="radio-inline" style="font-weight: bold">转换内核：</label>
+						<!--
+                                    <label class="radio-inline">
+                                        <input type="radio" name="radio_core" id="radio_core3" value="v3" checked>新版v2<sup class="text-danger"><i class="glyphicon glyphicon-thumbs-up"></i></sup>
+                                    </label>
+                                    -->
+						<label class="radio-inline"> <input type="radio"
+							name="radio_core" id="radio_core1" value="v2" checked="">新版<sup
+							class="text-danger"><i
+								class="glyphicon glyphicon-thumbs-up"></i></sup>
+						</label> <label class="radio-inline"> <input type="radio"
+							name="radio_core" id="radio_core2" value="v1">旧版
+						</label>
+					</div>
+					<div class="col-md-12" style="margin-top: 10px;">
+						<label class="radio-inline" style="font-weight: bold">
+							分析页面： </label> <label class="radio-inline" style="padding-left: 0;">
+							第<input type="text" name="analyze_page" id="analyze_page"
+							value="1" style="max-width: 30px;"> 页
+						</label>
+					</div>
+					<div class="col-md-12" style="margin-top: 10px;">
+						<label class="radio-inline" style="font-weight: bold">
+							PDF密码： </label> <label class="radio-inline" style="padding-left: 0;">
+							<input type="text" name="text_pass" id="text_pass" value=""
+							placeholder="请输入PDF文件打开密码">
+						</label>
+					</div>
+					<div class="col-md-12" style="margin-top: 20px;">
+						<div id="submitAnalyzeForm">
+							<button id="analyze_button" type="submit"
+								class="btn btn-lg btn-info col-xs-6 col-xs-offset-2"
+								onclick="analyze();">分析文档</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="tips" class="col-md-6">
+				<header>
+					<h2 data-toggle="collapse" data-target="#remind">
+						温馨提示<span class="caret"></span>
+					</h2>
+				</header>
+				<div class="collapse in" id="remind">
+					<p style="text-indent: 2em" class="text-danger">
+						1、选中的变色内容，画横杆的文字将会被去除</p>
+					<p style="text-indent: 2em" class="text-danger">
+						2、点击图片，图片会被隐藏起来，转换后将会被去除（可以预览看看）</p>
+					<p style="text-indent: 2em" class="text-danger">
+						3、无法去除PDF图片上的水印</p>
+					<p style="text-indent: 2em" class="text-danger">
+						4、如果第1页没有或者看不到水印，可输入其他包含水印的页面分析清除的内容</p>
+					<p style="text-indent: 2em" class="text-danger">
+						5、PDF文件格式复杂繁多，特别是有的水印比较复杂，可能无法去除，建议预览后没问题再转换。</p>
+					<!--
+                                <p style="text-indent: 2em" class="text-danger">
+                                3、如果去除失败，建议使用<a href="/PDFEditor">PDF在线编辑器</a></p>
+                                -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="analyzeFrame" class="block hidden">
+		<div class="row">
+			<div class="col-md-5 col-sm-12 col-xs-12"
+				style="margin-bottom: 10px;">
+				<header>
+					<h2 class="text-danger">第三步：等待分析结果</h2>
+				</header>
+				<div id="analyze_result" class="col-md-12 text-center text-danger">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="removeFrame" class="block hidden">
+		<header>
+			<h2 class="text-danger">请点击（选择）水印部分（提醒：被选中的变色/打叉内容将被去除。）</h2>
+		</header>
+		<div class="col-md-12">
+			<div class="row" id="analyze_image"></div>
+		</div>
+		<div id="analyze_show_btn" class="col-md-4">
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-md-10">
+					<button id="btn_preview" class="btn btn-success col-xs-12"
+						onclick="getPreview(newid,newtime,1);">预览转换结果</button>
+				</div>
+			</div>
+		</div>
+		<div id="analyze_submit" class="col-md-8">
+			<div class="row" style="margin-top: 20px;">
+				<div class="col-md-5 col-md-offset-1" style="margin-bottom: 40px;">
+					<div>
+						<button id="free_button" type="submit"
+							class="btn btn-primary col-xs-12" onclick="submit('free');">免费去除（限前5页）</button>
+					</div>
+				</div>
+				<div class="col-md-3 text-center">
+					<div>
+						<button id="pay_button" type="submit"
+							class="btn btn-warning col-xs-12" onclick="submit('pay');">付费去除</button>
+					</div>
+					<p style="margin-top: 40px;">
+						<a href="/PDFWatermark/help_whataboutpay.html" target="_blank">查看收费标准</a>
+					</p>
+				</div>
+				<div class="col-md-3">
+					<a class="btn btn-link col-xs-12"
+						href="https://www.wdku.net/user/charge" target="_blank">去充值&gt;&gt;</a>
+				</div>
+			</div>
+		</div>
+		<div id="resultFrame" class="block hidden">
+			<div class="row">
+				<div class="col-md-8 col-sm-12 col-xs-12"
+					style="margin-bottom: 10px;">
+					<header>
+						<h2>最后：等待结果</h2>
+					</header>
+					<div id="result" class="col-md-12 text-center text-danger"></div>
+					<div id="download" class="hidden">
+						<a id="download_link" class="btn btn-primary col-xs-3" href="#"
+							target="_blank" style="margin-right: 10px;">下载(1)</a> <a
+							id="download_link_via_id" class="btn btn-primary col-xs-3"
+							href="#" target="_blank" title="若标题发生标题乱码，用ID作为标题下载">下载(2)</a>
+					</div>
+				</div>
+
+				<div class="col-md-4 col-sm-12 col-xs-12"
+					style="margin-bottom: 10px;">
+					<header>
+						<h2>重新上传？</h2>
+					</header>
+					<div id="next">
+						<a class="btn btn-success col-xs-12"
+							href="javascript:location.reload();">刷新页面(F5)</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- https://www.wdku.net/PDFWatermark -->

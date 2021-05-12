@@ -1,0 +1,343 @@
+<!-- /工具开始 -->
+<!-- http://tools.jb51.net/code/zishutongji-->
+<style type="text/css">
+.num {
+	font-size: 14px;
+	font-weight: 700;
+	color: #F00
+}
+
+.textareas {
+	width: 100%;
+	height: 200px;
+}
+
+.radiomid {
+	vertical-align: inherit;
+}
+
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+/* 框架 */
+#b {
+	width: 1200px;
+	padding: 0 12px;
+	background: #FFF;
+	position: relative
+}
+
+#l {
+	width: 844px;
+	float: left;
+	padding-right: 10px;
+	position: relative
+}
+
+/* 文章 */
+.content-a {
+	width: 785px;
+	line-height: 26px;
+	font-size: 14px;
+	float: left;
+	border-left: 5px solid #F0F0F0;
+	margin-bottom: 45px;
+	padding: 10px 15px 0 33px;
+	overflow: hidden
+}
+
+.content-a img {
+	margin: 0 0 12px;
+	max-width: 99%;
+	height: auto
+}
+
+.title {
+	width: 793px;
+	height: 72px;
+	margin: 20px 0;
+	border-left: 5px solid #333;
+	padding: 4px 10px 4px 32px
+}
+
+h1 {
+	width: 600px;
+	font: 32px "微软雅黑", "Microsoft YaHei";
+	color: #333;
+	margin-bottom: 6px;
+	text-align: center;
+}
+
+.title .zuozhe {
+	color: #AAA
+}
+
+.title span {
+	float: right;
+	margin-top: -40px
+}
+
+.title a {
+	color: #390;
+	padding: 4px
+}
+
+.title {
+	width: 100%;
+	border: 0;
+	padding: 4px 0;
+}
+
+h3 {
+	font-size: 12px;
+	font-weight: lighter;
+	color: #666
+}
+
+.toolarea {
+	padding: 4px;
+	margin: 8px 0;
+	width: 720px;
+	height: 250px;
+	color: #333;
+	display: block
+}
+
+.toolcode {
+	margin: 0 8px 26px
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9">
+	<div id="b">
+		<div id="l">
+			<div class="title">
+				<h1>字数统计工具</h1>
+				<div class="zuozhe">可快速在线统计字数</div>
+			</div>
+			<!-- /title -->
+			<div class="content-a">
+				<div class="toolcode">
+					<h3 class="alert alert-success">这是一个快速计算字数和字符数的小工具（小说作者和或编辑必备工具）：</h3>
+					<textarea id="content" name="content" class="toolarea">在线字数统计
+工欲善其事，必先利其器。
+显而易见，最高的效率就是对现有材料的最佳利用。学会偷懒，并懒出境界是提高工作效率最有效的方法！
+脚本之家在线工具 http://tools.jb51.net/
+2016</textarea>
+					汉字：<span id="zhongwen" class="num">67</span> 个<br> 中文标点：<span
+						id="zbiaodian" class="num">6</span> 个<br>汉字+标点：<span
+						id="zhongwenbiaodian" class="num">73</span> 个<br> 英文：<span
+						id="yingwen" class="num">31</span> 个 （含英文状态下的数字、符号、标点）<br>
+					数字：<span id="shuzi" class="num">6</span> 个<br> 字符总数：<span
+						id="numwords" class="num">177</span> 个字符<br> <br>
+					<p class="alert alert-info">小贴士：汉字和中文标点算两个字符，数字、空格、英文字母，英文标点算做一个字符。</p>
+					<br>
+
+					<script language="javascript">
+						function $(id) {
+							return document.getElementById(id);
+						}
+						var EventUtil = function() {
+						};
+						EventUtil.addEventHandler = function(obj, EventType,
+								Handler) {
+							//如果是FF
+							if (obj.addEventListener) {
+								obj.addEventListener(EventType, Handler, false);
+							}
+							//如果是IE
+							else if (obj.attachEvent) {
+								obj.attachEvent('on' + EventType, Handler);
+							} else {
+								obj['on' + EventType] = Handler;
+							}
+						}
+
+						//alert($("chaptercontent").value);
+						if ($("content")) {
+							EventUtil.addEventHandler($('content'),
+									'propertychange', CountChineseCharacters);
+							EventUtil.addEventHandler($('content'), 'input',
+									CountChineseCharacters);
+							//EventUtil.addEventHandler($('chaptercontent'),'keydown',CountChineseCharacters('chaptercontent'));
+						}
+						window.onload = CountChineseCharacters();
+
+						function showit(Word) {
+							alert(Word);
+						}
+						function CountChineseCharacters() {
+							Words = $('content').value;
+							var W = new Object();
+							var Result = new Array();
+							var iNumwords = 0;
+							var sNumwords = 0;
+							var sTotal = 0;//双字节字符;
+							var iTotal = 0;//中文字符；
+							var eTotal = 0;//Ｅ文字符
+							var otherTotal = 0;
+							var bTotal = 0;
+							var inum = 0;
+
+							for (i = 0; i < Words.length; i++) {
+								var c = Words.charAt(i);
+								if (c.match(/[\u4e00-\u9fa5]/)) {
+									if (isNaN(W[c])) {
+										iNumwords++;
+										W[c] = 1;
+									}
+									iTotal++;
+								}
+							}
+
+							for (i = 0; i < Words.length; i++) {
+								var c = Words.charAt(i);
+								if (c.match(/[^\x00-\xff]/)) {
+									if (isNaN(W[c])) {
+										sNumwords++;
+
+									}
+									sTotal++;
+								} else {
+									eTotal++;
+								}
+								if (c.match(/[0-9]/)) {
+									inum++;
+								}
+							}
+							//alert(iTotal);
+							$('zhongwen').innerText = iTotal;
+							$('zbiaodian').innerText = sTotal - iTotal;
+							$('zhongwenbiaodian').innerText = sTotal;
+							$('yingwen').innerText = eTotal;
+							$('shuzi').innerText = inum;
+							document.getElementById("numwords").innerHTML = iTotal
+									* 2 + (sTotal - iTotal) * 2 + eTotal;
+						}
+					</script>
+
+					<!-- /工具结束 -->
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="clear: both"></div>
+	<div class="well">
+		<div id="SOHUCS" sid="zishutongji"></div>
+		<script type="text/javascript">
+		</script>
+	</div>
+
+</div>

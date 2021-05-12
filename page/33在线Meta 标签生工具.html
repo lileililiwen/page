@@ -1,0 +1,497 @@
+<!-- http://tools.jb51.net/code/metacreate -->
+<meta charset="utf-8"><style>
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #ddd;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.table th {
+    color: #ffffff;
+    background-color: #555555;
+    border: 1px solid #555555;
+}
+th {
+    text-align: left;
+}
+td, th {
+    padding: 0;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table tr:nth-child(odd) {
+    background-color: #F6F4F0;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9">
+	<script language="JavaScript">
+function create(form) {
+ if (confirm("确认生成代码?")) {
+ form.story.value = "<!--Meta 标签生成器 By http://www.jb51.net/-->\n";
+ if (form.title.value != "") {
+ form.story.value +="<META NAME=\"Title\" CONTENT=\"" +
+ form.title.value + "\">\n";
+ }
+ if (form.author.value != "") {
+ form.story.value +="<META NAME=\"Author\" CONTENT=\"" +
+ form.author.value + "\">\n";
+ }
+ if (form.subject.value != "") {
+ form.story.value +="<META NAME=\"Subject\" CONTENT=\"" +
+ form.subject.value + "\">\n";
+ }
+ if (form.descript.value != "") {
+ form.story.value +="<META NAME=\"Description\" CONTENT=\"" +
+ form.descript.value + "\">\n";
+ }
+ if (form.keyword.value != "") {
+ form.story.value +="<META NAME=\"Keywords\" CONTENT=\"" +
+ form.keyword.value + "\">\n";
+ }
+ if (form.gen.value != "") {
+ form.story.value +="<META NAME=\"Generator\" CONTENT=\"" +
+ form.gen.value + "\">\n";
+ }
+ if (form.input7.value != "") {
+ form.story.value +="<META NAME=\"Language\" CONTENT=\"" +
+ form.input7.value + "\">\n";
+ }
+ if (form.input8.value != "") {
+ form.story.value +="<META NAME=\"Expires\" CONTENT=\"" +
+ form.input8.value + "\">\n";
+ }
+ if (form.input9.value != "") {
+ form.story.value +="<META NAME=\"Abstract\" CONTENT=\"" +
+ form.input9.value + "\">\n";
+ }
+ if (form.input10.value != "") {
+ form.story.value +="<META NAME=\"Copyright\" CONTENT=\"" +
+ form.input10.value + "\">\n";
+ }
+ if (form.input11.value != "") {
+ form.story.value +="<META NAME=\"Designer\" CONTENT=\"" +
+ form.input11.value + "\">\n";
+ }
+ if (form.input12.value != "") {
+ form.story.value +="<META NAME=\"Publisher\" CONTENT=\"" +
+ form.input12.value + "\">\n";
+ }
+ if (form.input13.value != "") {
+ form.story.value +="<META NAME=\"Revisit-After\" CONTENT=\"" +
+ form.input13.value + " \Days\">\n";
+ }
+ if (form.input14.value != "") {
+ form.story.value +="<META NAME=\"Distribution\" CONTENT=\"" +
+ form.input14.options[form.input14.selectedIndex].value + "\">\n";
+ }
+ if (form.input15.value != "") {
+ form.story.value +="<META NAME=\"Robots\" CONTENT=\"" +
+ form.input15.options[form.input15.selectedIndex].value + "\">\n";
+ }
+ }
+}
+//End -->
+</script>
+	<h2 align="center">在线Meta 标签生工具</h2>
+	<p class="alert alert-info">这是一款在线Meta标签生成工具，可实现按照用户需求定制Meta标签的功能。</p>
+	<form>
+		<table width="100%" align="center" cellpadding="5" cellspacing="1"
+			bgcolor="#CCCCCC" class="table table-bordered table-hover">
+			<tbody>
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Title：（主题）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="title"
+						type="text" onfocus="this.select()" value="Meta 标签生成器" size="50">
+
+					</td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Author：（作者）</td>
+					<td align="left" bgcolor="#E9E9E9"><input name="author"
+						type="text" onfocus="this.select()" value="脚本之家" size="50">
+
+					</td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Subject：（主题）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="subject"
+						type="text" onfocus="this.select()" value="Meta 标签生成器" size="50">
+
+					</td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Description：（描述）</td>
+					<td align="left" bgcolor="#E9E9E9"><input name="descript"
+						type="text" onfocus="this.select()" value="在线生成META标签的工具"
+						size="50"></td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Keywords：（关键字）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="keyword"
+						type="text" onfocus="this.select()" value="Meta 标签生成器;工具"
+						size="50"></td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Generator：（编辑器）</td>
+					<td align="left" bgcolor="#E9E9E9"><input name="gen"
+						type="text" onfocus="this.select()" value="Meta 标签生成器" size="50">
+					</td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Language：（语言）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="input7"
+						type="text" onfocus="this.select()" value="zh-CN" size="50">
+
+					</td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Expires：（期限）</td>
+					<td align="left" bgcolor="#E9E9E9"><input name="input8"
+						type="text" onfocus="this.select()"
+						value="Wed, 27 Sep 2016 08:21:57 GMT" size="50"></td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Abstract：（摘要）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="input9"
+						type="text" onfocus="this.select()" value="Meta 标签生成器" size="50">
+
+					</td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Copyright：（版权）</td>
+					<td align="left" bgcolor="#E9E9E9"><input name="input10"
+						type="text" onfocus="this.select()" value="www.jb51.net" size="50">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Designer：（设计者）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="input11"
+						type="text" onfocus="this.select()" value="Designer" size="50">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Publisher：（出版者）</td>
+					<td align="left" bgcolor="#E9E9E9"><input name="input12"
+						type="text" onfocus="this.select()" value="Publisher" size="50">
+					</td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Revisit-After：（重访）</td>
+					<td align="left" bgcolor="#F9F9F9"><input name="input13"
+						type="text" onfocus="this.select()" value="请在此输入标题，Meta 标签生成器"
+						size="50"></td>
+				</tr>
+
+				<tr>
+					<td width="200" bgcolor="#E9E9E9">Distribution：（分配）</td>
+					<td align="left" bgcolor="#E9E9E9"><select name="input14"
+						size="1">
+							<option value="" selected="">Select One</option>
+							<option value="Global">1. Global</option>
+							<option value="Local">2. Local</option>
+							<option value="IU">3. Intern Use</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td width="200" bgcolor="#F9F9F9">Robots：（机器人向导）</td>
+					<td align="left" bgcolor="#F9F9F9"><select name="input15"
+						size="1">
+							<option value="" selected="">Select One</option>
+							<option value="All">1. All</option>
+							<option value="None">2. None</option>
+							<option value="Index">3. Index</option>
+							<option value="No Index">4. No Index</option>
+							<option value="Follow">5. Follow</option>
+							<option value="No Follow">6. No Follow</option>
+					</select></td>
+				</tr>
+				<tr bgcolor="#E9E9E9">
+					<td colspan="2">
+						<div align="center">
+							<input type="button" value="生成 META 标签"
+								onclick="create(this.form)" name="button"
+								class="submit btn btn-primary"> <input type="reset"
+								value="清除" name="reset" class="submit btn btn-primary">
+							<input
+								onclick="story.select();document.execCommand(&quot;Copy&quot;)"
+								type="button" name="Submit" value="复制"
+								class="submit btn btn-primary">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" bgcolor="#FFFFFF">
+						<div align="center">
+							<textarea wrap="" name="story" rows="12" class="form-control" readonly="readonly"></textarea>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+
+	<h4 class="alert alert-warning" align="center">Meta标签详解</h4>
+	<p class="alert alert-success">
+		下面介绍一些有关&nbsp;标记的例子及解释。&nbsp;<br>
+		META标签分两大部分：HTTP标题信息(HTTP-EQUIV)和页面描述信息(NAME)。&nbsp;<br> <br>
+		★HTTP-EQUIV&nbsp;<br>
+		HTTP-EQUIV类似于HTTP的头部协议，它回应给浏览器一些有用的信息，以帮助正确和精确地显示网页内容。常用的HTTP-EQUIV类型有：&nbsp;<br>
+		<br> 1、Content-Type和Content-Language&nbsp;(显示字符集的设定)&nbsp;<br>
+		说明：设定页面使用的字符集，用以说明主页制作所使用的文字已经语言，浏览器会根据此来调用相应的字符集显示page内容。&nbsp;<br>
+		用法：&lt;Meta&nbsp;http-equiv="Content-Type"&nbsp;Content="text/html;&nbsp;Charset=gb2312"&gt;<br>
+		&lt;Meta&nbsp;http-equiv="Content-Language"&nbsp;Content="zh-CN"&gt;&nbsp;<br>
+		注意：
+		该META标签定义了HTML页面所使用的字符集为GB2132，就是国标汉字码。如果将其中的“charset=GB2312”替换成“BIG5”，则该页面所用的字符集就是繁体中文Big5码。当你浏览一些国外的站点时，IE浏览器会提示你要正确显示该页面需要下载xx语支持。这个功能就是通过读取HTML页面META标签的Content-Type属性而得知需要使用哪种字符集显示该页面的。如果系统里没有装相应的字符集，则IE就提示下载。其他的语言也对应不同的charset，比如日文的字符集是“iso-2022-jp&nbsp;”，韩文的是“ks_c_5601”。<br>
+		<br> Content-Type的Content还可以是：text/xml等文档类型；<br>
+		Charset选项：ISO-8859-1(英文)、BIG5、UTF-8、SHIFT-Jis、Euc、Koi8-2、us-ascii,&nbsp;x-mac-roman,&nbsp;iso-8859-2,&nbsp;x-mac-ce,&nbsp;iso-2022-jp,&nbsp;x-sjis,&nbsp;x-euc-jp,euc-kr,&nbsp;iso-2022-kr,&nbsp;gb2312,&nbsp;gb_2312-80,&nbsp;x-euc-tw,&nbsp;x-cns11643-1,x-cns11643-2等字符集；Content-Language的Content还可以是：EN、FR等语言代码。&nbsp;<br>
+		2、Refresh&nbsp;(刷新)&nbsp;<br>
+		说明：让网页多长时间（秒）刷新自己，或在多长时间后让网页自动链接到其它网页。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Refresh"&nbsp;Content="30"&gt;<br>
+		&lt;Meta&nbsp;http-equiv="Refresh"&nbsp;Content="5;&nbsp;Url=<a
+			target="_blank" href="http://www.jb51.net">http://www.jb51.net</a>"&gt;<br>
+		注意：其中的5是指停留5秒钟后自动刷新到URL网址。&nbsp;<br> 3、Expires&nbsp;(期限)&nbsp;<br>
+		说明：指定网页在缓存中的过期时间，一旦网页过期，必须到服务器上重新调阅。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Expires"&nbsp;Content="0"&gt;<br>
+		&lt;Meta&nbsp;http-equiv="Expires"&nbsp;Content="Wed,&nbsp;26&nbsp;Feb&nbsp;1997&nbsp;08:21:57&nbsp;GMT"&gt;<br>
+		注意：必须使用GMT的时间格式，或直接设为0(数字表示多少时间后过期)。&nbsp;<br>
+		4、Pragma&nbsp;(cach模式)&nbsp;<br> 说明：禁止浏览器从本地机的缓存中调阅页面内容。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Pragma"&nbsp;Content="No-cach"&gt;<br>
+		注意：网页不保存在缓存中，每次访问都刷新页面。这样设定，访问者将无法脱机浏览。&nbsp;<br>
+		5、Set-Cookie&nbsp;(cookie设定)&nbsp;<br>
+		说明：浏览器访问某个页面时会将它存在缓存中，下次再次访问时就可从缓存中读取，以提高速度。当你希望访问者每次都刷新你广告的图标，或每次都刷新你的计数器，就要禁用缓存了。通常HTML文件没有必要禁用缓存，对于ASP等页面，就可以使用禁用缓存，因为每次看到的页面都是在服务器动态生成的，缓存就失去意义。如果网页过期，那么存盘的cookie将被删除。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Set-Cookie"&nbsp;Content="cookievalue=xxx;&nbsp;expires=Wednesday,<br>
+		&nbsp;21-Oct-98&nbsp;16:14:21&nbsp;GMT;&nbsp;path=/"&gt;<br>
+		注意：必须使用GMT的时间格式。&nbsp;<br> 6、Window-target&nbsp;(显示窗口的设定)&nbsp;<br>
+		说明：强制页面在当前窗口以独立页面显示。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Widow-target"&nbsp;Content="_top"&gt;<br>
+		注意：这个属性是用来防止别人在框架里调用你的页面。Content选项：_blank、_top、_self、_parent。&nbsp;<br>
+		7、Pics-label&nbsp;(网页RSAC等级评定)<br>
+		说明：在IE的Internet选项中有一项内容设置，可以防止浏览一些受限制的网站，而网站的限制级<br>
+		别就是通过该参数来设置的。<br>
+		用法：&lt;META&nbsp;http-equiv="Pics-label"&nbsp;Contect="(PICS－1.1'<a
+			target="_blank" href="http://www.jb51.net">http://www.jb51.net</a>I&nbsp;gen&nbsp;comment&nbsp;'RSACi&nbsp;North&nbsp;America&nbsp;Sever'&nbsp;by&nbsp;'inet@microsoft.com'
+		for&nbsp;'<a target="_blank" href="http://www.jb51.net">http://www.jb51.net</a>
+		&nbsp;on&nbsp;'1997.06.30T14:21－0500'&nbsp;r(n0&nbsp;s0&nbsp;v0&nbsp;l0))"&gt;&nbsp;<br>
+		注意：不要将级别设置的太高。RSAC的评估系统提供了一种用来评价Web站点内容的标准。用户可以设置Microsoft&nbsp;Internet&nbsp;Explorer（IE3.0以上）来排除包含有色情和暴力内容的站点。上面这个例子中的HTML取自Microsoft的主页。代码中的（n&nbsp;0&nbsp;s&nbsp;0&nbsp;v&nbsp;0&nbsp;l&nbsp;0）表示该站点不包含不健康内容。级别的评定是由RSAC，即美国娱乐委员会的评级机构评定的，如果你想进一步了解RSAC评估系统的等级内容，或者你需要评价自己的网站，可以访问RSAC的站点：<a
+			target="_blank" href="http://www.jb51.net">http://www.jb51.net</a>
+		&nbsp;<br> 8、Page-Enter、Page-Exit&nbsp;(进入与退出)&nbsp;<br>
+		说明：这个是页面被载入和调出时的一些特效。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Page-Enter"&nbsp;Content="blendTrans(Duration=0.5)"&gt;<br>
+		&lt;Meta&nbsp;http-equiv="Page-Exit"&nbsp;Content="blendTrans(Duration=0.5)"&gt;<br>
+		注意：blendTrans是动态滤镜的一种，产生渐隐效果。另一种动态滤镜RevealTrans也可以用于页面进入与退出效果:&nbsp;<br>
+		&lt;Meta&nbsp;http-equiv="Page-Enter"&nbsp;Content="revealTrans(duration=x,&nbsp;transition=y)"&gt;<br>
+		&lt;Meta&nbsp;http-equiv="Page-Exit"&nbsp;Content="revealTrans(duration=x,&nbsp;transition=y)"&gt;&nbsp;<br>
+		Duration 表示滤镜特效的持续时间(单位：秒)<br> Transition
+		滤镜类型。表示使用哪种特效，取值为0-23。&nbsp;<br> 0&nbsp;矩形缩小 1&nbsp;矩形扩大
+		2&nbsp;圆形缩小<br> 3&nbsp;圆形扩大 4&nbsp;下到上刷新 5&nbsp;上到下刷新<br>
+		6&nbsp;左到右刷新 7&nbsp;右到左刷新 8&nbsp;竖百叶窗<br> 9&nbsp;横百叶窗 &nbsp;
+		10&nbsp;错位横百叶窗 11&nbsp;错位竖百叶窗<br> &nbsp;12&nbsp;点扩散
+		13&nbsp;左右到中间刷新 14&nbsp;中间到左右刷新<br> &nbsp;15&nbsp;中间到上下
+		16&nbsp;上下到中间 &nbsp;17&nbsp;右下到左上<br> &nbsp;18&nbsp;右上到左下
+		19&nbsp;左上到右下 &nbsp;20&nbsp;左下到右上<br> &nbsp;21&nbsp;横条 22&nbsp;竖条
+		&nbsp; 23&nbsp;以上22种随机选择一种&nbsp;<br>
+		9、MSThemeCompatible&nbsp;(XP主题)<br> 说明：是否在IE中关闭&nbsp;xp&nbsp;的主题<br>
+		用法：&lt;Meta&nbsp;http-equiv="MSThemeCompatible"&nbsp;Content="Yes"&gt;<br>
+		注意：关闭&nbsp;xp&nbsp;的蓝色立体按钮系统显示样式，从而和win2k&nbsp;很象。&nbsp;<br>
+		10、IE6&nbsp;(页面生成器)<br> 说明：页面生成器generator，是ie6<br>
+		用法：&lt;Meta&nbsp;http-equiv="IE6"&nbsp;Content="Generator"&gt;<br>
+		注意：用什么东西做的，类似商品出厂厂商。&nbsp;<br> 11、Content-Script-Type&nbsp;(脚本相关)<br>
+		说明：这是近来W3C的规范，指明页面中脚本的类型。<br>
+		用法：&lt;Meta&nbsp;http-equiv="Content-Script-Type"&nbsp;Content="text/javascript"&gt;<br>
+		注意：&nbsp;<br> ★NAME变量&nbsp;<br>
+		name是描述网页的，对应于Content（网页内容），以便于搜索引擎机器人查找、分类（目前几乎所有的搜索引擎都使用网上机器人自动查找meta值来给网页分类）。<br>
+		name的value值（name=""）指定所提供信息的类型。有些值是已经定义好的。例如description(说明)、keyword(关键字)、refresh(刷新)等。还可以指定其他任意值，如：creationdate(创建日期)&nbsp;、<br>
+		document&nbsp;ID(文档编号)和level(等级)等。<br>
+		name的content指定实际内容。如：如果指定level(等级)为value(值)，则Content可能是beginner(初级)、intermediate(中级)、advanced(高级)。&nbsp;<br>
+		<br> 1、Keywords&nbsp;(关键字)<br> 说明：为搜索引擎提供的关键字列表<br>
+		用法：&lt;Meta&nbsp;name="Keywords"&nbsp;Content="关键词1,关键词2，关键词3,关键词4,……"&gt;<br>
+		注意：各关键词间用英文逗号“,”隔开。META的通常用处是指定搜索引擎用来提高搜索质量的关键词。当数个META元素提供文档语言从属信息时，搜索引擎会使用lang特性来过滤并通过用户的语言优先参照来显示搜索结果。例如：<br>
+		&lt;Meta&nbsp;name="Kyewords"&nbsp;Lang="EN"&nbsp;Content="vacation,greece,sunshine"&gt;<br>
+		&lt;Meta&nbsp;name="Kyewords"&nbsp;Lang="FR"&nbsp;Content="vacances,grè:ce,soleil"&gt;&nbsp;<br>
+		2、Description&nbsp;(简介)<br> 说明：Description用来告诉搜索引擎你的网站主要内容。<br>
+		用法：&lt;Meta&nbsp;name="Description"&nbsp;Content="你网页的简述"&gt;<br>
+		注意：&nbsp;<br> 3、Robots&nbsp;(机器人向导)<br>
+		说明：Robots用来告诉搜索机器人哪些页面需要索引，哪些页面不需要索引。Content的参数有all、none、index、noindex、follow、nofollow。默认是all。<br>
+		用法：&lt;Meta&nbsp;name="Robots"&nbsp;Content="All|None|Index|Noindex|Follow|Nofollow"&gt;<br>
+		注意：许多搜索引擎都通过放出robot/spider搜索来登录网站，这些robot/spider就要用到meta元素的一些特性来决定怎样登录。&nbsp;<br>
+		&nbsp;all：文件将被检索，且页面上的链接可以被查询；<br>
+		&nbsp;none：文件将不被检索，且页面上的链接不可以被查询；(和&nbsp;"noindex,&nbsp;no&nbsp;follow"&nbsp;起相同作用)<br>
+		&nbsp;index：文件将被检索；（让robot/spider登录）<br>
+		&nbsp;follow：页面上的链接可以被查询；<br>
+		&nbsp;noindex：文件将不被检索，但页面上的链接可以被查询；(不让robot/spider登录)<br>
+		nofollow：文件将不被检索，页面上的链接可以被查询。(不让robot/spider顺着此页的连接往下探找)&nbsp;<br>
+		4、Author&nbsp;(作者)<br> 说明：标注网页的作者或制作组<br>
+		用法：&lt;Meta&nbsp;name="Author"&nbsp;Content="张三，abc@sina.com"&gt;<br>
+		注意：Content可以是：你或你的制作组的名字,或Email&nbsp;<br> 5、Copyright&nbsp;(版权)<br>
+		说明：标注版权<br>
+		用法：&lt;Meta&nbsp;name="Copyright"&nbsp;Content="本页版权归haokucn.com所有.All&nbsp;Rights&nbsp;Reserved"&gt;<br>
+		注意：&nbsp;<br> 6、Generator&nbsp;(编辑器)<br> 说明：编辑器的说明<br>
+		用法：&lt;Meta&nbsp;name="Generator"&nbsp;Content="PCDATA|FrontPage|"&gt;<br>
+		注意：Content="你所用编辑器"&nbsp;<br> 7、revisit-after&nbsp;(重访)<br>
+		说明：<br>
+		用法：&lt;META&nbsp;name="revisit-after"&nbsp;CONTENT="7&nbsp;days"&nbsp;&gt;<br>
+		注意：&nbsp;<br> ★Head中的其它一些用法&nbsp;<br> <br>
+		1、scheme&nbsp;(方案)<br>
+		说明：scheme&nbsp;can&nbsp;be&nbsp;used&nbsp;when&nbsp;name&nbsp;is&nbsp;used&nbsp;to&nbsp;specify&nbsp;how&nbsp;the&nbsp;value&nbsp;of&nbsp;content&nbsp;should<br>
+		be&nbsp;interpreted.<br>
+		用法：&lt;meta&nbsp;scheme="ISBN"&nbsp;name="identifier"&nbsp;content="0-14-043205-1"&nbsp;/&gt;<br>
+		注意：&nbsp;<br> 2、Link&nbsp;(链接)<br> 说明：链接到文件<br>
+		用法：&lt;Link&nbsp;href="soim.ico"&nbsp;rel="Shortcut&nbsp;Icon"&gt;<br>
+		注意：很多网站如果你把她保存在收件夹中后，会发现它连带着一个小图标，如果再次点击进入之后还会发现地址栏中也有个小图标。现在只要在你的页头加上这段话，就能轻松实现这一功能。&lt;LINK&gt;&nbsp;用来将目前文件与其它&nbsp;URL&nbsp;作连结，但不会有连结按钮，用於&nbsp;&lt;HEAD&gt;&nbsp;标记间，&nbsp;格式如下：&nbsp;<br>
+		&lt;link&nbsp;href="URL"&nbsp;rel="relationship"&gt;&nbsp;<br>
+		&lt;link&nbsp;href="URL"&nbsp;rev="relationship"&gt;&nbsp;<br>
+		3、Base&nbsp;(基链接)<br> 说明：插入网页基链接属性<br>
+		用法：&lt;Base&nbsp;href="<a target="_blank" href="http://www.jb51.net">http://www.jb51.net/</a>"
+		&nbsp;target="_blank"&gt;<br> 注意：你网页上的所有相对路径在链接时都将在前面加上"<a
+			target="_blank" href="http://www.jb51.net/">http://www.jb51.net/</a>"
+	</p>
+	<div class="well">
+		<hr>
+		<div id="SOHUCS" sid="metacreate"></div>
+		<script type="text/javascript"> 
+</script>
+
+	</div>
+
+</div>

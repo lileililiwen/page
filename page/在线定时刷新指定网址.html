@@ -1,0 +1,400 @@
+<meta charset="utf-8"><style>
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333;
+	background-color: #fff;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert-dismissable, .alert-dismissible {
+	padding-right: 35px;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #555;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	box-shadow: inset 0 1px 1px rgb(0 0 0/ 8%);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow
+		ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out
+		.15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.form-control {
+	padding: 0 10px;
+	height: 34px;
+	max-width: 98%;
+	line-height: normal;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	box-sizing: content-box;
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+.panel {
+	margin-bottom: 10px;
+}
+
+.panel {
+	margin-bottom: 20px;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	-webkit-box-shadow: 0 1px 1px rgb(0 0 0/ 5%);
+	box-shadow: 0 1px 1px rgb(0 0 0/ 5%);
+}
+
+@media ( min-width : 768px) {
+	.form-horizontal .control-label {
+		padding-top: 7px;
+		margin-bottom: 0;
+		text-align: right;
+	}
+	.col-sm-2 {
+		width: 16.66666667%;
+	}
+	.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+		.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9 {
+		float: left;
+	}
+	.col-sm-12 {
+		width: 100%;
+	}
+	.col-sm-10 {
+		width: 83.33333333%;
+	}
+	.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
+		.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+		.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+		.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+		.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+		.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+		.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
+		.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+		position: relative;
+		min-height: 1px;
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+}
+
+.form-horizontal .form-group {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+.control-label {
+	padding-top: 7px;
+	margin-bottom: 0;
+	text-align: right;
+}
+
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3,
+	.col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9,
+	.col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3,
+	.col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9,
+	.col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3,
+	.col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9,
+	.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3,
+	.col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+	position: relative;
+	min-height: 1px;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+::selection {
+	background: #66be8c;
+	color: #fff;
+}
+
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before,
+	.btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before,
+	.container-fluid:after, .container-fluid:before, .container:after,
+	.container:before, .dl-horizontal dd:after, .dl-horizontal dd:before,
+	.form-horizontal .form-group:after, .form-horizontal .form-group:before,
+	.modal-footer:after, .modal-footer:before, .nav:after, .nav:before,
+	.navbar-collapse:after, .navbar-collapse:before, .navbar-header:after,
+	.navbar-header:before, .navbar:after, .navbar:before, .pager:after,
+	.pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before
+	{
+	display: table;
+	content: " ";
+}
+
+:after, :before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.btn-group-vertical>.btn-group:after, .btn-toolbar:after, .clearfix:after,
+	.container-fluid:after, .container:after, .dl-horizontal dd:after,
+	.form-horizontal .form-group:after, .modal-footer:after, .nav:after,
+	.navbar-collapse:after, .navbar-header:after, .navbar:after, .pager:after,
+	.panel-body:after, .row:after {
+	clear: both;
+}
+
+.btn-group-vertical>.btn-group:after, .btn-group-vertical>.btn-group:before,
+	.btn-toolbar:after, .btn-toolbar:before, .clearfix:after, .clearfix:before,
+	.container-fluid:after, .container-fluid:before, .container:after,
+	.container:before, .dl-horizontal dd:after, .dl-horizontal dd:before,
+	.form-horizontal .form-group:after, .form-horizontal .form-group:before,
+	.modal-footer:after, .modal-footer:before, .nav:after, .nav:before,
+	.navbar-collapse:after, .navbar-collapse:before, .navbar-header:after,
+	.navbar-header:before, .navbar:after, .navbar:before, .pager:after,
+	.pager:before, .panel-body:after, .panel-body:before, .row:after, .row:before
+	{
+	display: table;
+	content: " ";
+}
+
+button, html input[type=button], input[type=reset], input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+.btn-danger {
+	color: #fff;
+	background-color: #d9534f;
+	border-color: #d43f3a;
+}
+
+a {
+	color: #337ab7;
+	text-decoration: none;
+}
+</style>
+<!-- http://www.jsons.cn/reurl/ -->
+<div class="col-md-12 col10main"
+	style="height: auto !important; min-height: 0px !important;">
+	<div class="accordion" id="accordion2" style="height: auto !important;">
+		<div class="accordion-group">
+			<div class="alert alert-success alert-dismissible" role="alert">
+				在线定时刷新指定网址的工具（可以根据用户设定的时间频率定时刷新指定的网页）</div>
+
+			<div class="panel">
+				<form id="form1" class="form-horizontal" action="/reurl/"
+					method="post">
+					<div class="form-group">
+						<label class="col-sm-2 control-label"> 刷新网址： </label>
+						<div class="col-sm-10">
+							<input class="form-control" id="url" name="url" type="text"
+								value="" placeholder="请输入要刷新的网址，例如：http://www.jsons.cn">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label"> 刷新频率(秒/次)： </label>
+						<div class="col-sm-10">
+							<input class="form-control" id="frequency" type="text" value="5"
+								style="width: 30%;">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label"> 已刷新次数： </label>
+						<div class="col-sm-10">
+							<input class="form-control" id="times" type="text" value="0"
+								style="width: 30%;" disabled="">
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label"> 刷新网址： </label>
+						<div class="col-sm-10">
+							<input type="button" id="startButton" onclick="startRefresh();"
+								value="开始刷新" class="btn btn-success"> <input
+								type="button" id="endButton" onclick="endRefresh();"
+								value="停止刷新" class="btn btn-danger" style="display: none">
+							<a href="javascript:location.reload()" class="btn btn-danger">清空输入框</a>
+						</div>
+					</div>
+					<div class="form-group">
+						<label class="col-sm-2 control-label"> </label>
+						<div class="col-sm-10">
+							<div class="alert alert-danger alert-dismissible text-center"
+								id="errdiv" role="alert" style="display: none;"></div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<iframe id="frame"
+								style="width: 100%; height: 500px; padding: 10px; border: 1px solid #66be8c;">
+							</iframe>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<h4 style="color: #66be8c; margin-bottom: 20px;">
+				网页定时刷新器-在线定时刷新指定网址工具</h4>
+			<h5>1,在线定时刷新指定网址的工具,定时刷新网页增加网页请求量,可在线测试网页压力,可自定义刷新时间</h5>
+			<h5>2,此工具可能会给你的网站带来很大压力,使用请谨慎</h5>
+			<h5>3,不要恶意操作刷新别的网站,文明使用本工具</h5>
+		</div>
+	</div>
+
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+var timer;
+var startButton;
+var endButton;
+
+$(document).ready(function () {
+    startButton = $('#startButton');
+    endButton = $('#endButton');
+});
+
+function refresh() {
+
+    if (run) {
+        var url = $('#url').val();
+        if (url != "") {
+            if (url.indexOf("jsons.cn") > -1 || url.indexOf("jizhuni.com") > -1) {
+                JsonsMessageBox($("#url"), "请更换网址后再开始刷新");
+                return false;
+            }
+            if (url.indexOf('http://') <= -1 && url.indexOf('https://') <= -1) {
+                JsonsMessageBox($("#url"), "网址前需添加http://");
+                return false;
+            }
+        }
+        else {
+            JsonsMessageBox($("#url"), "请输入要刷新的网址");
+            return false;
+        }
+        var frame = $('#frame');
+        frame.attr('src', url);
+        var times = $('#times');
+        times.val(parseInt(times.val()) + 1);
+
+    }
+}
+
+function startRefresh() {
+    run = true;
+    try {
+        var url = $('#url').val();
+        if (url != "") {
+            if (url.indexOf("jsons.cn") > -1 || url.indexOf("jizhuni.com") > -1) {
+                JsonsMessageBox($("#url"), "请更换网址后再开始刷新");
+                return false;
+            }
+            if (url.indexOf('http://') <= -1 && url.indexOf('https://') <= -1) {
+                JsonsMessageBox($("#url"), "网址前需添加http://");
+                return false;
+            }
+        }
+        else {
+            JsonsMessageBox($("#url"), "请输入要刷新的网址");
+            return false;
+        }
+        startButton.hide();
+        endButton.show();
+        var frequency = parseInt($('#frequency').val());
+        refresh();
+        timer = setInterval("refresh()", frequency * 1000);
+    } catch (Exception) {
+        startButton.show();
+        endButton.hide();
+        showmsg('设置错误');
+    }
+}
+
+function endRefresh() {
+    run = false;
+    clearInterval(timer);
+    startButton.show();
+    endButton.hide();
+}
+function showmsg(msg) {
+    $('#errdiv').show();
+    $('#errdiv').text(msg);
+}
+</script>

@@ -1,0 +1,145 @@
+<meta charset="utf-8"><style>
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+b, strong {
+    font-weight: 700;
+}
+input[type=file] {
+    display: block;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center">在线文本去重复工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">
+		这是一款可针对输入文本进行去重复的工具，可针对文本内容进行一键去重复操作，并提供对处理结果的复制功能，用户还可对比查看左右两侧的处理前后结果。是一款非常简单实用的文本操作工具，免费提供给需要的朋友使用。</h2>
+	<table border="0" width="1000">
+		<tbody>
+			<tr>
+				<td><textarea name="neirong" id="neirong" type="text"
+						style="WIDTH: 443px; HEIGHT: 600px; overflow: auto;" cols="440"
+						rows="1">下面是重复内容，您可以点击进行测试：
+
+12345678
+
+87654321
+
+
+
+
+
+12345678
+
+
+
+
+
+
+
+87654321</textarea></td>
+				<td><div style="margin: 0 10px;">
+						<input value="去除重复" onclick="return sx();" type="button"
+							class="btn btn-primary"><br>
+						<br> <input value="复制结果" onclick="return jsCopy();"
+							type="button" class="btn btn-primary">
+					</div>
+					<p></p> <script type="text/javascript">
+						function jsCopy() {
+							var e = document.getElementById("neirong1");//对象是neirong1
+							e.select(); //选择对象
+							document.execCommand("Copy"); //执行浏览器复制命令
+							alert("已复制好，可贴粘。");
+						}
+					</script>
+					<p></p></td>
+				<td><textarea name="neirong1" id="neirong1" type="text"
+						style="WIDTH: 443px; HEIGHT: 600px; overflow: auto;" cols="440"
+						rows="1"></textarea></td>
+			</tr>
+		</tbody>
+	</table>
+	<script type="text/javascript">
+		function sx() {
+			var rntArray = [], temp, hasValue;
+			var array = document.getElementById("neirong").value.split("\n");
+			for ( var i in array) {
+				temp = array[i];
+				hasValue = false;
+				for ( var j in rntArray) {
+					if (temp === rntArray[j]) {
+						hasValue = true;
+						break;
+					}
+				}
+				if (hasValue === false) {
+					rntArray.push(temp);
+				}
+			}
+			document.getElementById("neirong1").value = rntArray.join("\n");
+		}
+	</script>
+	<div class="well">
+		<div id="SOHUCS" sid="txt_quchong"></div>
+		<script type="text/javascript"> 
+</script>
+
+	</div>
+
+</div>

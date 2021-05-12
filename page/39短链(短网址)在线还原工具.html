@@ -1,0 +1,222 @@
+<!-- http://tools.jb51.net/password/unshorturl -->
+<meta charset="utf-8"> <style>
+.ShortURL_copybtn {
+	cursor: pointer;
+	border: none;
+	color: #fff;
+	background-color: #449d44;
+}
+h1, .h1 {
+	font-size: 36px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+h1 {
+	margin: .67em 0;
+	font-size: 2em;
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.alert-success {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+
+.alert {
+	padding: 15px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+}
+
+h2, .h2 {
+	font-size: 30px;
+}
+
+.alert-info {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th,
+	.table-bordered>thead>tr>td, .table-bordered>tbody>tr>td,
+	.table-bordered>tfoot>tr>td {
+	border: 1px solid #ddd;
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td,
+	.table>tbody>tr>td, .table>tfoot>tr>td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+}
+
+.table th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #555555;
+}
+
+th {
+	text-align: left;
+}
+
+td, th {
+	padding: 0;
+}
+
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+.table tr:nth-child(odd) {
+	background-color: #F6F4F0;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+input {
+	line-height: normal;
+}
+
+button, input, optgroup, select, textarea {
+	margin: 0;
+	font: inherit;
+	color: inherit;
+}
+
+label {
+	display: inline-block;
+	max-width: 100%;
+	margin-bottom: 5px;
+	font-weight: 700;
+}
+
+.alert-warning {
+	color: #8a6d3b;
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+}
+
+code {
+	white-space: pre-wrap;
+	word-break: normal;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+</style>
+<!-- -TODO ph之提供服务 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9">
+	<h1 align="center">短链(短网址)在线还原工具</h1>
+	<h2 style="font-size: 16px" class="alert alert-success">这是一款可现在还原短链(短网址)的工具，可根据用户提交的短网址生成相对应的真实连接地址，能够还原goo.gl、adf.ly、t.cn等国内外300多种短网址。</h2>
+	<table class="table" style="border: solid 10px #F6F4F0; padding: 10px;">
+		<tbody>
+			<tr style="font-size: 14px;" border="2px" bordercolor="#D4E6F7">
+				<td align="center">
+					<form action="" method="post">
+						请输入短网址(<font color="#285e8e">如输入：http://sina.lt/eEyd</font>)：<input
+							type="text" value="" size="40" id="lurl" name="lurl"
+							class="input"> <input type="hidden" name="timestamp"
+							id="timestamp" value="1620296106"> <input type="hidden"
+							name="token" id="token" value="b4687ece14a1e9479dfaffc9d56a701c">
+						<input type="button" id="getdwz" value="还原短网址"
+							class="submit btn btn-primary">
+					</form>
+					<div id="showrel"></div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<script language="javascript">
+		$(function() {
+			$("#getdwz").click(function() {
+				var urlval = $("#lurl").val();
+				var tokenval = $("#token").val();
+				var timestampval = $("#timestamp").val();
+				$.post("http://tools.jb51.net/static/api/undwz.php", {
+					vurl : urlval,
+					token : tokenval,
+					timestamp : timestampval
+				}, function(rel) {
+					$("#showrel").html(rel);
+				})
+			});
+		})
+	</script>
+	<div class="alert alert-warning" style="font-size: 16px;">
+		PS：小编这里再为大家提供一款 <a href="http://tools.jb51.net/password/dwzcreate"
+			target="_blank" style="font-weight: bold">短链(短网址)在线<font
+			color="#FF0000">生成</font>工具
+		</a>
+	</div>
+	<script language="javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/adv_bottom.js"></script>
+	<div class="well">
+		<div id="SOHUCS" sid="unshorturl"></div>
+		<script type="text/javascript">
+		</script>
+	</div>
+</div>

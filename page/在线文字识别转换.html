@@ -1,0 +1,511 @@
+<meta charset="utf-8"><style>
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    background-color: #f5f5f5;
+    color: #4e4e50;
+}
+body {
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #fff;
+}
+html {
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+*:before, *:after {
+    box-sizing: border-box;
+}
+#bot #main .block {
+    margin-bottom: 2em;
+}
+#uploader .placeholder {
+    min-height: 120px;
+    padding-top: 30px;
+    text-align: center;
+    color: #cccccc;
+    font-size: 18px;
+    position: relative;
+}
+.webuploader-container {
+    position: relative;
+}
+#uploader .placeholder .webuploader-pick {
+    font-size: 18px;
+    background: #00b7ee;
+    border-radius: 3px;
+    line-height: 44px;
+    padding: 0 30px;
+    *width: 120px;
+    color: #fff;
+    display: inline-block;
+    margin: 0 auto 20px auto;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+}
+.webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    background: #00b7ee;
+    padding: 10px 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+input[type="file"] {
+    display: block;
+}
+.webuploader-element-invisible {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px,1px,1px,1px);
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+#uploader .queueList {
+    margin: 20px;
+    border: 3px dashed #e6e6e6;
+}
+#uploader p {
+    margin: 0;
+}
+#bot #main .block h2 {
+    margin-top: 0;
+}
+
+#bot #main header h2 {
+    border-bottom: 1px solid #d5d5d5;
+    font-size: 1.15em;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+}
+#main .block header h2 {
+    font-size: 1em;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: 0.5em;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #286090;
+    border-color: #204d74;
+}
+.btn:hover, .btn:focus, .btn.focus {
+    color: #333;
+    text-decoration: none;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.428571429;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.col-xs-12 {
+    width: 100%;
+}
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+    float: left;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.btn-warning {
+    color: #fff;
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+button, select {
+    text-transform: none;
+}
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.text-danger {
+    color: #a94442;
+}
+</style>
+<div id="main" class="col-md-8">
+	<div id="about" class="block">
+		<h2>
+			在线文字识别转换
+		</h2>
+		<hr>
+		<div class="cms-content">免费的文字在线识别工具 -
+			通过图片识别文字，可保留原始格式，提供图像文字识别，提取图片文字，pdf文字识别，扫描文件识别服务、pdf转Word文档服务等。我们的Ocr服务支持中文、繁体中文、日语、韩语、英语、法语、俄语、德语等多种语言，输出结果支持PDF、Word和Txt格式。
+		</div>
+	</div>
+	<div id="media" class="block">
+		<header>
+			<h2>
+				<span data-toggle="collapse" data-target="#uploader">第一步：上传文件<span
+					class="caret"></span></span>
+			</h2>
+		</header>
+		<div id="uploader" class="wu-example collapse in">
+			<div class="queueList">
+				<div id="dndArea" class="placeholder"
+					style="padding-top: 20px; min-height: 120px;">
+					<div id="filePicker" class="webuploader-container">
+						<div class="webuploader-pick">选择文件</div>
+						<div id="rt_rt_1f52nff9p43dhjp1k0j5p6sld1"
+							style="position: absolute; inset: 0px auto auto 271px; width: 132px; height: 44px; overflow: hidden;">
+							<input type="file" name="file"
+								class="webuploader-element-invisible" multiple="multiple"
+								accept=""><label
+								style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+						</div>
+					</div>
+					<p>或者将转换文件拖到这里</p>
+					<p>允许上传格式:png/jpg/pdf/tiff/bmp/gif/heic/heif/webp</p>
+					<p>如果没有“按钮”请刷新</p>
+				</div>
+				<ul class="filelist"></ul>
+			</div>
+			<div class="statusBar" style="display: none;">
+				<div class="progress" style="display: none;">
+					<span class="text">0%</span> <span class="percentage"
+						style="width: 0%;"></span>
+				</div>
+				<div class="info">共0张（0B），已传0张</div>
+				<div class="btns">
+					<div id="filePicker2" class="webuploader-container">
+						<div class="webuploader-pick">继续添加</div>
+						<div id="rt_rt_1f52nff9tceem6n9bpecqgcc6"
+							style="position: absolute; top: 0px; left: 0px; width: 1px; height: 1px; overflow: hidden;">
+							<input type="file" name="file"
+								class="webuploader-element-invisible" multiple="multiple"
+								accept=""><label
+								style="opacity: 0; width: 100%; height: 100%; display: block; cursor: pointer; background: rgb(255, 255, 255);"></label>
+						</div>
+					</div>
+					<div class="uploadBtn state-pedding">开始上传</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="related" class="block">
+		<div class="row">
+			<div id="selectForm" class="col-md-12" style="margin-bottom: 2em;">
+				<header>
+					<h2 data-toggle="collapse" data-target="#convparam">
+						第二步：转换参数/提醒<span class="caret"></span>
+					</h2>
+				</header>
+				<div class="collapse in" id="convparam">
+					<!--obj_type-->
+					<div class="row">
+						<div class="col-md-12">
+							<label>转换结果选择：</label>
+						</div>
+						<!-- obj_type-->
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="pdf_text" checked=""> 可复制PDF文档（保留格式）
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="pdf_double"> 可复制双层PDF文档（保留格式）<span
+								title="什么是双层PDF？既保持图片层，又支持复制文字的PDF文档。">?</span>
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="docx"> Word文档（docx格式，简易格式）<span
+								title="可能会造成转换后页数增加。">?</span>
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="docx_accurate"> Word文档（docx格式，精确格式）
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="xlsx"> Excel文档（xlsx格式）
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="txt_viapdf"> 纯文本txt（方式一：优化保留格式）
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="txt_source"> 纯文本txt（方式二：适当保留部分格式）
+							</label>
+						</div>
+						<div class="radio col-md-6" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_obj_type"
+								value="txt_physical"> 纯文本txt（方式三：物理排版格式）
+							</label>
+						</div>
+					</div>
+					<!--lang-->
+					<div class="row">
+						<div class="col-md-12">
+							<label> 识别语言组合：<span class="text-danger">（最多3种）准确选择有助于提升识别率，例如：只包含数字则建议只选择（数字）</span>
+							</label>
+							<div class="checkbox" style="margin-top: 0">
+								<label> <input id="lang_1" name="lang" type="checkbox"
+									value="1" checked=""> 简体中文(zh-cn)
+								</label> <label> <input id="lang_2" name="lang" type="checkbox"
+									value="2" checked=""> 英语(eng)
+								</label> <label> <input id="lang_3" name="lang" type="checkbox"
+									value="3"> 数字(digit)
+								</label> <label> <input id="lang_4" name="lang" type="checkbox"
+									value="4"> 繁体中文(zh-hk)
+								</label> <label> <input id="lang_5" name="lang" type="checkbox"
+									value="5"> 日语(jap)
+								</label> <label> <input id="lang_6" name="lang" type="checkbox"
+									value="6"> 韩语(ko)
+								</label> <label> <input id="lang_7" name="lang" type="checkbox"
+									value="7"> 法语(fr)
+								</label> <label> <input id="lang_8" name="lang" type="checkbox"
+									value="8"> 俄语(ru)
+								</label> <label> <input id="lang_9" name="lang" type="checkbox"
+									value="9"> 西班牙语(sp)
+								</label> <label> <input id="lang_10" name="lang" type="checkbox"
+									value="10"> 德语(ge)
+								</label>
+							</div>
+						</div>
+					</div>
+					<!--combine-->
+					<div class="row">
+						<div class="col-md-12">
+							<label>每个图片转换结果是否合并（仅对批量上传图片有效）：</label>
+						</div>
+						<div class="radio col-md-12">
+							<label> <input type="radio" name="rd_option_combine"
+								value="1" checked=""> 合并
+							</label> <label> <input type="radio" name="rd_option_combine"
+								value="0"> 不合并
+							</label>
+						</div>
+					</div>
+					<!-- autorotation-->
+					<div class="row">
+						<div class="col-md-2">
+							<label>图片方向：</label>
+						</div>
+						<div class="col-md-10">
+							<input type="checkbox" id="autorotation" checked=""><span
+								class="glyphicon glyphicon-asterisk text-danger"></span>自动识别图片方向（<span
+								class="text-danger">如果转换后全部乱码，表明自动识别方向错误，请取消选择</span>）
+						</div>
+					</div>
+					<!-- color -->
+					<div class="row">
+						<div class="col-md-2">
+							<label>色彩模式：</label>
+						</div>
+						<div class="radio col-md-2 col-xs-4" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_option_color"
+								value="1" checked=""> 彩色<span class="text-danger"></span>
+							</label>
+						</div>
+						<div class="radio col-md-3 col-xs-4" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_option_color"
+								value="0"> 黑白（耗时少）
+							</label>
+						</div>
+					</div>
+					<!-- A4 -->
+					<div class="row hidden">
+						<div class="col-md-2">
+							<label>&nbsp;&nbsp;&nbsp;A4版面：</label>
+						</div>
+						<div class="col-md-10">
+							<label style="font-weight: normal;"> <input
+								type="checkbox" id="a4">格式化为A4版式页面，适合Word版面（<span
+								class="text-danger">长图片不适用</span>）
+							</label>
+						</div>
+					</div>
+					<!-- force -->
+					<div class="row">
+						<div class="col-md-2 col-xs-12">
+							<label>强制识别模式：</label>
+						</div>
+						<div class="radio col-md-3 col-xs-12" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_option_force"
+								value="" checked=""> 自动图文识别（<span class="text-danger">建议</span>）
+							</label>
+						</div>
+						<div class="radio col-md-3 col-xs-12" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_option_force"
+								value="text"> 强制识别为文本<br>(要求纯净背景)
+							</label>
+						</div>
+						<div class="radio col-md-3 col-xs-12" style="margin-top: 0px;">
+							<label> <input type="radio" name="rd_option_force"
+								value="table"> 强制识别为表格<br>(要求纯净背景)
+							</label>
+						</div>
+					</div>
+					<!-- password -->
+					<div class="row">
+						<div class="col-md-2">
+							<label>PDF访问密码：</label>
+						</div>
+						<div class="col-md-3">
+							<input id="pass" type="text" value="">
+						</div>
+						<div class="col-md-5">
+							<span style="text-indent: 5em" class="text-danger">（如果有访问密码请填写）</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div id="confirmForm" class="col-md-6">
+				<header>
+					<h2>第三步：提交转换</h2>
+				</header>
+				<div class="row">
+					<div class="col-md-4" style="margin-bottom: 40px;">
+						<button id="free_button" class="btn btn-primary col-xs-12"
+							onclick="submit('free');">免费转换</button>
+					</div>
+					<div class="col-md-4 text-center">
+						<button id="pay_button" class="btn btn-warning col-xs-12"
+							onclick="submit('pay');">付费转换</button>
+						<p style="margin-top: 40px;">
+							<a href="/help_whataboutpay.html" target="_blank">查看收费标准</a>
+						</p>
+					</div>
+					<div class="col-md-4">
+						<a class="btn btn-link col-xs-12"
+							href="https://www.wdku.net/user/charge" target="_blank">去充值&gt;&gt;</a>
+					</div>
+				</div>
+			</div>
+			<div id="tips" class="col-md-6">
+				<header>
+					<h2 data-toggle="collapse" data-target="#remind">
+						温馨提示<span class="caret"></span>
+					</h2>
+				</header>
+				<div class="collapse in" id="remind">
+					<p style="text-indent: 2em" class="text-danger">
+						1、如果图片方向正常，请不要选择“自动识别图片方向”（方向识别错会导致全页乱码）</p>
+					<p style="text-indent: 2em" class="text-danger">
+						2、PDF和图片不可同时上传，并且每次只允许转换一份PDF文件</p>
+					<p style="text-indent: 2em" class="text-danger">
+						3、如果图片为长图片，建议先使用“<a href="https://www.wdku.net/image/imagesplit"
+							target="_blank">长图片分割</a>”功能先切割再转换
+					</p>
+					<p style="text-indent: 2em" class="text-danger">
+						4、如果PDF有打开密码，请务必正确输入</p>
+					<p style="text-indent: 2em" class="text-danger">
+						5、收费转换拥有更好的转化效果和无次数限制</p>
+					<p style="text-indent: 2em" class="text-danger">
+						6、如果你有大量格式一样的图片需要准确识别处理，请联系邮箱客服（网站底部）</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="resultFrame" class="block hidden">
+		<div class="row">
+			<div class="col-md-8 col-sm-12 col-xs-12"
+				style="margin-bottom: 10px;">
+				<header>
+					<h2 class="text-danger">最后：等待结果</h2>
+				</header>
+				<div id="result" class="col-md-12 text-center text-danger"></div>
+				<div id="download" class="hidden">
+					<a id="download_link" class="btn btn-primary col-xs-3" href="#"
+						target="_blank" style="margin-right: 10px;" title="原始标题下载">下载(1)</a>
+					<a id="download_link_via_id" class="btn btn-primary col-xs-3"
+						href="#" target="_blank" title="若标题发生标题乱码，用ID作为标题下载"
+						style="margin-right: 10px;">下载(2)</a>
+				</div>
+			</div>
+
+			<div class="col-md-4 col-sm-12 col-xs-12"
+				style="margin-bottom: 10px;">
+				<header>
+					<h2>重新上传？</h2>
+				</header>
+				<div id="next">
+					<a class="btn btn-success col-xs-12"
+						href="javascript:location.reload();">刷新页面(F5)</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- https://ocr.wdku.net/ -->

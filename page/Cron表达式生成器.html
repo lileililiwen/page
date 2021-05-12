@@ -1,0 +1,3384 @@
+<!-- https://www.toolnb.com/tools/croncreate.html -->
+<meta charset='utf-8'>
+<link href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/bootstrap3.5min.css" rel="stylesheet"></link>
+<link href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/jquery-ui.min.css" rel="stylesheet"></link>
+<meta charset="utf-8"><style>
+	* {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+	/*.ui-spinner a.ui-spinner-button {
+		border-top-style: none;
+		border-bottom-style: none;
+		border-right-style: none;
+	}
+	.ui-widget .ui-widget {
+		font-size: 1em;
+	}
+	.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited, a.ui-button, a:link.ui-button, a:visited.ui-button, .ui-button {
+		color: #454545;
+		text-decoration: none;
+	}
+	.ui-widget-content a {
+		color: #333;
+	}
+	.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+		border-bottom-right-radius: 3px;
+	}
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {
+		border: 1px solid #c5c5c5;
+		background: #f6f6f6;
+		font-weight: normal;
+		color: #454545;
+	}
+	.ui-widget {
+		font-family: Arial,Helvetica,sans-serif;
+		font-size: 1em;
+	}
+	.ui-spinner-down {
+		bottom: 0;
+	}
+	.ui-spinner-button {
+		width: 1.6em;
+		height: 50%;
+		font-size: .5em;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		position: absolute;
+		cursor: default;
+		display: block;
+		overflow: hidden;
+		right: 0;
+	}
+	.ui-button-icon-only {
+		width: 2em;
+		box-sizing: border-box;
+		text-indent: -9999px;
+		white-space: nowrap;
+	}
+	.ui-button, .ui-button:link, .ui-button:visited, .ui-button:hover, .ui-button:active {
+		text-decoration: none;
+	}
+	.ui-button {
+		padding: .4em 1em;
+		display: inline-block;
+		position: relative;
+		line-height: normal;
+		margin-right: .1em;
+		cursor: pointer;
+		vertical-align: middle;
+		text-align: center;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		overflow: visible;
+	}*/
+	.iradio_square-blue.checked {
+		background-position: -168px 0;
+	}
+	.iradio_square-blue {
+		background-position: -120px 0;
+	}
+	.icheckbox_square-blue, .iradio_square-blue {
+		display: inline-block;
+		*display: inline;
+		vertical-align: middle;
+		margin: 0;
+		padding: 0;
+		width: 22px;
+		height: 22px;
+		background: url(image/blue.png) no-repeat;
+		border: none;
+		cursor: pointer;
+	}
+	.icheckbox_square-blue.checked {
+		background-position: -48px 0;
+	}
+
+	.tab-content {
+		background: white;
+	}
+	.row {
+		padding: 5px;
+	}
+	.nav-tabs > li > a {
+		position: relative;
+		display: block;
+		padding: 5px 9px;
+		font-weight: 600;
+		color: #1f1f1f;
+	}
+	.button-3d.button-primary {
+		-webkit-box-shadow: 0 7px 0 #0880d7, 0 8px 3px rgb(0 0 0 / 30%);
+		box-shadow: 0 7px 0 #0880d7, 0 8px 3px rgb(0 0 0 / 30%);
+	}
+	.button-small {
+		font-size: 12px;
+		height: 30px;
+		line-height: 30px;
+		padding: 0 30px;
+	}
+	.button-3d {
+		position: relative;
+		top: 0;
+		-webkit-box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgb(0 0 0 / 20%);
+		box-shadow: 0 7px 0 #bbbbbb, 0 8px 3px rgb(0 0 0 / 20%);
+	}
+	.button-rounded {
+		border-radius: 4px;
+	}
+	.button-primary, .button-primary-flat {
+		background-color: #1B9AF7;
+		border-color: #1B9AF7;
+		color: #FFF;
+	}
+	.button {
+		color: #666;
+		background-color: #EEE;
+		border-color: #EEE;
+		font-weight: 300;
+		font-size: 16px;
+		font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		text-decoration: none;
+		text-align: center;
+		line-height: 40px;
+		height: 40px;
+		padding: 0 40px;
+		margin: 0;
+		display: inline-block;
+		appearance: none;
+		cursor: pointer;
+		border: none;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		-webkit-transition-property: all;
+		transition-property: all;
+		-webkit-transition-duration: .3s;
+		transition-duration: .3s;
+	}
+</style>
+<div class="container">
+	<h1>Cron表达式生成器</h1>
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">生成器</h3>
+		</div>
+		<div class="panel-body">
+
+			<ul id="myTab" class="nav nav-tabs">
+				<li class="active"><a href="#t_second" data-toggle="tab">秒</a></li>
+				<li><a href="#t_min" data-toggle="tab">分</a></li>
+				<li><a href="#t_hour" data-toggle="tab">时</a></li>
+				<li><a href="#t_day" data-toggle="tab">日</a></li>
+				<li><a href="#t_month" data-toggle="tab">月</a></li>
+				<li><a href="#t_quarter" data-toggle="tab">季</a></li>
+				<li><a href="#t_week" data-toggle="tab">周</a></li>
+				<li><a href="#t_year" data-toggle="tab">年</a></li>
+			</ul>
+
+
+			<div id="myTabContent" class="tab-content">
+				<div class="tab-pane fade in active" id="t_second">
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_second" name="second"
+								class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每秒
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="second" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从 <input type="text" data-max="59"
+											value="0" style="width: 50px;" class="numberspinner"
+											name="second"> <a href="javascript:;"
+											data-spin="down"><i class=" icon-minus-sign icon-large "></i></a>
+										<a href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 秒
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到 <input type="text" data-max="59" value="0"
+											style="width: 50px;" class="numberspinner" name="second">
+										<a href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 秒
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="second" class="loopradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;循环&nbsp; 从 <input type="text" data-max="59"
+											value="0" style="width: 50px;" class="numberspinner"
+											name="second"> <a href="javascript:;"
+											data-spin="down"><i class=" icon-minus-sign icon-large "></i></a>
+										<a href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 秒 开始
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										每 <input type="text" data-max="59" value="0"
+											style="width: 50px;" class="numberspinner" name="second">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 秒 执行一次
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="second" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="secondList" id="l_second">
+							</div>
+						</div>
+						<p></p>
+					</div>
+				</div>
+
+
+				<div class="tab-pane fade" id="t_min">
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_minute" name="min"
+								class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每分
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="min" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从 <input type="text" data-max="59"
+											value="0" style="width: 50px;" class="numberspinner"
+											name="min"> <a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 分
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到 <input type="text" data-max="59" value="0"
+											style="width: 50px;" class="numberspinner" name="min">
+										<a href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 分
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="min" class="loopradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;循环&nbsp; 从 <input type="text" data-max="59"
+											value="0" style="width: 50px;" class="numberspinner"
+											name="min"> <a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 分 开始
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										每 <input type="text" data-max="59" value="0"
+											style="width: 50px;" class="numberspinner" name="min">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 分 执行一次
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="min" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="minList" id="l_min">
+
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="0"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;0</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;1</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;2</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;3</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="4"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;4</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="5"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;5</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="6"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;6</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="7"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;7</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="8"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;8</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="9"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;9</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="10"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;10</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="11"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;11</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="12"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;12</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="13"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;13</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="14"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;14</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="15"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;15</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="16"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;16</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="17"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;17</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="18"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;18</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="19"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;19</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="20"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;20</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="21"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;21</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="22"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;22</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="23"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;23</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="24"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;24</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="25"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;25</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="26"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;26</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="27"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;27</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="28"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;28</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="29"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;29</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="30"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;30</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="31"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;31</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="32"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;32</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="33"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;33</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="34"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;34</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="35"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;35</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="36"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;36</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="37"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;37</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="38"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;38</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="39"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;39</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="40"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;40</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="41"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;41</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="42"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;42</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="43"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;43</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="44"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;44</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="45"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;45</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="46"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;46</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="47"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;47</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="48"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;48</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="49"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;49</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="50"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;50</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="51"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;51</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="52"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;52</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="53"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;53</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="54"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;54</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="55"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;55</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="56"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;56</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="57"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;57</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="58"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;58</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="59"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;59</label>
+								</div>
+							</div>
+						</div>
+						<p></p>
+					</div>
+				</div>
+
+				<div class="tab-pane fade" id="t_hour">
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_hour" name="hour"
+								class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每时
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="hour" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从 <input type="text" data-rule="hour"
+											style="width: 50px;" class="numberspinner" name="hour">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 时
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到 <input type="text" data-rule="hour" style="width: 50px;"
+											class="numberspinner" name="hour"> <a
+											href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 时
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="hour" class="loopradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;循环&nbsp; 从 <input type="text" data-rule="hour"
+											style="width: 50px;" class="numberspinner" name="hour">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 时 开始
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										每 <input type="text" data-rule="hour" style="width: 50px;"
+											class="numberspinner" name="hour"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 时 执行一次
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="hour" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="hourList" id="l_hour">
+
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="0"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;0</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;1</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;2</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;3</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="4"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;4</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="5"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;5</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="6"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;6</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="7"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;7</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="8"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;8</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="9"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;9</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="10"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;10</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="11"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;11</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="12"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;12</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="13"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;13</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="14"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;14</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="15"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;15</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="16"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;16</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="17"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;17</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="18"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;18</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="19"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;19</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="20"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;20</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="21"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;21</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="22"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;22</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="23"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;23</label>
+								</div>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+				</div>
+
+				<div class="tab-pane fade" id="t_day">
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_day" name="day"
+								class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每日
+						</p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="day" class="noconfirmradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 不指定(指定周时，日 需设置为不指定)
+						</p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="day" class="lastdayradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 月最后一日
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="day" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从 <input type="text" data-rule="day"
+											style="width: 50px;" class="numberspinner" name="day">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 日
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到 <input type="text" data-rule="day" style="width: 50px;"
+											class="numberspinner" name="day"> <a
+											href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 日
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="day" class="loopradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;循环&nbsp; 从 <input type="text" data-rule="day"
+											style="width: 50px;" class="numberspinner" name="day">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 日 开始
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										每 <input type="text" data-rule="day" style="width: 50px;"
+											class="numberspinner" name="day"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 日 执行一次
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-6">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="nearspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="day" class="nearradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;每月&nbsp; 离 <input type="text" data-rule="day"
+											style="width: 50px;" class="numberspinner" name="day">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 日 最近工作日
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="day" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="dayList" id="l_day">
+
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;1</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;2</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;3</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="4"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;4</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="5"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;5</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="6"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;6</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="7"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;7</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="8"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;8</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="9"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;9</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="10"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;10</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="11"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;11</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="12"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;12</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="13"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;13</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="14"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;14</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="15"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;15</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="16"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;16</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="17"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;17</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="18"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;18</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="19"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;19</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="20"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;20</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="21"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;21</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="22"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;22</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="23"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;23</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="24"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;24</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="25"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;25</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="26"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;26</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="27"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;27</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="28"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;28</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="29"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;29</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="30"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;30</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="31"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;31</label>
+								</div>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+				</div>
+
+				<div class="tab-pane fade" id="t_month">
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_month" name="month"
+								class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每月
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="month" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从 <input type="text" data-rule="month"
+											style="width: 50px;" class="numberspinner" name="month">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 月
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到 <input type="text" data-rule="month" style="width: 50px;"
+											class="numberspinner" name="month"> <a
+											href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 月
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="month" class="loopradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;循环&nbsp; 从 <input type="text" data-rule="month"
+											style="width: 50px;" class="numberspinner" name="month">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 月 开始
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										每 <input type="text" data-rule="month" style="width: 50px;"
+											class="numberspinner" name="month"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 月 执行一次
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="month" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="monthList" id="l_month">
+
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;1</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;2</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;3</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="4"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;4</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="5"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;5</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="6"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;6</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="7"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;7</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="8"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;8</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="9"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;9</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="10"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;10</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="11"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;11</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="12"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;12</label>
+								</div>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+				</div>
+
+
+				<div class="tab-pane fade" id="t_quarter">
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_quarter"
+								name="quarter" class="firstradioreactor"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 不指定
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="quarter" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="qtList" id="quarter_spe">
+								<div class="col-xs-1 col-sm-1 col-md-4">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1,4,7,10"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;每季度第一个月</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-4">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2,5,8,11"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;每季度第二个月</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-4">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3,6,9,12"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;每季度第三个月</label>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="monthList" id="l_quarter">
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;1</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;2</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;3</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="4"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;4</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="5"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;5</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="6"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;6</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="7"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;7</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="8"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;8</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="9"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;9</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="10"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;10</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="11"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;11</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="12"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;12</label>
+								</div>
+							</div>
+						</div>
+						<p></p>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="t_week">
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_week" name="week"
+								class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每周
+						</p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="week" class="noconfirmradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 不指定(指定日时，周 需设置为不指定)
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="week" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从周 <input type="text"
+											data-rule="percent" style="width: 50px;"
+											class="numberspinner" name="week"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a>
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到周 <input type="text" data-rule="percent" style="width: 50px;"
+											class="numberspinner" name="week"> <a
+											href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a>
+
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="week" class="loopradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;循环 &nbsp;从周 <input type="text"
+											data-rule="percent" style="width: 50px;"
+											class="numberspinner" name="week"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 开始
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="loopspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										每隔 <input type="text" data-rule="percent" style="width: 50px;"
+											class="numberspinner" name="week"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a> 天执行一次
+
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="designspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="week" class="designradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;指定&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第 <input
+											type="text" data-rule="percent" style="width: 50px;"
+											class="numberspinner" name="week"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a> 周的
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+							<div class="col-xs-12 col-sm-12 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="designspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;周 <input type="text"
+											data-rule="percent" style="width: 50px;"
+											class="numberspinner" name="week"> <a
+											href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a>
+
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-6">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="lastspin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="week" class="lastradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;本月最后一个周 <input type="text" data-rule="percent"
+											style="width: 50px;" class="numberspinner" name="week">
+										<a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a>
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+
+						</div>
+						<p></p>
+					</div>
+
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="week" class="choiceradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp;自定义
+
+						</p>
+						<div class="row">
+							<div class="weekList" id="l_week">
+
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="1"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;1</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="2"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;2</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="3"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;3</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="4"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;4</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="5"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;5</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="6"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;6</label>
+								</div>
+								<div class="col-xs-1 col-sm-1 col-md-1">
+									<label><div class="icheckbox_square-blue"
+											style="position: relative;">
+											<input type="checkbox" value="7"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div> &nbsp;7</label>
+								</div>
+							</div>
+						</div>
+						<p></p>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="t_year">
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue checked"
+							style="position: relative;">
+							<input type="radio" checked="checked" id="r_year" name="year"
+								class="unselectradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 不指定
+						</p>
+					</div>
+					<div class="radiocheck">
+						<p>
+						<div class="iradio_square-blue" style="position: relative;">
+							<input type="radio" name="year" class="firstradio"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+							<ins class="iCheck-helper"
+								style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+						</div>
+						&nbsp; &nbsp; 每年
+						</p>
+					</div>
+
+
+					<div class="radiocheck">
+						<p></p>
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										<div class="iradio_square-blue" style="position: relative;">
+											<input type="radio" name="year" class="cycleradio"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;">
+											<ins class="iCheck-helper"
+												style="position: absolute; top: -20%; left: -20%; display: block; width: 140%; height: 140%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
+										</div>
+										&nbsp; &nbsp;周期&nbsp; 从 <input type="text"
+											style="width: 50px;" class="numberspinner" name="year"
+											value="2015"> <a href="javascript:;" data-spin="down"><i
+											class=" icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="  icon-plus-sign icon-large"></i></a>
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<span
+									class="ui-spinner ui-corner-all ui-widget ui-widget-content"><div
+										data-trigger="spinner" class="cyclespin ui-spinner-input"
+										autocomplete="off" role="spinbutton">
+										到 <input type="text" style="width: 50px;"
+											class="numberspinner" name="year" value="2016"> <a
+											href="javascript:;" data-spin="down"><i
+											class="  icon-minus-sign icon-large "></i></a> <a
+											href="javascript:;" data-spin="up"><i
+											class="icon-plus-sign icon-large"></i></a>
+
+									</div>
+									<a tabindex="-1" aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-up ui-corner-tr ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-n"></span><span
+										class="ui-button-icon-space"> </span></a><a tabindex="-1"
+									aria-hidden="true"
+									class="ui-button ui-widget ui-spinner-button ui-spinner-down ui-corner-br ui-button-icon-only"
+									role="button"><span
+										class="ui-button-icon ui-icon ui-icon-triangle-1-s"></span><span
+										class="ui-button-icon-space"> </span></a></span>
+							</div>
+						</div>
+						<p></p>
+					</div>
+
+
+				</div>
+
+
+			</div>
+
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">表达式结果</h3>
+				</div>
+
+				<div class="panel-body">
+					<div class="table-responsive">
+						<table class="table table-bordered">
+
+							<thead>
+								<tr>
+									<th>秒</th>
+									<th>分</th>
+									<th>时</th>
+									<th>日</th>
+									<th>月</th>
+									<th>周</th>
+									<th>年</th>
+
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><span name="v_second">*</span></td>
+									<td><span name="v_min">*</span></td>
+									<td><span name="v_hour">*</span></td>
+									<td><span name="v_day">*</span></td>
+									<td><span name="v_month">*</span></td>
+									<td><span name="v_week">?</span></td>
+									<td><span name="v_year"></span></td>
+								</tr>
+							</tbody>
+						</table>
+
+					</div>
+
+					<div class="well well-sm">
+						<div class="row">
+							<div class="col-xs-12 col-sm-12 col-md-2">
+								<b>Cron表达式：</b>
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-8">
+								<input type="text" name="cron" style="width: 100%;"
+									value="* * * * * ?" id="cron"> <input type="hidden"
+									id="transCron" name="transCron" value="">
+							</div>
+							<div class="col-xs-12 col-sm-12 col-md-2">
+								<a id="explain" href="javascript:void(0)"
+									class="button button-3d button-primary button-rounded button-small">解析到生成器</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row">
+		<h2>Cron表达式说明介绍（字段 、符号）</h2>
+		<p>Cron表达式是一个字符串，字符串以5或6个空格隔开，分为6或7个域，每一个域代表一个含义</p>
+		<p>1.结构</p>
+		<p>corn从左到右（用空格隔开）：秒 分 小时 月份中的日期 月份 星期中的日期 年份</p>
+		<p>2.字段含义</p>
+		<pre>            字段	允许值	允许的特殊字符
+            秒（Seconds）	0~59的整数	, - * /    四个字符
+            分（Minutes）	0~59的整数	, - * /    四个字符
+            小时（Hours）	0~23的整数	, - * /    四个字符
+            日期（DayofMonth）	1~31的整数（但是你需要考虑你月的天数）	,- * ? / L W C     八个字符
+            月份（Month）	1~12的整数或者 JAN-DEC	, - * /    四个字符
+            星期（DayofWeek）	1~7的整数或者 SUN-SAT （1=SUN）	, - * ? / L C #     八个字符
+            年(可选，留空)（Year）	1970~2099	, - * /    四个字符
+            </pre>
+		<p>说明解析</p>
+		<p>（1）*：表示匹配该域的任意值。假如在Minutes域使用*, 即表示每分钟都会触发事件。</p>
+		<p>（2）?：只能用在DayofMonth和DayofWeek两个域。它也匹配域的任意值，但实际不会。因为DayofMonth和DayofWeek会相互影响。例如想在每月的20日触发调度，不管20日到底是星期几，则只能使用如下写法：
+			13 13 15 20 * ?, 其中最后一位只能用？，而不能使用*，如果使用*表示不管星期几都会触发，实际上并不是这样。</p>
+		<p>（3）-：表示范围。例如在Minutes域使用5-20，表示从5分到20分钟每分钟触发一次</p>
+		<p>（4）/：表示起始时间开始触发，然后每隔固定时间触发一次。例如在Minutes域使用5/20,则意味着5分钟触发一次，而25，45等分别触发一次.
+
+		</p>
+		<p>（5）,：表示列出枚举值。例如：在Minutes域使用5,20，则意味着在5和20分每分钟触发一次。</p>
+		<p>（6）L：表示最后，只能出现在DayofWeek和DayofMonth域。如果在DayofWeek域使用5L,意味着在最后的一个星期四触发。
+
+		</p>
+		<p>（7）W:表示有效工作日(周一到周五),只能出现在DayofMonth域，系统将在离指定日期的最近的有效工作日触发事件。例如：在
+			DayofMonth使用5W，如果5日是星期六，则将在最近的工作日：星期五，即4日触发。如果5日是星期天，则在6日(周一)触发；如果5日在星期一到星期五中的一天，则就在5日触发。另外一点，W的最近寻找不会跨过月份
+			。</p>
+		<p>（8）LW:这两个字符可以连用，表示在某个月最后一个工作日，即最后一个星期五。</p>
+		<p>（9）#:用于确定每个月第几个星期几，只能出现在DayofMonth域。例如在4#2，表示某月的第二个星期三。</p>
+		<hr>
+		<p>
+			<a href="https://www.cnblogs.com/javahr/p/8318728.html"
+				target="_blank" rel="nofollow">具体介绍详情</a>
+		</p>
+	</div>
+</div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/icheck.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.spinner.min.js"></script>
+<script type="text/javascript">
+	/**
+	 * Created by LinJ on 2015/11/5.
+	 * 初始化页面模块js
+	 */
+
+	//初始化各类元素以及监听
+	$(function () {
+		inition();
+	});
+
+	//页面所有的页签名称
+	var itemList = ["second", "min", "hour", "day", "month", "week"];
+
+	//初始化各个页签自主选择的最大值
+	var max_second = 59;
+	var max_min = 59;
+	var max_hour = 23;
+	var max_day = 31;
+	var max_month = 12;
+	var max_quarter = 12;
+	var max_week = 7;
+
+	function inition() {
+		//初始化checkbox
+		initCheckBox("l_second", 0, 59);
+		initCheckBox("l_min", 0, 59);
+		initCheckBox("l_hour", 0, 23);
+		initCheckBox("l_day", 1, 31);
+		initCheckBox("l_month", 1, 12);
+		initCheckBox("l_quarter", 1, 12);
+		initCheckBox("l_week", 1, 7);
+
+
+		//初始化单选、复选框
+		$('input').iCheck({
+			checkboxClass: 'icheckbox_square-blue',
+			radioClass: 'iradio_square-blue',
+			increaseArea: '20%' // optional
+		});
+
+		//解析按钮绑定函数
+		$('#explain').click(function () {
+			reverseExp();
+		});
+
+		initFirstRadio();
+		initNoConfirmRadio();
+		initRadio();
+		initRadioCheckDiv();
+		initSpinner();
+		initCronFromTable();
+		initListChange();
+		initMonthByQuarter();
+
+		//如果已有传输过来的值，那么放入cron字段并且反解析
+		var instr = $("#transCron").val();
+		if (instr) {
+			$("#cron").val(instr);
+			reverseExp();
+		}
+
+	}
+
+	//初始化大量的复选框 根据div的id以及数量进行初始化 每个复选框占1/12宽度
+	function initCheckBox(divid, start, cnt) {
+		if (cnt != null && cnt > 0) {
+			for (dc = start; dc <= cnt; dc++) {
+				$("#" + divid).append(" <div class='col-xs-1 col-sm-1 col-md-1'> <label><input type='checkbox' value=" + dc + "> &nbsp;" + dc + "</label></div>");
+			}
+		}
+	}
+
+	//初始化每个页签第一排的radio，即*条件
+	function initFirstRadio() {
+		$('.firstradio').on('ifChecked', function () {
+			everyTime(this);
+		});
+		$('.unselectradio').on('ifChecked', function () {
+			clearSpan(this);
+		});
+
+		//季度的第一排radio，需要指定为month
+		$('.firstradioreactor').on('ifChecked', function () {
+			everyTimeByName("v_month");
+		});
+	}
+
+	//初始化不指定的radio 即？条件 以及最后一日条件
+	function initNoConfirmRadio() {
+		$('.noconfirmradio').on('ifChecked', function () {
+			unAppoint(this);
+		});
+		$('.lastdayradio').on('ifChecked', function () {
+			lastDay(this);
+		});
+
+	}
+
+	//初始化每个页签选择的的radio
+	function initRadio() {
+		//周期选择的radio
+		$('.cycleradio').on('ifChecked', function () {
+			writeStartAndEnd(this, "-");
+		});
+		//循环选择的radio
+		$('.loopradio').on('ifChecked', function () {
+			writeStartAndEnd(this, "/");
+		});
+
+		//指定选择的radio 即#
+		$('.designradio').on('ifChecked', function () {
+			writeStartAndEnd(this, "#");
+		});
+
+
+		//自主选择的radio
+		$('.choiceradio').on('ifChecked', function () {
+
+			var spanname = this.name;
+			var theList = $("." + spanname + "List").find(':checkbox');
+			var maxvalue = eval("max_" + this.name);
+			changeSpanFromCheckList(theList, maxvalue, spanname);
+		});
+
+		//最近工作日的radio
+		$('.nearradio').on('ifChecked', function () {
+			writeEnd(this, "W");
+		});
+
+		//最后一个周几的radio
+		$('.lastradio').on('ifChecked', function () {
+			writeEnd(this, "L");
+		});
+
+
+	}
+
+	//初始化div内容监听绑定函数，即点击div，对应radio被选中
+	function initRadioCheckDiv() {
+		$('.radiocheck').click(function () {
+			radioCheckByClick(this);
+		});
+
+		$.each(itemList, function (n, value) {
+			var checkList = $("." + value + "List");
+			checkList.click(function () {
+				var theRadio = $(this.closest('.radiocheck')).find(':radio');
+				theRadio.eq(0).iCheck('check');
+			});
+		});
+	}
+
+
+	//绑定数字微调器
+	function initSpinner() {
+		//绑定数字微调器
+		$(".cyclespin").spinner('changing', function (e, newVal, oldVal) {
+			//trigger immediately
+			writeStartAndEnd(this, "-");
+		});
+		$(".loopspin").spinner('changing', function (e, newVal, oldVal) {
+			//trigger immediately
+			writeStartAndEnd(this, "/");
+		});
+		$(".designspin").spinner('changing', function (e, newVal, oldVal) {
+			//trigger immediately
+			writeStartAndEnd(this, "#");
+		});
+		$(".nearspin").spinner('changing', function (e, newVal, oldVal) {
+			//trigger immediately
+			writeEnd(this, "W");
+		});
+		$(".lastspin").spinner('changing', function (e, newVal, oldVal) {
+			//trigger immediately
+			writeEnd(this, "L");
+		});
+	}
+
+	//表达式结果由表格生成到cron表达式
+	function initCronFromTable() {
+		//查找所有name以v_开头的span元素
+		var vals = $("span[name^='v_']");
+		var cron = $("#cron");
+		vals.change(function () {
+			var item = [];
+			vals.each(function () {
+				item.push(this.innerHTML);
+			});
+			cron.val(item.join(" "));
+		});
+	}
+
+	//定义checkbox在被点击的时候的绑定函数  循环遍历页签数组
+	function initListChange() {
+		$.each(itemList, function (n, value) {
+			var checkList = $("." + value + "List").find(':checkbox');
+			var maxvalue = eval("max_" + value);
+			initChangeOnCheckboxList(checkList, maxvalue, value);
+		});
+	}
+
+	//给list的checkbox绑定点击方法 入参是list，最大值，指定输出的span名称
+	function initChangeOnCheckboxList(checkList, maxvalue, spanname) {
+		checkList.on('ifChanged', function () {
+			//模拟div被点击过一次
+			this.closest('.radiocheck').click();
+			changeSpanFromCheckList(checkList, maxvalue, spanname);
+		});
+	}
+
+	//定义季度的月份选择监听
+	function initMonthByQuarter() {
+		var checkList = $("#quarter_spe").find(':checkbox');
+		checkList.on('ifChanged', function () {
+			var vals = [];
+			checkList.each(function () {
+				if (this.checked) {
+					vals.push(this.value);
+				}
+			});
+			var val = "?";
+			val = vals.join(",");
+			ary = val.split(",");
+			unselectAll('l_quarter');
+			for (var i = 0; i < ary.length; i++) {
+				$("#l_quarter input[value='" + ary[i] + "']").iCheck('check');
+			}
+		});
+	}
+
+	//清除选中状态
+	function unselectAll(listId) {
+		for (var i = 1; i <= 12; i++) {
+			$("#l_quarter input[value='" + i + "']").iCheck('uncheck');
+		}
+	}
+
+	/**
+	 * Created by LinJ on 2015/11/5.
+	 * 页面功能模块js
+	 */
+
+
+
+	/**
+	 * 表达式重置为默认值
+	 */
+	function everyTime(dom) {
+		var item = $("span[name=v_" + dom.name + "]");
+		item.html("*");
+		item.change();
+	}
+
+	/**
+	 * 表达式重置为默认值
+	 入参为元素的名字
+	 */
+	function everyTimeByName(v_name) {
+		var item = $("span[name=" +v_name + "]");
+		item.html("*");
+		item.change();
+	}
+
+	//清除表达式的值
+	function clearSpan(dom){
+		var item = $("span[name=v_" +dom.name + "]");
+		item.html("");
+		item.change();
+	}
+
+
+	/**
+	 * 不指定 即重置为？号
+	 */
+	function unAppoint(dom) {
+		var name = dom.name;
+		var val = "?";
+		if (name == "year")
+			val = "";
+		var item = $("span[name=v_" + name + "]");
+		item.html(val);
+		item.change();
+	}
+
+	/**
+	 * 不指定 即重置为？号
+	 入参为元素的名字
+	 */
+	function unAppointByName(v_name) {
+
+		var val = "?";
+		if (v_name == "year")
+			val = "";
+		var item = $("span[name=" + v_name + "]");
+		item.html(val);
+		item.change();
+	}
+
+	//最后一日
+	function lastDay(dom){
+		var item = $("span[name=v_" + dom.name + "]");
+		item.html("L");
+		item.change();
+	}
+
+	/**
+	 * 书写有前后的公式，包括 1-2 1/2 1#2 等
+	 */
+	function writeStartAndEnd(dom,sym) {
+		var name = dom.name;
+		var ns = $(dom).closest('.radiocheck').find(".numberspinner");
+		var start = ns.eq(0).val();
+		var end = ns.eq(1).val();
+		var item = $("span[name=v_" + name + "]");
+		item.html(start + sym + end);
+		item.change();
+	}
+
+	//书写只有前的工时，包括1W 1L等
+	function writeEnd(dom,sym){
+		var name = dom.name;
+		var ns = $(dom).closest('.radiocheck').find(".numberspinner");
+		var value = ns.eq(0).val();
+		var item = $("span[name=v_" + name + "]");
+		item.html(value + sym);
+		item.change();
+	}
+
+
+	//点击div中的内容，对应radio即被选中的功能
+	function radioCheckByClick(dom){
+		var theRadio = $(dom).find(':radio');
+		theRadio.eq(0).iCheck('check');
+	}
+
+	//从checkList更新span的通用方法
+	function changeSpanFromCheckList(checkList,maxvalue,spanname){
+		var vals = [];
+		checkList.each(function () {
+			if (this.checked) {
+				vals.push(this.value);
+			}
+		});
+		var val = "?";
+		if (vals.length > 0 && vals.length < maxvalue) {
+			val = vals.join(",");
+		}else if(vals.length == maxvalue){
+			val = "*";
+		}
+		var item = $("span[name=v_"+spanname+"]");
+		item.html(val);
+		item.change();
+	}
+
+	//解析cron表达式到生成器的函数
+	function reverseExp() {
+		//获取参数中表达式的值
+		var txt = $("#cron").val();
+
+		if (txt) {
+			var regs = txt.split(' ');
+			expObj(regs[0], "second");
+			expObj(regs[1], "min");
+			expObj(regs[2], "hour");
+			expDay(regs[3], "day");
+			expObj(regs[4], "month");
+			expWeek(regs[5],"week");
+
+			if (regs.length > 6) {
+				$("span[name=v_year]").html(regs[6]);
+				expYear(regs[6],"year");
+			}
+		}
+	}
+
+	//解析时分秒月
+	function expObj(val,type){
+		//表达式结果框赋值
+		$("span[name=v_"+type+"]").html(val);
+		//寻找对应类型的radio列表
+		var radios = $(":radio[name="+type+"]");
+		var ary = null;
+		//根据值的类型进行判断与对应赋值，以及radio的选中。
+		if (val == "*") {
+			radios.eq(0).iCheck("check");
+		} else if (val.split('-').length > 1) {
+			ary = val.split('-');
+			$(":text[name="+type+"]").eq(0).val(ary[0]);
+			$(":text[name="+type+"]").eq(1).val(ary[1]);
+			radios.eq(1).iCheck("check");
+		} else if (val.split('/').length > 1) {
+			ary = val.split('/');
+			$(":text[name="+type+"]").eq(2).val(ary[0]);
+			$(":text[name="+type+"]").eq(3).val(ary[1]);
+			radios.eq(2).iCheck("check");
+		} else {
+			if (val != "?") {
+				ary = val.split(",");
+				for (var i = 0; i < ary.length; i++) {
+					$("." + type + "List input[value='" + ary[i] + "']").iCheck("check");
+				}
+			}
+			radios.eq(3).iCheck("check");
+		}
+	}
+
+	//解析日
+	function expDay(val,type){
+		//表达式结果框赋值
+		$("span[name=v_"+type+"]").html(val);
+		//寻找对应类型的radio列表
+		var radios = $(":radio[name="+type+"]");
+		var ary = null;
+		//根据值的类型进行判断与对应赋值，以及radio的选中。
+		if (val == "*") {
+			radios.eq(0).iCheck("check");
+		}else if (val == "?") {
+			radios.eq(1).iCheck("check");
+		}else if (val == "L") {
+			radios.eq(2).iCheck("check");
+		}else if (val.split('-').length > 1) {
+			ary = val.split('-');
+			$(":text[name="+type+"]").eq(0).val(ary[0]);
+			$(":text[name="+type+"]").eq(1).val(ary[1]);
+			radios.eq(3).iCheck("check");
+		} else if (val.split('/').length > 1) {
+			ary = val.split('/');
+			$(":text[name="+type+"]").eq(2).val(ary[0]);
+			$(":text[name="+type+"]").eq(3).val(ary[1]);
+			radios.eq(4).iCheck("check");
+		} else if (val.split('W').length > 1) {
+			ary = val.split('W');
+			$(":text[name="+type+"]").eq(4).val(ary[0]);
+			radios.eq(5).iCheck("check");
+		}else {
+			if (val != "?") {
+				ary = val.split(",");
+				for (var i = 0; i < ary.length; i++) {
+					$("." + type + "List input[value='" + ary[i] + "']").iCheck("check");
+				}
+			}
+			radios.eq(6).iCheck("check");
+		}
+	}
+
+	//解析周
+	function expWeek(val,type){
+		//表达式结果框赋值
+		$("span[name=v_"+type+"]").html(val);
+		//寻找对应类型的radio列表
+		var radios = $(":radio[name="+type+"]");
+		var ary = null;
+		//根据值的类型进行判断与对应赋值，以及radio的选中。
+		if (val == "*") {
+			radios.eq(0).iCheck("check");
+		}else if (val == "?") {
+			radios.eq(1).iCheck("check");
+		}else if (val.split('-').length > 1) {
+			ary = val.split('-');
+			$(":text[name="+type+"]").eq(0).val(ary[0]);
+			$(":text[name="+type+"]").eq(1).val(ary[1]);
+			radios.eq(2).iCheck("check");
+		} else if (val.split('/').length > 1) {
+			ary = val.split('/');
+			$(":text[name="+type+"]").eq(2).val(ary[0]);
+			$(":text[name="+type+"]").eq(3).val(ary[1]);
+			radios.eq(3).iCheck("check");
+		}else if (val.split('#').length > 1) {
+			ary = val.split('#');
+			$(":text[name="+type+"]").eq(4).val(ary[0]);
+			$(":text[name="+type+"]").eq(5).val(ary[1]);
+			radios.eq(4).iCheck("check");
+		} else if (val.split('L').length > 1) {
+			ary = val.split('L');
+			$(":text[name="+type+"]").eq(6).val(ary[0]);
+			radios.eq(5).iCheck("check");
+		}else {
+			if (val != "?") {
+				ary = val.split(",");
+				for (var i = 0; i < ary.length; i++) {
+					$("." + type + "List input[value='" + ary[i] + "']").iCheck("check");
+				}
+			}
+			radios.eq(6).iCheck("check");
+		}
+	}
+
+	//解析年
+	function expYear(val,type){
+		//表达式结果框赋值
+		$("span[name=v_"+type+"]").html(val);
+		//寻找对应类型的radio列表
+		var radios = $(":radio[name="+type+"]");
+		var ary = null;
+		//根据值的类型进行判断与对应赋值，以及radio的选中。
+		if (val == "*") {
+			radios.eq(1).iCheck("check");
+		}else if (val.split('-').length > 1) {
+			ary = val.split('-');
+			$(":text[name="+type+"]").eq(0).val(ary[0]);
+			$(":text[name="+type+"]").eq(1).val(ary[1]);
+			radios.eq(2).iCheck("check");
+		}
+	}
+</script>

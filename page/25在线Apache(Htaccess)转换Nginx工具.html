@@ -1,0 +1,245 @@
+<!-- http://tools.jb51.net/aideddesign/htaccess2nginx -->
+<style type="text/css">
+#error_msg {
+	border: 1px dashed #C00;
+	padding: 5px;
+	color: #C00;
+	margin: 10px 2px;
+	display: none;
+}
+h1, .h1 {
+    font-size: 36px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+h1 {
+    margin: .67em 0;
+    font-size: 2em;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+button, html input[type=button], input[type=reset], input[type=submit] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+input {
+    line-height: normal;
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+    color: inherit;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #428bca;
+    border-color: #357ebd;
+}
+textarea.form-control {
+    height: auto;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+textarea {
+    overflow: auto;
+}
+.alert-warning {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
+.alert-info {
+    color: #31708f;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+}
+a {
+    color: #428bca;
+    text-decoration: none;
+}
+</style>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+<div class="col-md-9">
+	<h1 align="center">在线Apache(Htaccess)转换Nginx工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">这是一款Htaccess转换Nginx工具，可实现Apache环境下.htaccess文件转换成nginx格式，支持.htaccess文件上传读取与转换，以及生成结果的复制与清空功能。非常简单实用。提供给需要的朋友参考使用。</h2>
+	<textarea name="code" class="form-control" id="code"
+		style="height: 200px; width: 95%; margin: 10px;">RewriteEngine On
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]</textarea>
+
+	选择文件
+	<form action="" method="post" id="upload-form"
+		enctype="multipart/form-data" style="display: inline;">
+		<input type="hidden" name="timestamp1" id="timestamp1"
+			value="1620040522"> <input type="hidden" name="token1"
+			id="token1" value="1fbeabef753a320abf13371baf5dd897"> <input
+			type="file" name="conf-file" class="load-file btn btn-default"
+			style="display: inline;">
+	</form>
+	<input type="button" id="convert-btn"
+		class="convert-btn btn btn-success" value="转换">
+	<button data-nocopy="true" id="copy-code"
+		class="copy-code btn btn-primary" data-clipboard-action="copy"
+		data-clipboard-target="#result" value="复制结果">复制结果</button>
+	<button data-nocopy="true" class="clear-all btn btn-default">全部删除</button>
+
+	<pre id="error_msg" class="error_msg"></pre>
+	<textarea name="result" class="form-control" id="result"
+		placeholder="返回结果" style="height: 200px; width: 95%; margin: 10px;"></textarea>
+
+	<script src="http://tools.jb51.net/static/skin/js/jquery.form.js"></script>
+
+	<script src="http://tools.jb51.net/js/clipboard.min.js"></script>
+	<script src="http://tools.jb51.net/js/rewrite-conf.js"></script>
+	<script>
+		$("#convert-btn").click(function() {
+			var source = $("#code").val();
+			if (source == '') {
+				return;//empty error
+			}
+			var nginx = RewriteConf.convert(source);
+			$("#result").val(nginx);
+		});
+		$(".clear-all").click(function() {
+			$("#code").val("");
+			$("#result").val("");
+		});
+		var clipboard = new Clipboard('#copy-code');
+		clipboard.on('success', function(e) {
+		});
+		clipboard.on('error', function(e) {
+		});
+		$("#copy-code").click(function() {
+			alert("已复制√");
+		});
+		$("#copy-code").mouseout(function() {
+			$("#copy-code").val("复制结果");
+		});
+		$(function() {
+			$('#upload-form')
+					.find('input[name=conf-file]')
+					.on(
+							'change',
+							function(e) {
+								e.preventDefault();
+								$('#upload-form')
+										.ajaxSubmit(
+												{
+													type : 'post',
+													url : 'http://tools.jb51.net/static/htaccess2nginx/readfile.php',
+													data : $("#upload-form")
+															.serialize(),
+													success : function(data) {
+														var json = eval('('
+																+ data + ')');
+														$('#error_msg').hide();
+														$('#error_msg').empty();
+														if (json.error) {
+															$('#error_msg')
+																	.html(
+																			json.error);
+															$('#error_msg')
+																	.show();
+														} else if (json.rel) {
+															$('#code').val(
+																	json.rel);
+														}
+													}
+												});
+							});
+		});
+	</script>
+	<h2 align="center" class="alert alert-warning">关于在线Apache(Htaccess)转换Nginx工具</h2>
+	<div class="alert alert-info" style="font-size: 16px;">
+		1. 该工具类似基于网上的开源代码修改而来，支持htaccess文件转换nginx格式功能，并带有复制转换结果与清空功能。<br>
+		2. 支持htaccess文件的上传读取功能，便于读取本地.htaccess文件及转换操作。<br> 3.
+		这里再为大家推荐一款相关的htaccess工具，便于与本工具配合使用：&nbsp;<a
+			href="http://tools.jb51.net/aideddesign/mkhtaccess" target="_blank"><strong>.htaccess文件代码在线生成工具</strong></a><br>
+		4. 欢迎大家提出宝贵意见。
+	</div>
+	<div class="well">
+		<hr>
+		<div id="SOHUCS" sid="htaccess2nginx"></div>
+		<script type="text/javascript"> 
+</script>
+
+	</div>
+
+</div>

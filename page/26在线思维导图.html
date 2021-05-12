@@ -1,0 +1,87 @@
+<!-- https://www.zxgj.cn/naotu?p=siweidaotu-->
+<!doctype html>
+<html lang=''>
+<head>
+   <meta charset='utf-8'>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /> 
+   <title>在线工具网 - 工作生活好帮手</title>   
+   <meta name="keywords" content="在线工具,在线软件,工具软件,实用工具,在线工具网">
+   <meta name="description" content="在线工具网提供基于Web网页的在线工具软件，如：智商测试、情商测试、逻辑思维训练、mbti职业性格测试、九型人格测试、大五人格测试、人才测评、图表制作、图片处理、疾病自测、抑郁症测试题、生活查询、健康管理、娱乐工具、及各类在线计算器等等。">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/naotu/bootstrap.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/naotu/codemirror.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/naotu/hotbox.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/naotu/kityminder.core.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/naotu/color-picker.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lileililiwen/static/css/naotu/kityminder.editor.min.css">
+
+	<meta charset="utf-8"><style>
+		html, body {
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			overflow: hidden;
+		}
+		h1.editor-title {
+			background: #5e8ae9;
+			color: white;
+			margin: 0;
+			height: 40px;
+			font-size: 14px;
+			line-height: 40px;
+			font-family: 'Hiragino Sans GB', 'Arial', 'Microsoft Yahei';
+			font-weight: normal;
+			padding: 0 20px;
+		}
+		div.minder-editor-container {
+			position: absolute;
+			top: 40px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body ng-app="kityminder" ng-controller="MainController">
+<h1 class="editor-title">
+	<span style="margin-left:100px;"><a href="/info/d/fcTzmRtt" target="_blank" style="text-decoration: underline;color:#fff">使用说明</a></span>
+	<span style="margin-left:20px;">TAB：添加子节点</span>
+	<span style="margin-left:20px;">ENTER：添加下一节点</span>
+	<span style="margin-left:20px;">DELETE：删除节点</span>
+</h1>
+<form id="xform" name="xform"></form>
+<kityminder-editor on-init="initEditor(editor, minder)" data-theme="fresh-green"></kityminder-editor>
+</body>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/bootstrap.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/angular.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/ui-bootstrap-tpls.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/codemirror.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/xml.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/javascript.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/css.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/htmlmixed.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/overlay.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/gfm.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/ui-codemirror.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/marked.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/kity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/hotbox.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/json-diff.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/kityminder.core.min.sj.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/color-picker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/kityminder.editor.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/naotu/naotu.js"></script>
+
+<script>
+	angular.module('kityminder', ['kityminderEditor'])
+	.controller('MainController', function($scope) {
+		$scope.initEditor = function(editor, minder) {
+			window.editor = editor;
+			window.minder = minder;
+		};
+	});
+</script>
+</body>
+</html>

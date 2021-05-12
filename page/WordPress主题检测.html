@@ -1,0 +1,309 @@
+<!--
+https://www.dute.org/wp-theme-detector-->
+<meta charset="utf-8"><style>
+    .page-header {
+        padding-top: 16px;
+        padding-bottom: 12px;
+        background-color: #242424;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .page-header {
+            padding-top: 25px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .tool-title {
+        color: #000;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .tool-title {
+            font-size: 2.2rem;
+        }
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    *, *::before, *::after {
+        box-sizing: border-box;
+    }
+
+    .row-control-group .form-control, .row-control-group .btn {
+        width: 100%;
+    }
+
+    .btn.btn-lg {
+        font-size: 1em;
+        padding: 12px 20px;
+    }
+
+    .btn.btn-primary, .btn.btn-primary:visited, a.btn.btn-primary, a.btn.btn-primary:visited {
+        border-color: #119e49;
+        color: #fff;
+        background-color: #3bb76d;
+    }
+
+    .btn, a.btn {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ccc;
+        color: #585858;
+        background-color: #e4e4e4;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        font-size: .9rem;
+        padding: 8px 16px;
+        border-radius: 2px;
+        line-height: 1;
+        text-align: center;
+        user-select: none;
+        -webkit-user-select: none;
+        transition: background-color .25s;
+    }
+
+    button, input, optgroup, select, textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    .tool-content-wrap {
+        background-color: #fdfae9;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 2px;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .tool-content-wrap, .tool-content-body {
+            padding: 30px;
+        }
+    }
+
+    button, input, optgroup, select, textarea {
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+    }
+
+    row-control-group .form-control, .row-control-group .btn {
+        width: 100%;
+    }
+
+    .input-group-lg > .form-control {
+        height: calc(2.5rem + 2px);
+        padding: .715rem .8rem;
+        font-size: 1rem;
+        border-top-left-radius: .15rem;
+        border-bottom-left-radius: .15rem;
+    }
+
+    input[type="search"], input[type="search"]::-webkit-search-decoration {
+        -webkit-appearance: none;
+    }
+
+    .form-control {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: calc(2.15rem + 2px);
+        padding: .5rem .875rem;
+        font-size: .9rem;
+        color: #242424;
+        border: 1px solid #d2d6d6;
+        border-radius: .125rem;
+        background-color: #fff;
+        transition: border-color .15s ease-in-out;
+        -webkit-appearance: none;
+    }
+
+    .col-xs-12 {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .col-xs, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-offset-0, .col-xs-offset-1, .col-xs-offset-2, .col-xs-offset-3, .col-xs-offset-4, .col-xs-offset-5, .col-xs-offset-6, .col-xs-offset-7, .col-xs-offset-8, .col-xs-offset-9, .col-xs-offset-10, .col-xs-offset-11, .col-xs-offset-12, .col-sm, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-offset-0, .col-sm-offset-1, .col-sm-offset-2, .col-sm-offset-3, .col-sm-offset-4, .col-sm-offset-5, .col-sm-offset-6, .col-sm-offset-7, .col-sm-offset-8, .col-sm-offset-9, .col-sm-offset-10, .col-sm-offset-11, .col-sm-offset-12, .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-offset-0, .col-md-offset-1, .col-md-offset-2, .col-md-offset-3, .col-md-offset-4, .col-md-offset-5, .col-md-offset-6, .col-md-offset-7, .col-md-offset-8, .col-md-offset-9, .col-md-offset-10, .col-md-offset-11, .col-md-offset-12, .col-lg, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-offset-0, .col-lg-offset-1, .col-lg-offset-2, .col-lg-offset-3, .col-lg-offset-4, .col-lg-offset-5, .col-lg-offset-6, .col-lg-offset-7, .col-lg-offset-8, .col-lg-offset-9, .col-lg-offset-10, .col-lg-offset-11, .col-lg-offset-12, .col-xl, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-offset-0, .col-xl-offset-1, .col-xl-offset-2, .col-xl-offset-3, .col-xl-offset-4, .col-xl-offset-5, .col-xl-offset-6, .col-xl-offset-7, .col-xl-offset-8, .col-xl-offset-9, .col-xl-offset-10, .col-xl-offset-11, .col-xl-offset-12 {
+        box-sizing: border-box;
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+        flex: 0 0 auto;
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+        padding-right: 8px;
+        padding-left: 8px;
+        max-width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+        .col-md-9 {
+            -ms-flex-preferred-size: 75%;
+            flex-basis: 75%;
+            max-width: 75%;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .col-md, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md-offset-0, .col-md-offset-1, .col-md-offset-2, .col-md-offset-3, .col-md-offset-4, .col-md-offset-5, .col-md-offset-6, .col-md-offset-7, .col-md-offset-8, .col-md-offset-9, .col-md-offset-10, .col-md-offset-11, .col-md-offset-12 {
+            box-sizing: border-box;
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            padding-right: 8px;
+            padding-left: 8px;
+        }
+    }
+    .row-control-group .form-control, .row-control-group .btn {
+        width: 100%;
+    }
+    .input-group-lg>.form-control {
+        height: calc(2.5rem + 2px);
+        padding: .715rem .8rem;
+        font-size: 1rem;
+        border-top-left-radius: .15rem;
+        border-bottom-left-radius: .15rem;
+    }
+    .tool-summary {
+        text-align: justify;
+    }
+
+    @media only screen and (min-width: 768px){
+        .tool-summary {
+            font-size: 1.125rem;
+        }
+    }
+    body {
+        margin: 0;
+        padding: 0;
+        color: #242424;
+        font-size: 16px;
+        font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+        line-height: 1.8;
+    }
+
+    .content-container {
+        padding: 1rem .5rem;
+        min-height: 400px;
+    }
+    @media only screen and (min-width: 768px){
+        .content-container {
+            padding: 30px 0;
+        }
+    }
+    .container {
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+    @media only screen and (min-width: 576px){
+        .container {
+            width: 560px;
+            max-width: 100%;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        .container {
+            width: 752px;
+            max-width: 100%;
+        }
+    }
+
+</style>
+<meta charset='utf-8'>
+<div id="pjax-container">
+    <div class="content-header">
+        <div class="container"><h1 class="tool-title">WordPress主题检测</h1>
+            <div class="tool-summary">
+                WordPress主题检测工具，可以检查使用WordPress程序搭建的网站用的什么主题。本工具可以检查出网站主题的作者（及作者链接）、主题描述、主题Tag、主题版本以及主题使用的License等信息，是一款了解WordPress网站主题信息的便利工具。
+            </div>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-md-9">
+                    <div class="tool-body">
+                        <div class="tool-content-container">
+                            <div class="tool-content-wrap"><strong><i class="iconfont icon-edit"></i> 输入要检测的网站：</strong>
+                                <div class="row row-control-group">
+                                    <div class="col-xs-12 col-md-9 input-group-lg"><input type="search" name="url"
+                                                                                          id="url" class="form-control"
+                                                                                          data-keyup-trigger="#btn-theme-detect"
+                                                                                          placeholder="请输入要检测的 WordPress 网站...">
+                                    </div>
+                                    <div class="col-xs-12 col-md-3">
+                                        <button type="button" id="btn-theme-detect" class="btn btn-primary btn-lg"
+                                                data-click-handler="">检查主题
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="loading-section" style="display: none;">
+                            <div class="row center-xs middle-xs">
+                                <div class="loading"></div>
+                                <div>正在检测网站主题...</div>
+                            </div>
+                        </div>
+                        <div class="result-section mt-1" style="display: none;">
+                            <div class="wp-theme-result">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-8"><h3 class="wp-theme-name">主题：REGAL</h3>
+                                        <div class="wp-theme-details">
+                                            <div class="row"><label class="col-xs-3">版本</label>
+                                                <div class="col-xs-9">4.4</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4"><img
+                                            src="http://www.2zzt.com/wp-content/themes/regal/screenshot.png"
+                                            class="img-responsive"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <template id="no-result-template">
+                            <div class="no-result">{reason}</div>
+                        </template>
+                        <template id="wp-theme-detail-item-template">
+                            <div class="row"><label class="col-xs-3">{key}</label>
+                                <div class="col-xs-9">{value}</div>
+                            </div>
+                        </template>
+                        <template id="wp-theme-detail-item-link-template">
+                            <div class="row"><label class="col-xs-3">{key}</label>
+                                <div class="col-xs-9"><a href="{value}" target="_blank">{value}</a></div>
+                            </div>
+                        </template>
+                        <template id="wp-theme-template">
+                            <div class="wp-theme-result">
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-8"><h3 class="wp-theme-name">主题：{name}</h3>
+                                        <div class="wp-theme-details">{details}</div>
+                                    </div>
+                                    <div class="col-xs-12 col-md-4"><img src="{screenshot}" class="img-responsive">
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script> var scripts = [], styles = [];
+    scripts.push("out/js/d5ec268aa13a060eaf00808831117439.js"); </script>
+</div>

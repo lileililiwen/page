@@ -1,0 +1,422 @@
+<meta charset="utf-8"><style>
+.wrap {
+	width: 960px;
+	min-height: 520px;
+	margin: 20px auto;
+	border: solid 0px #f00;
+}
+
+.title {
+	margin: 60px auto 30px auto;
+	font-family: "微软雅黑";
+	text-align: center;
+}
+
+.browser {
+	margin: 0;
+	padding: 0
+}
+/* browser  */
+.browser .icon {
+	height: 20px;
+	width: 20px;
+	margin: 0px auto;
+}
+
+.browser .true {
+	background: url(image/browser/flag.png) 0px 0px no-repeat;
+}
+
+.browser .false {
+	background: url(image/browser/flag.png) -20px 0px no-repeat;
+}
+
+.browser .other {
+	background: url(image/browser/flag.png) -40px 0px no-repeat;
+}
+.table>caption+thead>tr:first-child>th, .table>colgroup+thead>tr:first-child>th, .table>thead:first-child>tr:first-child>th, .table>caption+thead>tr:first-child>td, .table>colgroup+thead>tr:first-child>td, .table>thead:first-child>tr:first-child>td {
+    border-top: 0;
+}
+.table-bordered>thead>tr>th, .table-bordered>thead>tr>td {
+    border-bottom-width: 2px;
+}
+.table-bordered>thead>tr>th, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>tbody>tr>td, .table-bordered>tfoot>tr>td {
+    border: 1px solid #ddd;
+}
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #ddd;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.table th {
+    color: #ffffff;
+    background-color: #555555;
+    border: 1px solid #555555;
+}
+.text-center {
+    text-align: center;
+}
+th {
+    text-align: left;
+}
+td, th {
+    padding: 0;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+.table tr:nth-child(odd) {
+    background-color: #F6F4F0;
+}
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+h2, .h2 {
+    font-size: 30px;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</style>
+<div class="col-md-9">
+	<h1 align="center">在线浏览器信息检测工具</h1>
+	<h2 class="alert alert-success" style="font-size: 16px;">这是一款针对客户端访问浏览器类型与各类信息检测的工具，可检测出客户端浏览器类型、内核类型、操作系统、屏幕分辨率以及各种浏览器功能的支持情况，非常方便实用。提供给需要的朋友使用。</h2>
+	<div class="browser">
+		<!--wrap-->
+		<div class="wrap">
+
+			<!--title-->
+			<h2 class="title">浏览器检测</h2>
+
+			<table
+				class="table table-hover table-striped table-bordered text-center bg_white">
+				<caption>检测结果</caption>
+				<thead>
+					<tr>
+						<th class="text-center">浏览器外壳</th>
+						<th class="text-center">浏览器内核</th>
+						<th class="text-center">操作系统</th>
+						<th class="text-center">终端设备</th>
+					</tr>
+					<tr>
+						<td><img src="https://cdn.jsdelivr.net/gh/lileililiwen/static/image/browser/browser/chrome.png"
+							width="64" height="64"></td>
+						<td><img src="https://cdn.jsdelivr.net/gh/lileililiwen/static/image/browser/check.png"
+							width="64" height="64"></td>
+						<td><img src="https://cdn.jsdelivr.net/gh/lileililiwen/static/image/browser/os/windows.png"
+							width="64" height="64"></td>
+						<td><img src="https://cdn.jsdelivr.net/gh/lileililiwen/static/image/browser/device/pc.png"
+							width="64" height="64"></td>
+					</tr>
+					<tr>
+						<td id="browserName">Chrome</td>
+						<td id="engineName">WebKit</td>
+						<td id="osName">Windows</td>
+						<td id="deviceName">-</td>
+					</tr>
+					<tr>
+						<td id="browserVer">90.0.4430.93</td>
+						<td id="engineVer">537.36</td>
+						<td id="osVer">10</td>
+						<td id="deviceVer">-</td>
+					</tr>
+					<tr>
+						<td id="ua" colspan="4">Mozilla/5.0 (Windows NT 10.0; Win64;
+							x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93
+							Safari/537.36</td>
+					</tr>
+				</thead>
+			</table>
+
+			<table
+				class="table table-hover table-striped table-bordered text-center bg_white">
+				<caption>浏览器其他参数检测</caption>
+				<thead>
+					<tr>
+						<th class="text-center">序号</th>
+						<th>功能</th>
+						<th>支持/不支持</th>
+						<th>说明</th>
+					</tr>
+					<tr>
+						<th class="text-center">1</th>
+						<td>HTML5</td>
+						<td>
+							<div id="supportHTML5" class="icon false"></div>
+						</td>
+						<td>浏览器是否支持HTML5</td>
+					</tr>
+					<tr>
+						<th class="text-center">2</th>
+						<td>cookie</td>
+						<td>
+							<div id="bolCookie" class="icon true"></div>
+						</td>
+						<td>打开cookie将允许网站记录您的必要信息，建议开启</td>
+					</tr>
+					<tr>
+						<th class="text-center">3</th>
+						<td>Flash动画播放</td>
+						<td>
+							<div id="bolFlash" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持播放Flash动画</td>
+					</tr>
+					<tr>
+						<th class="text-center">4</th>
+						<td>Java程序运行</td>
+						<td>
+							<div id="bolJava" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持运行Java程序</td>
+					</tr>
+					<tr>
+						<th class="text-center">5</th>
+						<td>Ajax加载</td>
+						<td>
+							<div id="bolAjax" class="icon true"></div>
+						</td>
+						<td>检测您的浏览器是否支持无刷新异步加载外部文件</td>
+					</tr>
+					<tr>
+						<th class="text-center">6</th>
+						<td>PDF文档阅读</td>
+						<td>
+							<div id="bolPDF" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持在线阅读PDF文件</td>
+					</tr>
+					<tr>
+						<th class="text-center">7</th>
+						<td>Quick Time播放</td>
+						<td>
+							<div id="bolQuickTime" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持播放Quick Time视频</td>
+					</tr>
+					<tr>
+						<th class="text-center">8</th>
+						<td>Windows Media Player</td>
+						<td>
+							<div id="bolWMP" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持播放Windows Media Player视频</td>
+					</tr>
+					<tr>
+						<th class="text-center">9</th>
+						<td>Realplayer播放</td>
+						<td>
+							<div id="bolRealPlayer" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持播放RealPlayer视频</td>
+					</tr>
+					<tr>
+						<th class="text-center">10</th>
+						<td>透明度效果</td>
+						<td>
+							<div id="bolAlpha" class="icon false"></div>
+						</td>
+						<td>检测您的浏览器是否支持网络标准的新特性 - 透明度设置</td>
+					</tr>
+					<tr>
+						<td colspan="4">更多检测功能将陆续推出……</td>
+					</tr>
+				</thead>
+			</table>
+
+			<table
+				class="table table-hover table-striped table-bordered text-center bg_white">
+				<caption>屏幕分辨率检测</caption>
+				<thead>
+					<tr>
+						<th>检测项目</th>
+						<th>宽度</th>
+						<th>高度</th>
+					</tr>
+					<tr>
+						<td>屏幕分辨率</td>
+						<td id="param1">1920</td>
+						<td id="param2">1080</td>
+					</tr>
+					<tr>
+						<td>屏幕可用工作区</td>
+						<td id="param3">1920</td>
+						<td id="param4">1040</td>
+					</tr>
+					<tr>
+						<td>XHTML标准 网页可见区域</td>
+						<td id="param7">1903</td>
+						<td id="param8">881</td>
+					</tr>
+					<tr>
+						<td>HTML标准 网页可见区域</td>
+						<td id="param9">1903</td>
+						<td id="param10">3703</td>
+					</tr>
+					<tr>
+						<td>屏幕的色盘深度</td>
+						<td id="param5" colspan="2">24</td>
+					</tr>
+					<tr>
+						<td>您的屏幕PPI (Pixels Per Inch,每英寸所拥有的像素数目)</td>
+						<td id="param11" colspan="2">横向：96像素 纵向：96像素</td>
+					</tr>
+				</thead>
+			</table>
+
+
+		</div>
+
+	</div>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/browser/ua-parser.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/lileililiwen/static/js/browser/jQuery.UAPlus.js"></script>
+
+	<script type="text/javascript">
+        $(function () {
+
+            //
+            var fill = function (el, prop) {
+                if (typeof prop === 'object') {
+                    el.innerHTML = '';
+                    el.appendChild(prop);
+                } else if (typeof prop === 'string') {
+                    el.innerHTML = prop;
+                } else {
+                    el.innerHTML = "-";
+                }
+            };
+
+            //
+            var imgMap = function (prop, dir, key, arr) {
+                var img = document.createElement('img');
+                img.src = 'image/undefined.png';
+                img.width = 64;
+                img.height = 64;
+                for (var i in arr) {
+                    if (arr.hasOwnProperty(i)) {
+                        var isobj = typeof arr[i] === 'object';
+                        var r = isobj ? new RegExp(arr[i][0], 'i') : new RegExp(arr[i], 'i');
+                        if (r.test(prop[key]) && dir != 'engine') {
+                        	//TODO ,image 目前不全
+                            img.src = 'image/browser/' + dir + '/' + (isobj ? arr[i][1] : arr[i]) + '.png';
+                            return img;
+                        } else if (prop[key] !== undefined) {
+                            img.src = 'image/browser/check.png';
+                        }
+                    }
+                }
+                img.onerror = function () {
+                    this.src = 'image/browser/check.png';
+                    this.onerror = null;
+                };
+                return img;
+            };
+
+            //
+            var parser = new UAParser();
+            var browser = parser.getBrowser();
+            var engine = parser.getEngine();
+            var os = parser.getOS();
+            var device = parser.getDevice();
+            var tbl = document.getElementsByTagName('td');
+
+            //
+            var prop = [
+                imgMap(browser, 'browser', 'name', [['ie', 'internet-explorer-tile'], 'chrome', 'chromium', 'konqueror', 'safari', 'opera', 'firefox', 'fennec', 'mozilla', 'midori', 'arora', 'camino', 'iceweasel', 'flock', 'avant', 'baidu', 'dolphin', 'epiphany', ['icab', 'icab-mobile'], 'iceape', 'icecat', ['lunascape', 'ilunascape-android'], 'maxthon', ['netscape', 'netscape_4-6'], 'netsurf', 'omniweb', ['qqbrowser', 'qq'], 'rockmelt', 'rekonq', 'seamonkey', ['silk', 'silk_1'], ['skyfire', 'skyfire-ios'], ['ucbrowser', 'uc'], ['uc browser', 'uc'], 'yandex']),
+                imgMap(engine, 'engine', 'name', [['trident', 'ie'], ['webkit', 'safari'], ['khtml', 'konqueror'], ['presto', 'opera'], ['gecko', 'mozilla']]),
+                imgMap(os, 'os', 'name', ['meego', 'symbian', 'android', 'blackberry', 'bada', ['windows phone os', 'winphone'], 'windows', 'chromium', 'mac', 'freebsd', 'bsd', 'kubuntu', 'xubuntu', 'lubuntu', 'ubuntu', 'gentoo', 'fedora', 'mandriva', 'redhat', 'suse', 'debian', 'slackware', 'arch', 'linux', 'solaris', 'webos', 'centos', 'pclinuxos', ['ios', 'mac'], ['rim', 'blackberry'], 'qnx', 'gnu', 'playstation', 'wii', 'xbox', 'unix']),
+                imgMap(device, 'device', 'type', [['undefined', 'pc'], 'console', 'tablet', ['mobile', 'phone'], ['smarttv', 'tv']]),
+                browser.name, engine.name, os.name, device.vendor,
+                browser.version, engine.version, os.version, device.model];
+
+            //
+            for (var i = 0; i < prop.length; i++) {
+                fill(tbl[i], prop[i]);
+            }
+            $("#ua").html(parser.getUA());
+
+            //功能插件
+            $("#bolCookie").addClass($.uaplus.cookieEnabled ? "true" : "false");
+            $("#bolFlash").addClass($.uaplus.flashSupport ? "true" : "false");
+            $("#bolJava").addClass($.uaplus.javaSupport ? "true" : "false");
+            $("#bolAjax").addClass($.uaplus.ajaxSupport ? "true" : "false");
+            $("#bolPDF").addClass($.uaplus.pdfSupport ? "true" : "false");
+            $("#bolQuickTime").addClass($.uaplus.quickTimeSupport ? "true" : "false");
+            $("#bolWMP").addClass($.uaplus.windowsMediaPlayerSupport ? "true" : "false");
+            $("#bolRealPlayer").addClass($.uaplus.realplayerSupport ? "true" : "false");
+            $("#bolAlpha").addClass($.uaplus.opacitySupport ? "true" : "false");
+            $("#supportHTML5").addClass(window.applicationCache ? "true" : "false");
+            
+
+            $("#param1").html(screen.width);
+            $("#param2").html(screen.height);
+            $("#param3").html(screen.availWidth);
+            $("#param4").html(screen.availHeight);
+            $("#param5").html(screen.colorDepth);
+
+            $("#param7").html(document.documentElement.clientWidth);
+            $("#param8").html(document.documentElement.clientHeight);
+
+            $("#param9").html(document.body.clientWidth);
+            $("#param10").html(document.body.clientHeight);
+
+            //
+            var arrDPI = new Array;
+            if (window.screen.deviceXDPI) {
+                arrDPI[0] = "X:" + window.screen.deviceXDPI + "PX";
+                arrDPI[1] = " Y:" + window.screen.deviceYDPI + "PX";
+            }
+            else {
+                var tmpNode = document.createElement("DIV");
+                tmpNode.style.cssText = "width:1in;height:1in;position:absolute;left:0px;top:0px;z-index:99;visibility:hidden";
+                document.body.appendChild(tmpNode);
+                arrDPI[0] = "横向：" + parseInt(tmpNode.offsetWidth) + "像素";
+                arrDPI[1] = "　　纵向：" + parseInt(tmpNode.offsetHeight) + "像素";
+                tmpNode.parentNode.removeChild(tmpNode);
+            }
+
+            $("#param11").html(arrDPI);
+
+        });
+    </script>
+	<div class="well">
+		<hr>
+		<div id="SOHUCS" sid="browser_info"></div>
+		<script type="text/javascript"> 
+		</script>
+
+	</div>
+
+</div>
